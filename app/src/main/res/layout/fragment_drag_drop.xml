@@ -68,7 +68,7 @@
       android:layout_gravity="right">
 
       <!--add areas for answers to be dragged to-->
-      
+
     </LinearLayout>
     <!--end of dragged answers layout-->
 
