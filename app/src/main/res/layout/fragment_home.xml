@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".HomeFragment">
+  android:padding="100sp"
+  tools:context=".HomeFragment"
+  >
 
-  <!-- TODO: Update blank fragment layout -->
-  <TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/hello_blank_fragment"/>
+  <ImageSwitcher
+    android:id="@+id/user_image"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true">
 
-</FrameLayout>
+    <ImageView
+      android:layout_width="200sp"
+      android:layout_height="200sp"
+      android:src="@drawable/ic_person_outline"
+      />
+  </ImageSwitcher>
+
+  <Button
+    android:id="@+id/button_one"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="11dp"
+    android:layout_below="@+id/user_image"
+    android:layout_centerHorizontal="true"
+    android:padding="50dp"
+    android:layout_marginVertical="20sp"
+    />
+
+  <Button
+    android:id="@+id/button_two"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="11dp"
+    android:layout_below="@+id/button_one"
+    android:layout_centerHorizontal="true"
+    android:padding="50sp"
+    android:layout_marginVertical="20sp"
+    />
+
+  <Button
+    android:id="@+id/button_three"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="11dp"
+    android:layout_below="@+id/button_two"
+    android:layout_centerHorizontal="true"
+    android:padding="50sp"
+    android:layout_marginVertical="20sp"
+    />
+
+  <Button
+    android:id="@+id/button_four"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="11dp"
+    android:layout_below="@+id/button_three"
+    android:layout_centerHorizontal="true"
+    android:padding="50sp"
+    android:layout_marginVertical="20sp"
+    />
+
+
+</RelativeLayout>
