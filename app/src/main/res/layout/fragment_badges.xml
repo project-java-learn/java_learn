@@ -2,59 +2,20 @@
 <GridView
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/grid_view"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="horizontal"
-  tools:context=".BadgesFragment">
+  android:padding="200dp"
+  tools:context=".BadgesFragment"
+  android:columnWidth="90dp"
+  android:numColumns="auto_fit"
+  android:verticalSpacing="18dp"
+  android:horizontalSpacing="18dp"
+  android:stretchMode="columnWidth"
+  android:gravity="center"
+  >
 
-
-  <!--<ImageButton-->
-    <!--android:id="@+id/badge_1"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:adjustViewBounds="false"-->
-    <!--android:src="@android:drawable/btn_dialog"-->
-    <!--android:text="badge1"-->
-    <!--android:visibility="visible"-->
-    <!--/>-->
-
-  <!--<ImageButton-->
-    <!--android:id="@+id/badge_2"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="badge2"-->
-    <!--android:visibility="visible"-->
-    <!--tools:src="@android:drawable/btn_dialog"/>-->
-  <!--<ImageButton-->
-    <!--android:id="@+id/badge_3"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="button3"-->
-    <!--tools:src="@android:drawable/btn_star"/>-->
-
-  <!--<ImageButton-->
-    <!--android:id="@+id/badge_4"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="button4"-->
-    <!--tools:src="@android:drawable/ic_input_add"/>-->
-
-  <!--<ImageButton-->
-    <!--android:id="@+id/badge_5"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="button5"-->
-    <!--android:visibility="visible"-->
-    <!--tools:src="@android:drawable/ic_menu_add"/>-->
-
-  <!--<ImageButton-->
-    <!--android:id="@+id/badge_6"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:adjustViewBounds="false"-->
-    <!--android:text="badge6"-->
-    <!--android:visibility="visible"-->
-    <!--tools:src="@android:drawable/arrow_up_float"/>-->
 
 
 </GridView>
