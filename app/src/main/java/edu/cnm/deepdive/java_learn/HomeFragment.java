@@ -28,7 +28,14 @@ public class HomeFragment extends Fragment {
     glossaryButton = view.findViewById(R.id.glossary_button);
     settingsButton = view.findViewById(R.id.settings_button);
 
-    return inflater.inflate(R.layout.fragment_home, container, false);
+    setupListener();
+
+    levelsButton.setOnClickListener(listener);
+    profileButton.setOnClickListener(listener);
+    glossaryButton.setOnClickListener(listener);
+    settingsButton.setOnClickListener(listener);
+
+    return view;
   }
 
 
