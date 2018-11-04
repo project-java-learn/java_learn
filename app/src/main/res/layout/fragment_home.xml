@@ -21,46 +21,50 @@
   </ImageSwitcher>
 
   <Button
-    android:id="@+id/button_one"
+    android:id="@+id/levels_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="11dp"
     android:layout_below="@+id/user_image"
     android:layout_centerHorizontal="true"
     android:padding="50dp"
+    android:text="Levels"
     android:layout_marginVertical="20sp"
     />
 
   <Button
-    android:id="@+id/button_two"
+    android:id="@+id/profile_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="11dp"
-    android:layout_below="@+id/button_one"
+    android:layout_below="@id/levels_button"
     android:layout_centerHorizontal="true"
     android:padding="50sp"
+    android:text="Profile"
     android:layout_marginVertical="20sp"
     />
 
   <Button
-    android:id="@+id/button_three"
+    android:id="@+id/glossary_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="11dp"
-    android:layout_below="@+id/button_two"
+    android:layout_below="@id/profile_button"
     android:layout_centerHorizontal="true"
     android:padding="50sp"
+    android:text="Glossary"
     android:layout_marginVertical="20sp"
     />
 
   <Button
-    android:id="@+id/button_four"
+    android:id="@+id/settings_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="11dp"
-    android:layout_below="@+id/button_three"
+    android:layout_below="@id/glossary_button"
     android:layout_centerHorizontal="true"
     android:padding="50sp"
+    android:text="Settings"
     android:layout_marginVertical="20sp"
     />
 
