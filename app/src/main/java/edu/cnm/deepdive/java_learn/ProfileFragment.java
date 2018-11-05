@@ -11,7 +11,6 @@ import android.widget.Button;
 public class ProfileFragment extends Fragment {
 
   private Button friendsButton;
-  private Button connectButton;
   private Button badgesButton;
   private OnClickListener listener;
 
@@ -22,13 +21,11 @@ public class ProfileFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
     friendsButton = view.findViewById(R.id.friends_button);
-    connectButton = view.findViewById(R.id.connect_button);
     badgesButton = view.findViewById(R.id.badges_button);
 
     setupListener();
 
     friendsButton.setOnClickListener(listener);
-    connectButton.setOnClickListener(listener);
     badgesButton.setOnClickListener(listener);
 
     return view;
@@ -45,9 +42,6 @@ public class ProfileFragment extends Fragment {
 
         switch (id) {
           case R.id.friends_button:
-            fragment = new FriendsFragment();
-            break;
-          case R.id.connect_button:
             fragment = new FriendsFragment();
             break;
           case R.id.badges_button:

@@ -80,16 +80,6 @@
     android:text="Friends"/>
 
   <Button
-    android:id="@+id/connect_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginTop="30dp"
-    android:layout_marginBottom="30dp"
-    android:padding="30dp"
-    android:text="Connect"/>
-
-  <Button
     android:id="@+id/badges_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
