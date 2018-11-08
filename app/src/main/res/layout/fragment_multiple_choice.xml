@@ -3,7 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MultipleChoice">
+  tools:context=".multipleChoice.MultipleChoice">
 
   <ImageView
     android:id="@+id/snip_of_code"
@@ -14,12 +14,13 @@
     android:src="@drawable/snip_of_code"/>
 
   <LinearLayout
+    android:id="@+id/questions"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="20sp"
+    android:layout_centerVertical="true"
     android:layout_toRightOf="@+id/snip_of_code"
-    android:layout_centerVertical="true">
+    android:padding="20sp"
+    android:orientation="vertical">
 
     <TextView
       android:id="@+id/question_1"
@@ -30,32 +31,36 @@
 
     <RadioGroup
       android:id="@+id/radios_one"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:padding="20sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
       android:inputType="text"
+      android:orientation="vertical"
       >
-    <RadioButton
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="answer A"
-      />
-    <RadioButton
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="answer B"
-      />
-    <RadioButton
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="answer C"
-      />
-    <RadioButton
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Answer D"
-      />
+      <RadioButton
+        android:id="@+id/answer_1_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="answer A"
+        />
+      <RadioButton
+        android:id="@+id/answer_1_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="answer B"
+        />
+      <RadioButton
+        android:id="@+id/answer_1_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="answer C"
+        />
+      <RadioButton
+        android:id="@+id/answer_1_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer D"
+        />
 
     </RadioGroup>
 
@@ -68,28 +73,32 @@
 
     <RadioGroup
       android:id="@+id/radios_two"
-      android:padding="20dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
+      android:padding="20dp"
       android:inputType="text"
+      android:orientation="vertical"
       >
       <RadioButton
+        android:id="@+id/answer_2_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer A"
         />
       <RadioButton
+        android:id="@+id/answer_2_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer B"
         />
       <RadioButton
+        android:id="@+id/answer_2_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer C"
         />
       <RadioButton
+        android:id="@+id/answer_2_d"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Answer D"
@@ -106,28 +115,32 @@
 
     <RadioGroup
       android:id="@+id/radios_three"
-      android:padding="20sp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
+      android:padding="20sp"
       android:inputType="text"
+      android:orientation="vertical"
       >
       <RadioButton
+        android:id="@+id/answer_3_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer A"
         />
       <RadioButton
+        android:id="@+id/answer_3_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer B"
         />
       <RadioButton
+        android:id="@+id/answer_3_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer C"
         />
       <RadioButton
+        android:id="@+id/answer_3_d"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Answer D"
@@ -146,26 +159,30 @@
       android:id="@+id/radios_four"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:inputType="text"
       android:padding="20sp"
+      android:inputType="text"
+      android:orientation="vertical"
       >
       <RadioButton
+        android:id="@+id/answer_4_a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer A"
         />
       <RadioButton
+        android:id="@+id/answer_4_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer B"
         />
       <RadioButton
+        android:id="@+id/answer_4_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="answer C"
         />
       <RadioButton
+        android:id="@+id/answer_4_d"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Answer D"
@@ -174,5 +191,17 @@
     </RadioGroup>
 
   </LinearLayout>
+
+  <Button
+    android:id="@+id/submit_answers"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="347dp"
+    android:layout_marginLeft="188dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_toRightOf="@id/questions"
+    android:textAlignment="center"
+    android:text="SUBMIT"/>
 
 </RelativeLayout>

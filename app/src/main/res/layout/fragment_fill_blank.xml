@@ -18,7 +18,7 @@
     <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/body_text"
+      android:text="body_text"
       android:textSize="12dp"/>
 
     <LinearLayout
@@ -30,7 +30,7 @@
       <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_with_answer"
+        android:text="text_with_answer"
         android:textSize="12dp"
         />
 
@@ -64,7 +64,7 @@
     <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/rules"
+      android:text="rules"
       android:textSize="20sp"
       android:layout_gravity="center|top"
       />
