@@ -3,7 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:padding="100sp"
+  android:padding="@dimen/top_level_padding"
   tools:context=".HomeFragment"
   >
 
@@ -29,7 +29,7 @@
     android:layout_below="@+id/user_image"
     android:layout_centerHorizontal="true"
     android:text="Levels"
-    android:textSize="30sp"
+    android:textSize="@dimen/button_text_size"
     />
 
   <Button
@@ -40,7 +40,7 @@
     android:layout_marginBottom="20dp"
     android:layout_below="@id/levels_button"
     android:layout_centerHorizontal="true"
-    android:textSize="30sp"
+    android:textSize="@dimen/button_text_size"
     android:text="Profile"
     />
 
@@ -52,7 +52,7 @@
     android:layout_marginBottom="20dp"
     android:layout_below="@id/profile_button"
     android:layout_centerHorizontal="true"
-    android:textSize="28sp"
+    android:textSize="@dimen/button_text_size"
     android:text="Glossary"
     />
 

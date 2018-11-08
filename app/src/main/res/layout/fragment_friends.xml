@@ -6,7 +6,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="horizontal"
-  android:padding="200dp"
+  android:padding="@dimen/top_level_padding"
   tools:context=".BadgesFragment"
   android:columnWidth="90dp"
   android:numColumns="auto_fit"
