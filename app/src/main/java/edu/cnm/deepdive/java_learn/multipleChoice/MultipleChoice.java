@@ -65,6 +65,15 @@ public class MultipleChoice extends Fragment {
       ((RadioButton) radiosOne.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
       ((RadioButton) radiosOne.getChildAt(i))
           .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
+      ((RadioButton) radiosTwo.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
+      ((RadioButton) radiosTwo.getChildAt(i))
+          .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
+      ((RadioButton) radiosThree.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
+      ((RadioButton) radiosThree.getChildAt(i))
+          .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
+      ((RadioButton) radiosFour.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
+      ((RadioButton) radiosFour.getChildAt(i))
+          .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
     }
 
     radiosOne.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -77,8 +86,11 @@ public class MultipleChoice extends Fragment {
      submitAnswers.setOnClickListener(new OnClickListener() {
        @Override
        public void onClick(View v) {
-         RadioButton selected = getActivity().findViewById(radiosOne.getCheckedRadioButtonId());
-         boolean isCorrect = selected.getTag() == Boolean.TRUE;
+         RadioButton selected1 = getActivity().findViewById(radiosOne.getCheckedRadioButtonId());
+         RadioButton selected2 = getActivity().findViewById(radiosOne.getCheckedRadioButtonId());
+         RadioButton selected3 = getActivity().findViewById(radiosOne.getCheckedRadioButtonId());
+         RadioButton selected4 = getActivity().findViewById(radiosOne.getCheckedRadioButtonId());
+         boolean isCorrect = selected1.getTag() == Boolean.TRUE;
        }
      });
     return view;
