@@ -2,6 +2,7 @@ package edu.cnm.deepdive.java_learn;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import edu.cnm.deepdive.java_learn.view.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 

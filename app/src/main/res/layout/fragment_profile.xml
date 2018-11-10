@@ -5,7 +5,7 @@
   android:layout_height="match_parent"
   android:padding="@dimen/top_level_padding"
   android:orientation="vertical"
-  tools:context=".ProfileFragment">
+  tools:context=".view.ProfileFragment">
 
   <ImageView
     android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn;
+package edu.cnm.deepdive.java_learn.view;
 
 
 import android.os.Bundle;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import edu.cnm.deepdive.java_learn.GlossaryFragment;
+import edu.cnm.deepdive.java_learn.LevelsFragment;
+import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.view.ProfileFragment;
 
 public class HomeFragment extends Fragment {
 
