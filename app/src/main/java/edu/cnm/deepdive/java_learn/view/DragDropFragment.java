@@ -9,16 +9,7 @@ import android.view.ViewGroup;
 import edu.cnm.deepdive.java_learn.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DragDropFragment extends Fragment {
-
-
-  public DragDropFragment() {
-    // Required empty public constructor
-  }
-
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
