@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:padding="30dp"
   android:orientation="horizontal"
-  tools:context=".FillBlank">
+  tools:context=".fillInBlank.FillBlank">
 
   <!--Body of Text-->
   <LinearLayout
     android:layout_width="500sp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <!--body of text no fill-->
     <TextView
@@ -20,35 +21,6 @@
       android:layout_height="wrap_content"
       android:text="body_text"
       android:textSize="12dp"/>
-
-    <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-
-      <!--body of text with fill-->
-      <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="text_with_answer"
-        android:textSize="12dp"
-        />
-
-      <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:hintAnimationEnabled="true">
-
-        <android.support.design.widget.TextInputEditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="answer"
-          android:textSize="20sp" />
-
-      </android.support.design.widget.TextInputLayout>
-
-
-    </LinearLayout>
 
   </LinearLayout>
 
@@ -61,14 +33,80 @@
     android:layout_alignParentEnd="true"
     android:layout_alignParentTop="true">
 
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="rules"
-      android:textSize="20sp"
-      android:layout_gravity="center|top"
-      />
+    <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
 
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="20dp"
+        android:text="rules"
+        android:textSize="20sp"
+        />
+
+
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintAnimationEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="answer"
+          android:textSize="20sp"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintAnimationEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="answer"
+          android:textSize="20sp"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintAnimationEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="answer"
+          android:textSize="20sp"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintAnimationEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="answer"
+          android:textSize="20sp"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+    </ScrollView>
   </android.support.v7.widget.CardView>
 
 
