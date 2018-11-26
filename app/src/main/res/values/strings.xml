@@ -6,32 +6,50 @@
   <string name="definition_three_question">The principal building blocks of object-oriented programs.</string>
   <string name="fourth_definition_question">A data member of a class.</string>
   <string name="definition_five_question">A Java programming language keyword used in a class definition to specify that a class is not to be instantiated, but rather inherited by other classes.</string>
+  <string name="fill_blank_submit">SUBMIT</string>
 
   <string-array name="definition_one_entries">
-  <item>Array Item One</item>
-  <item>Array Item Two</item>
-  <item>Array Item Three</item>
-</string-array>
-
+    <item>Array Item One</item>
+    <item>Array Item Two</item>
+    <item>Array Item Three</item>
+  </string-array>
   <string-array name="definition_two_entries">
     <item>Array Item One</item>
     <item>Array Item Two</item>
     <item>Array Item Three</item>
   </string-array>
-
   <string-array name="definition_three_entries">
     <item>Array Item One</item>
     <item>Array Item Two</item>
     <item>Array Item Three</item>
   </string-array>
-
   <string-array name="definition_four_entries">
     <item>Array Item One</item>
     <item>Array Item Two</item>
     <item>Array Item Three</item>
   </string-array>
-
   <string-array name="definition_five_entries">
+    <item>Array Item One</item>
+    <item>Array Item Two</item>
+    <item>Array Item Three</item>
+  </string-array>
+
+  <string-array name="fill_in_one_entries">
+    <item>Array Item One</item>
+    <item>Array Item Two</item>
+    <item>Array Item Three</item>
+  </string-array>
+  <string-array name="fill_in_two_entries">
+    <item>Array Item One</item>
+    <item>Array Item Two</item>
+    <item>Array Item Three</item>
+  </string-array>
+  <string-array name="fill_in_three_entries">
+    <item>Array Item One</item>
+    <item>Array Item Two</item>
+    <item>Array Item Three</item>
+  </string-array>
+  <string-array name="fill_in_four_entries">
     <item>Array Item One</item>
     <item>Array Item Two</item>
     <item>Array Item Three</item>

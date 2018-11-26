@@ -10,7 +10,25 @@
 
   <style name="TextViewStyle">
     <item name="android:textSize">20sp</item>
-    <item name="android:padding">50dp</item>
+    <item name="android:textStyle">bold</item>
   </style>
+
+  <style name="TextViewStyleSmall">
+    <item name="android:textSize">12sp</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="cardView" parent="Widget.MaterialComponents.CardView">
+    <item name="android:padding">40dp</item>
+    <item name="android:animateLayoutChanges">true</item>
+    <item name="cardCornerRadius">10dp</item>
+    <item name="android:paddingBottom">16dp</item>
+    <item name="cardElevation">2dp</item>
+    <item name="android:translationZ">8dp</item>
+    <item name="cardUseCompatPadding">true</item>
+    <item name="cardBackgroundColor">@color/colorAccent</item>
+  </style>
+  
+
 
 </resources>

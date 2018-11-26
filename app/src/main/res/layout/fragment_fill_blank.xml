@@ -7,106 +7,122 @@
   android:layout_height="match_parent"
   android:padding="30dp"
   android:orientation="horizontal"
+  android:clipToPadding="false"
   tools:context=".fillInBlank.FillBlank">
 
   <!--Body of Text-->
   <LinearLayout
     android:layout_width="500sp"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     android:orientation="vertical">
 
     <!--body of text no fill-->
-    <TextView
+    <ImageView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="body_text"
-      android:textSize="12dp"/>
+      android:src="@drawable/snip_of_code"
+      />
 
   </LinearLayout>
 
   <!--Rules-->
   <android.support.v7.widget.CardView
+    style="@style/cardView"
     android:layout_width="313dp"
-    android:layout_height="268dp"
+    android:layout_height="368dp"
     android:layout_marginTop="170dp"
     android:layout_marginEnd="148dp"
+    android:clipToPadding="false"
     android:layout_alignParentEnd="true"
     android:layout_alignParentTop="true">
 
-    <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:padding="20dp"
       android:orientation="vertical"
       >
 
       <TextView
+        android:id="@+id/fill_in_rules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:padding="15dp"
         android:paddingBottom="20dp"
-        android:text="rules"
+        android:text="Fill in the correct answer with the corresponding color."
+        style="@style/TextViewStyle"
+        android:textAlignment="center"
         android:textSize="20sp"
         />
 
-
-      <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/fill_in_one_spinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:hintAnimationEnabled="true">
+        android:padding="8dp"
+        android:entries="@array/fill_in_one_entries"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fill_in_rules"
+        >
+      </android.support.v7.widget.AppCompatSpinner>
 
-        <android.support.design.widget.TextInputEditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="answer"
-          android:textSize="20sp"/>
-
-      </android.support.design.widget.TextInputLayout>
-
-      <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/fill_in_two_spinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:hintAnimationEnabled="true">
+        android:padding="8dp"
+        android:entries="@array/fill_in_one_entries"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fill_in_one_spinner"
+        >
+      </android.support.v7.widget.AppCompatSpinner>
 
-        <android.support.design.widget.TextInputEditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="answer"
-          android:textSize="20sp"/>
-
-      </android.support.design.widget.TextInputLayout>
-
-      <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/fill_in_three_spinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:hintAnimationEnabled="true">
+        android:padding="8dp"
+        android:entries="@array/fill_in_three_entries"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fill_in_two_spinner"
+        >
+      </android.support.v7.widget.AppCompatSpinner>
 
-        <android.support.design.widget.TextInputEditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="answer"
-          android:textSize="20sp"/>
-
-      </android.support.design.widget.TextInputLayout>
-
-      <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/fill_in_four_spinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:hintAnimationEnabled="true">
+        android:padding="8dp"
+        android:entries="@array/fill_in_four_entries"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fill_in_three_spinner"
+        >
+      </android.support.v7.widget.AppCompatSpinner>
 
-        <android.support.design.widget.TextInputEditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="answer"
-          android:textSize="20sp"/>
+      <Button
+        android:id="@+id/fill_blank_submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:padding="15dp"
+        android:text="@string/fill_blank_submit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fill_in_four_spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        />
 
-      </android.support.design.widget.TextInputLayout>
+    </android.support.constraint.ConstraintLayout>
 
-    </LinearLayout>
-    </ScrollView>
+
   </android.support.v7.widget.CardView>
 
 

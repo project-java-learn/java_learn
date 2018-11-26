@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="20dp"
+  tools:context=".dragDrop.DragDropFragment">
+
+
+  <TableLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <TableRow>
+      <TextView
+        android:id="@+id/first_definition"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:singleLine="false"
+        android:text="@string/definition_one_question"
+        />
+
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/definition_one_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:entries="@array/definition_one_entries">
+      </android.support.v7.widget.AppCompatSpinner>
+
+    </TableRow>
+    <TableRow>
+      <TextView
+        android:id="@+id/second_definition"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:text="@string/definition_two_question"
+        />
+
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/definition_second_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:entries="@array/definition_two_entries">
+      </android.support.v7.widget.AppCompatSpinner>
+
+    </TableRow>
+
+    <TableRow>
+      <TextView
+        android:id="@+id/third_definition"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:text="@string/definition_three_question"
+        />
+
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/definition_third_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:entries="@array/definition_three_entries">
+      </android.support.v7.widget.AppCompatSpinner>
+
+    </TableRow>
+    <TableRow>
+      <TextView
+        android:id="@+id/fourth_definition"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:text="@string/fourth_definition_question"
+        />
+
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/definition_fourth_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:entries="@array/definition_four_entries">
+      </android.support.v7.widget.AppCompatSpinner>
+
+    </TableRow>
+    <TableRow>
+      <TextView
+        android:id="@+id/fifth_definition"
+        style="@style/TextViewStyle"
+        android:layout_width="1028dp"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:text="@string/definition_five_question"
+        />
+      <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/definition_fifth_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:entries="@array/definition_five_entries"
+        >
+      </android.support.v7.widget.AppCompatSpinner>
+    </TableRow>
+
+
+  </TableLayout>
+
+
+</LinearLayout>
+
+
+
