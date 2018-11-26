@@ -17,30 +17,30 @@ import android.support.annotation.NonNull;
         )
     }
 )
-public class FBQuestions {
+public class MCImage {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "fb_question_id")
-  private long fbQuestionId;
+  @ColumnInfo(name = "mc_image_id")
+  private long mcImageId;
 
   @ColumnInfo(name = "level_id")
   private long levelId;
 
   @NonNull
-  @ColumnInfo(name = "fb_question")
-  private Image fbQuestion;
+  @ColumnInfo(name = "mc_image")
+  private Image mcImage;
 
-  public FBQuestions(@NonNull Image fbQuestion, long levelId) {
+  public MCImage (@NonNull Image mcImage, long levelId) {
     this.levelId = levelId;
-    this.fbQuestion = fbQuestion;
+    this.mcImage = mcImage;
   }
 
-  public long getFbQuestionId() {
-    return fbQuestionId;
+  public long getMcImageId() {
+    return mcImageId;
   }
 
-  public void setFbQuestionId(long fbQuestionId) {
-    this.fbQuestionId = fbQuestionId;
+  public void setMcImageId(long mcImageId) {
+    this.mcImageId = mcImageId;
   }
 
   public long getLevelId() {
@@ -52,11 +52,11 @@ public class FBQuestions {
   }
 
   @NonNull
-  public Image getFbQuestion() {
-    return fbQuestion;
+  public Image getMcImage() {
+    return mcImage;
   }
 
-  public void setFbQuestion(@NonNull Image fbQuestion) {
-    this.fbQuestion = fbQuestion;
+  public void setMcImage(@NonNull Image mcImage) {
+    this.mcImage = mcImage;
   }
 }
