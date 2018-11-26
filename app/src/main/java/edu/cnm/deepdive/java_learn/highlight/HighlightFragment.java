@@ -1,10 +1,11 @@
-package edu.cnm.deepdive.java_learn;
+package edu.cnm.deepdive.java_learn.highlight;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import edu.cnm.deepdive.java_learn.R;
 
 
 public class HighlightFragment extends Fragment {
