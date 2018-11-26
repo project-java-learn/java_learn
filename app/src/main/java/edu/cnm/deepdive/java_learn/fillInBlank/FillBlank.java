@@ -8,10 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import edu.cnm.deepdive.java_learn.R;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class FillBlank extends Fragment {
 
   @Override

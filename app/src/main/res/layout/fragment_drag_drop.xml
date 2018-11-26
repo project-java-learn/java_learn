@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".view.DragDropFragment"
+  android:padding="@dimen/top_level_padding">
+
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!--Linear Layout for definition text-->
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="20dp"
+      android:layout_gravity="left">
+    
+    <TextView
+      android:id="@+id/first_definition"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="A function defined in a class."
+      android:textSize="20sp"
+      android:padding="50dp"
+      />
+
+      <TextView
+        android:id="@+id/second_definition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A type that defines the implementation of a particular kind of object."
+        android:textSize="20sp"
+        android:padding="50dp"
+
+        />
+
+      <TextView
+        android:id="@+id/third_definition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The principal building blocks of object-oriented programs."
+        android:textSize="20sp"
+        android:padding="50dp"
+        />
+      <TextView
+        android:id="@+id/fourth_definition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A data member of a class."
+        android:textSize="20sp"
+        android:padding="50dp"
+        />
+
+    </LinearLayout>
+    <!--end of definition text layout-->
+
+      <!--Linear Layout for dragged answers-->
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right">
+
+      <!--add areas for answers to be dragged to-->
+
+    </LinearLayout>
+    <!--end of dragged answers layout-->
+
+  </LinearLayout>
+
+  <!--add box for answer bank-->
+
+</RelativeLayout>
