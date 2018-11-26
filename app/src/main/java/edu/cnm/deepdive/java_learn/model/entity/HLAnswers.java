@@ -32,8 +32,10 @@ public class HLAnswers {
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
-  public HLAnswers() {
-
+  public HLAnswers( @NonNull String hlAnswer, boolean isCorrect ,long hlQuestionId) {
+    this.hlQuestionId = hlQuestionId;
+    this.hlAnswer = hlAnswer;
+    this.isCorrect = isCorrect;
   }
 
   public long getHlAnswerId() {

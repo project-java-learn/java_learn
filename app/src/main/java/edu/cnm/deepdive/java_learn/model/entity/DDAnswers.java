@@ -32,8 +32,10 @@ public class DDAnswers {
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
-  public DDAnswers () {
-
+  public DDAnswers( @NonNull String ddAnswer, boolean isCorrect, long ddQuestionId) {
+    this.ddQuestionId = ddQuestionId;
+    this.ddAnswer = ddAnswer;
+    this.isCorrect = isCorrect;
   }
 
   public long getDdAnswerId() {

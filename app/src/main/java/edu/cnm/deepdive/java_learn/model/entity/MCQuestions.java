@@ -29,8 +29,9 @@ public class MCQuestions {
   @ColumnInfo(name = "mc_question")
   private String mcQuestion;
 
-  public MCQuestions() {
-
+  public MCQuestions(@NonNull String mcQuestion, long levelId) {
+    this.levelId = levelId;
+    this.mcQuestion = mcQuestion;
   }
 
   public long getMcQuestionId() {

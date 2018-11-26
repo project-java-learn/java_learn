@@ -32,8 +32,10 @@ public class FBAnswers {
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
-  public FBAnswers() {
-
+  public FBAnswers(@NonNull String fbAnswer, boolean isCorrect, long fbQuestionId) {
+    this.fbQuestionId = fbQuestionId;
+    this.fbAnswer = fbAnswer;
+    this.isCorrect = isCorrect;
   }
 
   public long getFbAnswerId() {

@@ -29,8 +29,9 @@ public class DDQuestions {
   @ColumnInfo(name = "dd_question")
   private String ddQuestion;
 
-  public DDQuestions() {
-
+  public DDQuestions(@NonNull String ddQuestion, long levelId) {
+    this.ddQuestion = ddQuestion;
+    this.levelId = levelId;
   }
 
   public long getDdQuestionId() {
@@ -39,6 +40,14 @@ public class DDQuestions {
 
   public void setDdQuestionId(long ddQuestionId) {
     this.ddQuestionId = ddQuestionId;
+  }
+
+  public long getLevelId() {
+    return levelId;
+  }
+
+  public void setLevelId(long levelId) {
+    this.levelId = levelId;
   }
 
   @NonNull

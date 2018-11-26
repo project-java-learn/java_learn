@@ -10,8 +10,8 @@ import android.support.annotation.NonNull;
     foreignKeys = {
         @ForeignKey(
             entity = MCQuestions.class,
-            parentColumns = "level_id",
-            childColumns = "level_id",
+            parentColumns = "mc_question_id",
+            childColumns = "mc_question_id",
             onDelete = ForeignKey.CASCADE
         )
     }
@@ -26,14 +26,16 @@ public class MCAnswers {
   private long mcQuestionId;
 
   @NonNull
-  @ColumnInfo(name = "mc_answwer")
+  @ColumnInfo(name = "mc_answer")
   private String mcAnswer;
 
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
-  public MCAnswers() {
-
+  public MCAnswers(@NonNull String mcAnswer, boolean isCorrect, long mcQuestionId) {
+    this.mcQuestionId = mcQuestionId;
+    this.mcAnswer = mcAnswer;
+    this.isCorrect = isCorrect;
   }
 
   public long getMcAnswerId() {

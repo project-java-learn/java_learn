@@ -26,11 +26,12 @@ public class HLQuestions {
   private long levelId;
 
   @NonNull
-  @ColumnInfo(name = "hl_answer")
-  private String hlAnswer;
+  @ColumnInfo(name = "hl_question")
+  private String hlQuestion;
 
-  public HLQuestions() {
-
+  public HLQuestions(@NonNull String hlQuestion, long levelId) {
+    this.levelId = levelId;
+    this.hlQuestion = hlQuestion;
   }
 
   public long getHlQuestionId() {
@@ -50,11 +51,11 @@ public class HLQuestions {
   }
 
   @NonNull
-  public String getHlAnswer() {
-    return hlAnswer;
+  public String getHlQuestion() {
+    return hlQuestion;
   }
 
-  public void setHlAnswer(@NonNull String hlAnswer) {
-    this.hlAnswer = hlAnswer;
+  public void setHlQuestion(@NonNull String hlQuestion) {
+    this.hlQuestion = hlQuestion;
   }
 }
