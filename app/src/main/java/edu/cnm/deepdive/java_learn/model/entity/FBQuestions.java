@@ -5,6 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import android.widget.ImageView;
 
 @Entity(
     foreignKeys = {
@@ -27,9 +28,9 @@ public class FBQuestions {
 
   @NonNull
   @ColumnInfo(name = "fb_question")
-  private String fbQuestion;
+  private ImageView fbQuestion;
 
-  public FBQuestions(@NonNull String fbQuestion, long levelId) {
+  public FBQuestions(@NonNull ImageView fbQuestion, long levelId) {
     this.levelId = levelId;
     this.fbQuestion = fbQuestion;
   }
@@ -51,11 +52,11 @@ public class FBQuestions {
   }
 
   @NonNull
-  public String getFbQuestion() {
+  public ImageView getFbQuestion() {
     return fbQuestion;
   }
 
-  public void setFbQuestion(@NonNull String fbQuestion) {
+  public void setFbQuestion(@NonNull ImageView fbQuestion) {
     this.fbQuestion = fbQuestion;
   }
 }
