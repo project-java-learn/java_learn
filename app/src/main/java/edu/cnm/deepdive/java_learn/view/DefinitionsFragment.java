@@ -9,13 +9,13 @@ import android.view.ViewGroup;
 import edu.cnm.deepdive.java_learn.R;
 
 
-public class DragDropFragment extends Fragment {
+public class DefinitionsFragment extends Fragment {
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_drag_drop, container, false);
+    return inflater.inflate(R.layout.fragment_definitions, container, false);
   }
 
 }
