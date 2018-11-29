@@ -26,7 +26,7 @@
   <android.support.v7.widget.CardView
     android:id="@+id/all_questions_card"
     style="@style/cardView"
-    android:layout_width="wrap_content"
+    android:layout_width="500dp"
     android:layout_height="wrap_content"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toRightOf="@id/snip_of_code_card"
@@ -43,46 +43,55 @@
         android:id="@+id/multiple_choice_questions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:stretchColumns="*">
 
         <TableRow
-          android:padding="15dp"
+          android:gravity="center"
           >
 
           <TextView
             android:id="@+id/question_1"
-            style="@style/TextViewStyleSmall"
+            style="@style/TextViewStyleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question number 1"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Question 1,\nText,\nText"
             />
 
           <TextView
             android:id="@+id/question_2"
-            style="@style/TextViewStyleSmall"
+            style="@style/TextViewStyleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question number 2"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Question 2,\nText,\nText"
             />
 
           <TextView
             android:id="@+id/question_3"
-            style="@style/TextViewStyleSmall"
+            style="@style/TextViewStyleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question number 3"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Question 3,\nText,\nText"
             />
 
         </TableRow>
 
         <TableRow
-          android:padding="15dp">
+          android:gravity="center">
 
           <RadioGroup
             android:id="@+id/radios_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:inputType="text"
             android:orientation="vertical"
             >
@@ -118,6 +127,7 @@
             android:id="@+id/radios_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:inputType="text"
             android:orientation="vertical"
             >
@@ -125,6 +135,7 @@
               android:id="@+id/answer_2_a"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:layout_gravity="center"
               android:text="answer A"
               />
             <RadioButton
@@ -152,6 +163,7 @@
             android:id="@+id/radios_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:inputType="text"
             android:orientation="vertical"
             >
@@ -185,38 +197,46 @@
         </TableRow>
 
         <TableRow
-          android:padding="15dp">
+          android:gravity="center"
+          android:paddingTop="15dp">
           <TextView
             android:id="@+id/question_4"
-            style="@style/TextViewStyleSmall"
+            style="@style/TextViewStyleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question number 4"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Question 4,\nText,\nText"
             />
 
           <TextView
             android:id="@+id/question_5"
-            style="@style/TextViewStyleSmall"
+            style="@style/TextViewStyleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question number 5"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Question 5,\nText,\nText"
             />
 
           <TextView
             android:id="@+id/question_6"
-            style="@style/TextViewStyleSmall"
+            style="@style/TextViewStyleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question number 6"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Question 6,\nText,\nText"
             />
         </TableRow>
 
         <TableRow
-          android:padding="15dp">
+          android:gravity="center">
           <RadioGroup
             android:id="@+id/radios_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:inputType="text"
             android:orientation="vertical"
             >
@@ -252,6 +272,7 @@
             android:id="@+id/radios_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:inputType="text"
             android:orientation="vertical"
             >
@@ -287,6 +308,7 @@
             android:id="@+id/radios_six"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:inputType="text"
             android:orientation="vertical"
             >
