@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.view.GameFragment;
 
 
-public class HighlightFragment extends Fragment {
+public class HighlightFragment extends GameFragment {
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,

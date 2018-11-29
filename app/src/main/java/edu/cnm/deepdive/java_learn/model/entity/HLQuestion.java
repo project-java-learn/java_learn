@@ -16,30 +16,30 @@ import android.support.annotation.NonNull;
         )
     }
 )
-public class DDQuestions {
+public class HLQuestion {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "dd_question_id")
-  private long ddQuestionId;
+  @ColumnInfo(name = "hl_question_id")
+  private long hlQuestionId;
 
   @ColumnInfo(name = "level_id")
   private long levelId;
 
   @NonNull
-  @ColumnInfo(name = "dd_question")
-  private String ddQuestion;
+  @ColumnInfo(name = "hl_question")
+  private String hlQuestion;
 
-  public DDQuestions(@NonNull String ddQuestion, long levelId) {
-    this.ddQuestion = ddQuestion;
+  public HLQuestion(@NonNull String hlQuestion, long levelId) {
     this.levelId = levelId;
+    this.hlQuestion = hlQuestion;
   }
 
-  public long getDdQuestionId() {
-    return ddQuestionId;
+  public long getHlQuestionId() {
+    return hlQuestionId;
   }
 
-  public void setDdQuestionId(long ddQuestionId) {
-    this.ddQuestionId = ddQuestionId;
+  public void setHlQuestionId(long hlQuestionId) {
+    this.hlQuestionId = hlQuestionId;
   }
 
   public long getLevelId() {
@@ -51,11 +51,11 @@ public class DDQuestions {
   }
 
   @NonNull
-  public String getDdQuestion() {
-    return ddQuestion;
+  public String getHlQuestion() {
+    return hlQuestion;
   }
 
-  public void setDdQuestion(@NonNull String DDQuestion) {
-    this.ddQuestion = DDQuestion;
+  public void setHlQuestion(@NonNull String hlQuestion) {
+    this.hlQuestion = hlQuestion;
   }
 }

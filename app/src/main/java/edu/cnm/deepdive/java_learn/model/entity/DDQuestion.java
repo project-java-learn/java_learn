@@ -4,7 +4,6 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
-import android.media.Image;
 import android.support.annotation.NonNull;
 
 @Entity(
@@ -17,30 +16,30 @@ import android.support.annotation.NonNull;
         )
     }
 )
-public class FBQuestions {
+public class DDQuestion {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "fb_question_id")
-  private long fbQuestionId;
+  @ColumnInfo(name = "dd_question_id")
+  private long ddQuestionId;
 
   @ColumnInfo(name = "level_id")
   private long levelId;
 
   @NonNull
-  @ColumnInfo(name = "fb_question")
-  private Image fbQuestion;
+  @ColumnInfo(name = "dd_question")
+  private String ddQuestion;
 
-  public FBQuestions(@NonNull Image fbQuestion, long levelId) {
+  public DDQuestion(@NonNull String ddQuestion, long levelId) {
+    this.ddQuestion = ddQuestion;
     this.levelId = levelId;
-    this.fbQuestion = fbQuestion;
   }
 
-  public long getFbQuestionId() {
-    return fbQuestionId;
+  public long getDdQuestionId() {
+    return ddQuestionId;
   }
 
-  public void setFbQuestionId(long fbQuestionId) {
-    this.fbQuestionId = fbQuestionId;
+  public void setDdQuestionId(long ddQuestionId) {
+    this.ddQuestionId = ddQuestionId;
   }
 
   public long getLevelId() {
@@ -52,11 +51,11 @@ public class FBQuestions {
   }
 
   @NonNull
-  public Image getFbQuestion() {
-    return fbQuestion;
+  public String getDdQuestion() {
+    return ddQuestion;
   }
 
-  public void setFbQuestion(@NonNull Image fbQuestion) {
-    this.fbQuestion = fbQuestion;
+  public void setDdQuestion(@NonNull String DDQuestion) {
+    this.ddQuestion = DDQuestion;
   }
 }

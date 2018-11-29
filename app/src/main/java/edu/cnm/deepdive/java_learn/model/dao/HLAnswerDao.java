@@ -4,15 +4,15 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
-import edu.cnm.deepdive.java_learn.model.entity.FBAnswers;
+import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
 import java.util.List;
 
 @Dao
-public interface FBAnswersDao {
+public interface HLAnswerDao {
 
   @Insert(onConflict = OnConflictStrategy.FAIL)
-  long insert(FBAnswers answer);
+  long insert(HLAnswer answer);
 
-  @Query("SELECT * FROM FBAnswers WHERE fb_question_id = :fbQuestionId")
-  List<FBAnswers> select(long fbQuestionId);
+  @Query("SELECT * FROM HLAnswer WHERE hl_question_id = :hlQuestionId")
+  List<HLAnswer> select(long hlQuestionId);
 }

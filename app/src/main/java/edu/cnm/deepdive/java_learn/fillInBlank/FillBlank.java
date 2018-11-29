@@ -7,8 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.view.GameFragment;
 
-public class FillBlank extends Fragment {
+public class FillBlank extends GameFragment {
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,

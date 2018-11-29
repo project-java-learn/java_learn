@@ -13,10 +13,11 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.view.GameFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultipleChoice extends Fragment {
+public class MultipleChoice extends GameFragment {
 
   private RadioGroup radiosOne;
   private RadioGroup radiosTwo;
