@@ -8,6 +8,7 @@
   <string name="definition_five_question">A Java programming language keyword used in a class definition to specify that a class is not to be instantiated, but rather inherited by other classes.</string>
   <string name="fill_blank_submit">SUBMIT</string>
 
+
   <string-array name="definition_one_entries">
     <item>Array Item One</item>
     <item>Array Item Two</item>

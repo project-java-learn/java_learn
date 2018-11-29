@@ -1,41 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<android.support.constraint.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:padding="@dimen/top_level_padding"
-  android:orientation="vertical">
+  android:padding="30dp"
+  android:orientation="horizontal"
+  android:clipToPadding="false"
+  tools:context=".fillInBlank.FillBlank">
 
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:text="Highlight Activity"/>
+  <!--Body of Text-->
 
-
-  <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".highlight.HighlightFragment">
-
+  <android.support.v7.widget.CardView
+    android:id="@+id/fill_blank_code"
+    android:layout_width="500dp"
+    android:layout_height="700dp"
+    style="@style/cardView">
 
     <TextView
-      android:layout_width="700dp"
-      android:layout_height="match_parent"/>
+      android:id="@+id/highlight_text"
+      android:layout_width="400dp"
+      android:layout_height="400dp"
+      android:layout_gravity="center"
+      style="@style/TextViewStyleSmall"
+      android:background="@drawable/rounded_corner"
+      android:textAlignment="center"
+      android:text=""
+
+      />
 
 
-    <android.support.v7.widget.CardView
-      android:layout_width="350dp"
-      android:layout_height="500dp"
-      android:layout_marginEnd="38dp"
-      android:layout_alignParentEnd="true"
-      android:layout_centerVertical="true">
 
-    </android.support.v7.widget.CardView>
+  </android.support.v7.widget.CardView>
+
+  <!--Rules-->
+  <android.support.v7.widget.CardView
+    android:id="@+id/spinner_card"
+    style="@style/cardView"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toRightOf="@id/fill_blank_code"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintBottom_toBottomOf="@id/fill_blank_submit_button"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+
+    <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="20dp"
+      android:orientation="vertical"
+      >
+
+      <TextView
+        android:id="@+id/highlight_rules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:paddingBottom="20dp"
+        android:text="Highlight and mark each item as the appropriate identifier"
+        style="@style/TextViewStyle"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        />
+
+      <Button
+        android:id="@+id/red_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toBottomOf="@id/highlight_rules"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/blue_button"
+        android:text="Field"
+        />
+
+      <Button
+        android:id="@+id/blue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toBottomOf="@id/red_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/green_button"
+        android:text="Method"
+        />
+
+      <Button
+        android:id="@+id/green_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/blue_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Constructor"
+        />
 
 
-  </RelativeLayout>
-</LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+  </android.support.v7.widget.CardView>
+
+  <Button
+    android:id="@+id/fill_blank_submit_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/my_button"
+    android:padding="15dp"
+    android:text="@string/fill_blank_submit"
+    android:clickable="true"
+    android:focusable="true"
+    app:layout_constraintLeft_toRightOf="@id/fill_blank_code"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/spinner_card"
+    app:layout_constraintBottom_toBottomOf="parent"
+    />
+
+</android.support.constraint.ConstraintLayout>

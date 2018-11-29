@@ -19,7 +19,7 @@ public class LevelsFragment extends Fragment {
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragment_levels, container, false);
-    level1a = view.findViewById(R.id.level_1_a);
+    /*level1a = view.findViewById(R.id.level_1_a);
     level1a.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -27,7 +27,7 @@ public class LevelsFragment extends Fragment {
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, mc)
             .addToBackStack("Levels").commit();
       }
-    });
+    });*/
     return view;
   }
 }
