@@ -10,7 +10,7 @@ public class McAnswers {
     this.isCorrect = isCorrect;
   }
 
-  public String getAnswer() {
+  public String getAnswerText() {
     return answer;
   }
 
