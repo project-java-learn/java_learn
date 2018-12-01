@@ -11,6 +11,7 @@ import android.widget.Button;
 import edu.cnm.deepdive.java_learn.GlossaryFragment;
 import edu.cnm.deepdive.java_learn.LevelsFragment;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.multipleChoice.MultipleChoice;
 import edu.cnm.deepdive.java_learn.view.ProfileFragment;
 
 public class HomeFragment extends Fragment {
@@ -50,7 +51,7 @@ public class HomeFragment extends Fragment {
 
         switch (id) {
           case R.id.levels_button:
-            fragment = new LevelsFragment();
+            fragment = new MultipleChoice();
             break;
           case R.id.profile_button:
             fragment = new ProfileFragment();

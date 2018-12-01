@@ -126,6 +126,14 @@ public class MultipleChoice extends GameFragment {
     return view;
   }
 
+  /**
+   * Populates the radio group buttons and the correct answer tag. This method
+   * will throw and exception if the number of McAnswers in answers is not equal
+   * to the number of radio buttons in the radioGroup.
+   *
+   * @param radioGroup - the buttons for the multiple choice questions.
+   * @param answers - the answers associated with each button.
+   */
   private void populateButtons(RadioGroup radioGroup, List<McAnswers> answers) {
     Iterator<McAnswers> it = answers.iterator();
 
