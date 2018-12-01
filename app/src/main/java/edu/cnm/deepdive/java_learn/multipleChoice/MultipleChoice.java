@@ -21,12 +21,7 @@ import java.util.List;
 
 public class MultipleChoice extends GameFragment {
 
-  private TextView question1;
-  private TextView question2;
-  private TextView question3;
-  private TextView question4;
-  private TextView question5;
-  private TextView question6;
+  private View view;
   private RadioGroup radiosOne;
   private RadioGroup radiosTwo;
   private RadioGroup radiosThree;
@@ -39,7 +34,7 @@ public class MultipleChoice extends GameFragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
 
-    View view = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
+    view = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
 
     radiosOne = view.findViewById(R.id.radios_one);
     radiosTwo = view.findViewById(R.id.radios_two);
@@ -54,6 +49,7 @@ public class MultipleChoice extends GameFragment {
 // TODO Populate questions
 
 // TODO Remove test code
+
     McAnswers a1 = new McAnswers("This is 1.", false);
     McAnswers a2 = new McAnswers("This is 2", false);
     McAnswers a3 = new McAnswers("This is 3", false);
@@ -66,45 +62,35 @@ public class MultipleChoice extends GameFragment {
     qAnswers.add(a3);
     qAnswers.add(a4);
 
-    populateButtons(radiosOne, qAnswers);
-    populateButtons(radiosTwo, qAnswers);
-    populateButtons(radiosThree, qAnswers);
-    populateButtons(radiosFour, qAnswers);
-    populateButtons(radiosFive, qAnswers);
-    populateButtons(radiosSix, qAnswers);
+    McQuestions question1 = new McQuestions("This is a test Question1.", qAnswers);
+    McQuestions question2 = new McQuestions("This is a test Question2.", qAnswers);
+    McQuestions question3 = new McQuestions("This is a test Question3.", qAnswers);
+    McQuestions question4 = new McQuestions("This is a test Question4.", qAnswers);
+    McQuestions question5 = new McQuestions("This is a test Question5.", qAnswers);
+    McQuestions question6 = new McQuestions("This is a test Question6.", qAnswers);
 
-//    String correctAnswer = "This is correct";
+    populateQuestionsAndAnswerButtons(radiosOne, question1, (TextView) view.findViewById(R.id.question_1));
+    populateQuestionsAndAnswerButtons(radiosTwo, question2, (TextView) view.findViewById(R.id.question_2));
+    populateQuestionsAndAnswerButtons(radiosThree, question3, (TextView) view.findViewById(R.id.question_3));
+    populateQuestionsAndAnswerButtons(radiosFour, question4, (TextView) view.findViewById(R.id.question_4));
+    populateQuestionsAndAnswerButtons(radiosFive, question5, (TextView) view.findViewById(R.id.question_5));
+    populateQuestionsAndAnswerButtons(radiosSix, question6, (TextView) view.findViewById(R.id.question_6));
+
+//        for (int i = 0; i < radiosOne.getChildCount(); i++) {
+//          ((RadioButton) radiosOne.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
 //
-
-//    McQuestions q = new McQuestions("This is question one.", qAnswers);
-//
-//    question1 = view.findViewById(R.id.question_1);
-//
-//    question1.setText(q.getQuestion());
-
-//    for (int i = 0; i < radiosOne.getChildCount(); i++) {
-//      ((RadioButton) radiosOne.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//      ((RadioButton) radiosOne.getChildAt(i))
-//          .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//      ((RadioButton) radiosTwo.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//      ((RadioButton) radiosTwo.getChildAt(i))
-//          .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//      ((RadioButton) radiosThree.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//      ((RadioButton) radiosThree.getChildAt(i))
-//          .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//      ((RadioButton) radiosFour.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//      ((RadioButton) radiosFour.getChildAt(i))
-//          .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//    }
-
-    radiosOne.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-      @Override
-      public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-      }
-
-
-    });
+//          ((RadioButton) radiosOne.getChildAt(i))
+//              .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
+//    ((RadioButton) radiosTwo.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
+//    ((RadioButton) radiosTwo.getChildAt(i))
+//        .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
+//    ((RadioButton) radiosThree.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
+//    ((RadioButton) radiosThree.getChildAt(i))
+//        .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
+//    ((RadioButton) radiosFour.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
+//    ((RadioButton) radiosFour.getChildAt(i))
+//        .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
+//        }
 
     submitAnswers.setOnClickListener(new OnClickListener() {
       @Override
@@ -126,18 +112,23 @@ public class MultipleChoice extends GameFragment {
     return view;
   }
 
+
   /**
-   * Populates the radio group buttons and the correct answer tag. This method
-   * will throw and exception if the number of McAnswers in answers is not equal
-   * to the number of radio buttons in the radioGroup.
+   * Populates the radio group buttons and the correct answer tag. This method will throw and
+   * exception if the number of McAnswers taken from McQuestions is not equal to the number of radio
+   * buttons in the radioGroup.
    *
    * @param radioGroup - the buttons for the multiple choice questions.
-   * @param answers - the answers associated with each button.
+   * @param mcQuestions - the questions for the multiple choice
    */
-  private void populateButtons(RadioGroup radioGroup, List<McAnswers> answers) {
+  private void populateQuestionsAndAnswerButtons(RadioGroup radioGroup, McQuestions mcQuestions,
+      TextView textView) {
+    List<McAnswers> answers = mcQuestions.getAnswers();
     Iterator<McAnswers> it = answers.iterator();
 
     Collections.shuffle(answers);
+
+    textView.setText(mcQuestions.getQuestion());
 
     for (int i = 0; i < radioGroup.getChildCount(); i++) {
       RadioButton button = (RadioButton) radioGroup.getChildAt(i);
