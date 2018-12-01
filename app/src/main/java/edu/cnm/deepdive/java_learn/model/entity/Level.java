@@ -16,8 +16,8 @@ public class Level {
   @ColumnInfo(name = "level")
   private String level;
 
-  public Level() {
-
+  public Level(@NonNull String level) {
+    this.level = level;
   }
 
   public long getLevelId() {

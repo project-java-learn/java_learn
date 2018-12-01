@@ -2,11 +2,9 @@
 <android.support.constraint.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:padding="20dp"
-  >
+  android:padding="20dp">
 
   <android.support.v7.widget.CardView
     android:id="@+id/definitions_card"
@@ -32,7 +30,6 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:singleLine="false"
-        android:text="@string/definition_one_question"
         />
 
       <android.support.v7.widget.AppCompatSpinner
@@ -40,8 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
-        android:entries="@array/definition_one_entries">
+        android:padding="20dp">
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
@@ -49,8 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/ic_check"
-        android:padding="20dp"
-        />
+        android:padding="20dp"/>
 
     </TableRow>
     <TableRow>
@@ -60,7 +55,6 @@
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:text="@string/definition_two_question"
         />
 
       <android.support.v7.widget.AppCompatSpinner
@@ -68,8 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
-        android:entries="@array/definition_two_entries">
+        android:padding="20dp">
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
@@ -89,7 +82,6 @@
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:text="@string/definition_three_question"
         />
 
       <android.support.v7.widget.AppCompatSpinner
@@ -97,8 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
-        android:entries="@array/definition_three_entries">
+        android:padding="20dp">
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
@@ -117,7 +108,6 @@
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:text="@string/fourth_definition_question"
         />
 
       <android.support.v7.widget.AppCompatSpinner
@@ -125,8 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
-        android:entries="@array/definition_four_entries">
+        android:padding="20dp">
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
@@ -144,18 +133,14 @@
         style="@style/TextViewStyle"
         android:layout_width="625dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:padding="20dp"
-        android:text="@string/definition_five_question"
         />
       <android.support.v7.widget.AppCompatSpinner
         android:id="@+id/definition_fifth_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
-        android:entries="@array/definition_five_entries"
-        >
+        android:padding="20dp">
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView

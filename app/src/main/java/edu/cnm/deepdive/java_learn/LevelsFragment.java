@@ -7,27 +7,31 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.multipleChoice.MultipleChoice;
+import edu.cnm.deepdive.java_learn.view.DefinitionsFragment;
 
 
 public class LevelsFragment extends Fragment {
 
-  private Button level1a;
+  private Button levelButton;
 
   @Override
   public View onCreateView(final LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragment_levels, container, false);
-    /*level1a = view.findViewById(R.id.level_1_a);
-    level1a.setOnClickListener(new OnClickListener() {
+
+    levelButton = view.findViewById(R.id.test_btn);
+    levelButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        MultipleChoice mc = new MultipleChoice();
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, mc)
-            .addToBackStack("Levels").commit();
+
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+            new DefinitionsFragment()).commit();
       }
-    });*/
+    });
+
     return view;
   }
 }

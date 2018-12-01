@@ -5,6 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import java.util.List;
 
 @Entity(
     foreignKeys = {
@@ -58,4 +59,5 @@ public class DDQuestion {
   public void setDdQuestion(@NonNull String DDQuestion) {
     this.ddQuestion = DDQuestion;
   }
+
 }
