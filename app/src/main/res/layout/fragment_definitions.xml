@@ -27,7 +27,7 @@
     <TableRow>
       <TextView
         android:id="@+id/first_definition"
-        style="@style/TextViewStyle"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -56,7 +56,7 @@
     <TableRow>
       <TextView
         android:id="@+id/second_definition"
-        style="@style/TextViewStyle"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -85,7 +85,7 @@
     <TableRow>
       <TextView
         android:id="@+id/third_definition"
-        style="@style/TextViewStyle"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -113,7 +113,7 @@
     <TableRow>
       <TextView
         android:id="@+id/fourth_definition"
-        style="@style/TextViewStyle"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -141,7 +141,7 @@
     <TableRow>
       <TextView
         android:id="@+id/fifth_definition"
-        style="@style/TextViewStyle"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

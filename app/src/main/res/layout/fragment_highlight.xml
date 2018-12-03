@@ -61,7 +61,7 @@
         android:padding="15dp"
         android:paddingBottom="20dp"
         android:text="Highlight and mark each item as the appropriate identifier"
-        style="@style/TextViewStyle"
+        style="@style/TextViewStyle20"
         android:textAlignment="center"
         android:textSize="20sp"
         />

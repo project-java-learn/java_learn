@@ -39,7 +39,7 @@
 
         <TextView
           android:id="@+id/game_title_highlight"
-          style="@style/TextViewStyle"
+          style="@style/TextViewStyle20"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:padding="20dp"
@@ -88,7 +88,7 @@
 
         <TextView
           android:id="@+id/game_title_fill_in"
-          style="@style/TextViewStyle"
+          style="@style/TextViewStyle20"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:padding="20dp"
@@ -137,7 +137,7 @@
 
         <TextView
           android:id="@+id/game_title_definition"
-          style="@style/TextViewStyle"
+          style="@style/TextViewStyle20"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:padding="20dp"
@@ -186,7 +186,7 @@
 
         <TextView
           android:id="@+id/game_title_multiple"
-          style="@style/TextViewStyle"
+          style="@style/TextViewStyle20"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:padding="20dp"

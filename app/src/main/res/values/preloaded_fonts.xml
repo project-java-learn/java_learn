@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <array name="preloaded_fonts" translatable="false">
+    <item>@font/alegreya_black</item>
+    <item>@font/clicker_script</item>
+    <item>@font/cutive_mono</item>
+    <item>@font/roboto</item>
+    <item>@font/roboto_mono_light_italic</item>
+    <item>@font/roboto_mono_medium_italic</item>
+    <item>@font/rochester</item>
+  </array>
+</resources>

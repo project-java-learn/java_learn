@@ -6,9 +6,15 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:colorBackground">#ffc4ff</item>
   </style>
 
-  <style name="TextViewStyle">
+  <style name="TextViewStyle50">
+    <item name="android:textSize">50sp</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="TextViewStyle20">
     <item name="android:textSize">20sp</item>
     <item name="android:textStyle">bold</item>
   </style>
@@ -20,7 +26,7 @@
 
   <style name="TextViewStyleSmall">
     <item name="android:textSize">12sp</item>
-    <item name="android:textStyle">bold</item>
+
   </style>
 
   <style name="cardView" parent="Widget.MaterialComponents.CardView">

@@ -54,7 +54,7 @@
         android:padding="15dp"
         android:paddingBottom="20dp"
         android:text="Fill in the correct answer with the corresponding color."
-        style="@style/TextViewStyle"
+        style="@style/TextViewStyle20"
         android:textAlignment="center"
         android:textSize="20sp"
         />
