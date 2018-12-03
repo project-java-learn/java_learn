@@ -7,6 +7,10 @@
     <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
     <item name="colorAccent">@color/accent_material_dark</item>
     <item name="android:colorBackground">@color/accent_material_dark</item>
+    <item name="android:textViewStyle">@font/leagueSpartanBold</item>
+    <item name="colorControlNormal">#FFFFFF</item>
+    <item name="colorControlActivated">#FFFFFF</item>
+    <item name="colorControlHighlight">#FFFFFF</item>
   </style>
 
   <style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">
