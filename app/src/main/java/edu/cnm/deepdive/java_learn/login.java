@@ -59,7 +59,7 @@ public class login extends AppCompatActivity {
     _loginButton.setEnabled(false);
 
     final ProgressDialog progressDialog = new ProgressDialog(login.this,
-        R.style.AppTheme_Dark);
+        R.style.AppTheme);
     progressDialog.setIndeterminate(true);
     progressDialog.setMessage("Authenticating...");
     progressDialog.show();

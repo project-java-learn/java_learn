@@ -8,16 +8,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import edu.cnm.deepdive.java_learn.GlossaryFragment;
 import edu.cnm.deepdive.java_learn.LevelsFragment;
 import edu.cnm.deepdive.java_learn.R;
-import edu.cnm.deepdive.java_learn.view.ProfileFragment;
 
 public class HomeFragment extends Fragment {
 
   private Button levelsButton;
   private Button profileButton;
-  private Button glossaryButton;
   private OnClickListener listener;
 
   @Override
@@ -28,13 +25,12 @@ public class HomeFragment extends Fragment {
 
     levelsButton = view.findViewById(R.id.levels_button);
     profileButton = view.findViewById(R.id.profile_button);
-    glossaryButton = view.findViewById(R.id.glossary_button);
+
 
     setupListener();
 
     levelsButton.setOnClickListener(listener);
     profileButton.setOnClickListener(listener);
-    glossaryButton.setOnClickListener(listener);
 
     return view;
   }
@@ -54,9 +50,6 @@ public class HomeFragment extends Fragment {
             break;
           case R.id.profile_button:
             fragment = new ProfileFragment();
-            break;
-          case R.id.glossary_button:
-            fragment = new GlossaryFragment();
             break;
           default:
             fragment = new LevelsFragment();
