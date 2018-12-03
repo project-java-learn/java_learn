@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:padding="@dimen/top_level_padding"
   android:orientation="vertical"
   tools:context=".view.ProfileFragment"
   android:gravity="center">
+
+  <ImageView
+    android:id="@+id/logo_definitions"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_gravity="right"
+    android:src="@drawable/java_learn_logo_circle"/>
 
   <android.support.v7.widget.CardView
     android:layout_width="550dp"
@@ -41,6 +47,18 @@
         app:layout_constraintBottom_toTopOf="@id/icon_image_profile"
         android:text="USERNAME"/>
 
+      <TextView
+        android:id="@+id/points_profile"
+        style="@style/TextViewStyle20"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username_profile"
+        app:layout_constraintBottom_toTopOf="@id/icon_image_profile"
+        android:text="5,000"/>
+
     </android.support.constraint.ConstraintLayout>
 
 
@@ -48,4 +66,4 @@
 
 
 
-</LinearLayout>
+</FrameLayout>

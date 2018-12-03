@@ -8,12 +8,19 @@
   android:padding="20dp"
   >
 
+  <ImageView
+    android:id="@+id/logo_definitions"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    app:layout_constraintRight_toRightOf="parent"
+    android:src="@drawable/java_learn_logo_circle"/>
+
   <android.support.v7.widget.CardView
     android:id="@+id/definitions_card"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     style="@style/cardView"
-    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/logo_definitions"
     app:layout_constraintBottom_toTopOf="@+id/submit_definitions"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
@@ -162,7 +169,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-
         android:src="@drawable/ic_check"
         android:padding="20dp"
         />
@@ -180,8 +186,8 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:translationZ="6dp"
-    android:textColor="#FFFFFFFF"
+    android:translationZ="4dp"
+    style="@style/TextViewStyleMedium"
     android:text="SUBMIT"
     android:background="@drawable/my_button"
     android:textAlignment="center"

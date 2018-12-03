@@ -9,53 +9,34 @@
   >
   <android.support.v7.widget.CardView
     style="@style/cardView"
-    android:layout_width="550dp"
-    android:layout_height="550dp"
+    android:layout_width="700dp"
+    android:layout_height="850dp"
     android:layout_centerInParent="true">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
       android:layout_width="fill_parent"
-      android:layout_height="fill_parent">
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:gravity="center">
 
-      <TextView
-        android:id="@+id/java_header"
-        style="@style/TextViewStyle50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/anton"
-        android:text="JAVA"
-        app:layout_constraintBottom_toTopOf="@id/user_image"
-        app:layout_constraintLeft_toLeftOf="parent"
+      <ImageView
+        android:id="@+id/logo_home"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:fontFamily="@font/alegreya_black"/>
-
-      <TextView
-        android:id="@+id/learn_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Learn"
-        android:textSize="50dp"
-        app:layout_constraintBottom_toTopOf="@id/user_image"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/java_header"
-        tools:fontFamily="@font/cutive_mono"/>
+        android:src="@drawable/java_learn_logo"/>
 
       <ImageSwitcher
         android:id="@+id/user_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/java_header"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/levels_button"
         >
 
         <ImageView
           android:id="@+id/icon_image_home"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
+          android:layout_width="150dp"
+          android:layout_height="150dp"
           android:src="@drawable/ic_person"
           />
       </ImageSwitcher>
@@ -65,10 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button"
-        app:layout_constraintTop_toBottomOf="@id/user_image"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/profile_button"
+        android:layout_margin="12dp"
         android:text="Levels"
         />
 
@@ -77,25 +55,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button"
-        app:layout_constraintTop_toBottomOf="@id/levels_button"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/glossary_button"
+        android:layout_margin="12dp"
         android:text="Profile"
         />
 
-      <Button
-        android:id="@+id/glossary_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/my_button"
-        app:layout_constraintTop_toBottomOf="@id/profile_button"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Glossary"
-        />
 
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
   </android.support.v7.widget.CardView>
 </RelativeLayout>
