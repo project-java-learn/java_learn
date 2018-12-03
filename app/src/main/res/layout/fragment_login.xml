@@ -18,23 +18,22 @@
       android:id="@+id/login_fields"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
-      android:orientation="vertical"
-      android:padding="25dp">
+      android:padding="25dp"
+      android:orientation="vertical">
 
-      <TextView
+      <ImageView
         android:id="@+id/login_welcome"
+        style="@style/TextViewStyle50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextViewStyle50"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="Welcome"/>
+        android:src="@drawable/java_learn_logo"/>
 
       <android.support.design.widget.TextInputLayout
         android:id="@+id/email_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         >
         <android.support.design.widget.TextInputEditText
           android:layout_width="match_parent"
@@ -60,20 +59,21 @@
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
+        android:padding="12dp"
         android:background="@drawable/my_button"
         android:text="@string/login_button"
         />
 
-      <TextView android:id="@+id/link_signup"
+      <TextView
+        android:id="@+id/link_signup"
+        style="@style/TextViewStyleMedium"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        style="@style/TextViewStyleMedium"
         android:layout_marginBottom="24dp"
-        android:text="No account yet? Create one"
         android:gravity="center"
+        android:text="No account yet? Create one"
         />
 
     </LinearLayout>
