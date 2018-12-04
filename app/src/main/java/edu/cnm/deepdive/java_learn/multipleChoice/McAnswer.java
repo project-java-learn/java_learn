@@ -1,11 +1,11 @@
 package edu.cnm.deepdive.java_learn.multipleChoice;
 
-public class McAnswers {
+public class McAnswer {
 
   private String answer;
   private boolean isCorrect;
 
-  public McAnswers(String answer, boolean isCorrect) {
+  public McAnswer(String answer, boolean isCorrect) {
     this.answer = answer;
     this.isCorrect = isCorrect;
   }

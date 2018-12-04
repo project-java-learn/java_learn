@@ -2,12 +2,12 @@ package edu.cnm.deepdive.java_learn.multipleChoice;
 
 import java.util.List;
 
-public class McQuestions {
+public class McQuestion {
 
   private String question;
-  private List<McAnswers> answers;
+  private List<McAnswer> answers;
 
-  public McQuestions(String question, List<McAnswers> answers) {
+  public McQuestion(String question, List<McAnswer> answers) {
     this.question = question;
     this.answers = answers;
   }
@@ -20,11 +20,11 @@ public class McQuestions {
     this.question = question;
   }
 
-  public List<McAnswers> getAnswers() {
+  public List<McAnswer> getAnswers() {
     return answers;
   }
 
-  public void setAnswers(List<McAnswers> answers) {
+  public void setAnswers(List<McAnswer> answers) {
     this.answers = answers;
   }
 }
