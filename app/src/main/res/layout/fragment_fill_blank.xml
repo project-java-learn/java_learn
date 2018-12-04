@@ -72,6 +72,8 @@
         android:padding="8dp"
         android:popupBackground="@color/accent_material_dark"
         android:backgroundTint="@color/accent_material_dark"
+        android:prompt="1"
+        android:spinnerMode="dialog"
         android:entries="@array/fill_in_one_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
