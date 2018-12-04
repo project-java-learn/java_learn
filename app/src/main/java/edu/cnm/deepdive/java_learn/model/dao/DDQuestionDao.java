@@ -15,4 +15,7 @@ public interface DDQuestionDao {
 
   @Query("SELECT * FROM DDQuestion WHERE level_id =:levelId")
   List<DDQuestion> select(long levelId);
+
+  @Query("SELECT * FROM DDQuestion WHERE dd_question = :ddQuestion")
+  DDQuestion select(String ddQuestion);
 }

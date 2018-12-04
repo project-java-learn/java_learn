@@ -16,6 +16,10 @@ public class Level {
   @ColumnInfo(name = "level")
   private String level;
 
+  public Level(@NonNull String level) {
+    this.level = level;
+  }
+
   public Level() {
 
   }
