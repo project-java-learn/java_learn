@@ -69,7 +69,6 @@ public abstract class JavaLearnDB extends RoomDatabase {
 
   public abstract MCImageDao getMCImageDao();
 
-
   private static class Callback extends RoomDatabase.Callback {
 
     private Context context;
