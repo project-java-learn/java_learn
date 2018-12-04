@@ -36,24 +36,48 @@
   </string-array>
 
   <string-array name="fill_in_one_entries">
-    <item>Array Item One</item>
-    <item>Array Item Two</item>
-    <item>Array Item Three</item>
+    <item>1</item>
+    <item>try</item>
+    <item>Random</item>
+    <item>IOException e</item>
+    <item>println</item>
+    <item>InterruptedException</item>
+    <item>printf</item>
+    <item>writer</item>
+    <item>do</item>
   </string-array>
   <string-array name="fill_in_two_entries">
-    <item>Array Item One</item>
-    <item>Array Item Two</item>
-    <item>Array Item Three</item>
+    <item>2</item>
+    <item>try</item>
+    <item>Random</item>
+    <item>IOException e</item>
+    <item>println</item>
+    <item>InterruptedException</item>
+    <item>printf</item>
+    <item>writer</item>
+    <item>do</item>
   </string-array>
   <string-array name="fill_in_three_entries">
-    <item>Array Item One</item>
-    <item>Array Item Two</item>
-    <item>Array Item Three</item>
+    <item>3</item>
+    <item>try</item>
+    <item>Random</item>
+    <item>IOException e</item>
+    <item>println</item>
+    <item>InterruptedException</item>
+    <item>printf</item>
+    <item>writer</item>
+    <item>do</item>
   </string-array>
   <string-array name="fill_in_four_entries">
-    <item>Array Item One</item>
-    <item>Array Item Two</item>
-    <item>Array Item Three</item>
+    <item>4</item>
+    <item>try</item>
+    <item>Random</item>
+    <item>IOException e</item>
+    <item>println</item>
+    <item>InterruptedException</item>
+    <item>printf</item>
+    <item>writer</item>
+    <item>do</item>
   </string-array>
 
   <!-- TODO: Remove or change this placeholder text -->
