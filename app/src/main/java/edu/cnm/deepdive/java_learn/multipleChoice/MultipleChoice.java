@@ -70,34 +70,14 @@ public class MultipleChoice extends GameFragment {
     McQuestion question5 = new McQuestion("This is a test Question5.", qAnswers);
     McQuestion question6 = new McQuestion("This is a test Question6.", qAnswers);
 
-    populateQuestionsAndAnswerButtons(radiosOne, question1,
-        (TextView) view.findViewById(R.id.question_1));
-    populateQuestionsAndAnswerButtons(radiosTwo, question2,
-        (TextView) view.findViewById(R.id.question_2));
-    populateQuestionsAndAnswerButtons(radiosThree, question3,
-        (TextView) view.findViewById(R.id.question_3));
-    populateQuestionsAndAnswerButtons(radiosFour, question4,
-        (TextView) view.findViewById(R.id.question_4));
-    populateQuestionsAndAnswerButtons(radiosFive, question5,
-        (TextView) view.findViewById(R.id.question_5));
-    populateQuestionsAndAnswerButtons(radiosSix, question6,
-        (TextView) view.findViewById(R.id.question_6));
+// TODO end of test code
 
-//        for (int i = 0; i < radiosOne.getChildCount(); i++) {
-//          ((RadioButton) radiosOne.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//
-//          ((RadioButton) radiosOne.getChildAt(i))
-//              .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//    ((RadioButton) radiosTwo.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//    ((RadioButton) radiosTwo.getChildAt(i))
-//        .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//    ((RadioButton) radiosThree.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//    ((RadioButton) radiosThree.getChildAt(i))
-//        .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//    ((RadioButton) radiosFour.getChildAt(i)).setText(q.getAnswers().get(i).getAnswer());
-//    ((RadioButton) radiosFour.getChildAt(i))
-//        .setTag(q.getAnswers().get(i).isCorrect() ? Boolean.TRUE : Boolean.FALSE);
-//        }
+    populateQuestionsAndAnswerButtons(R.id.question_1, radiosOne, question1);
+    populateQuestionsAndAnswerButtons(R.id.question_2, radiosTwo, question2);
+    populateQuestionsAndAnswerButtons(R.id.question_3, radiosThree, question3);
+    populateQuestionsAndAnswerButtons(R.id.question_4, radiosFour, question4);
+    populateQuestionsAndAnswerButtons(R.id.question_5, radiosFive, question5);
+    populateQuestionsAndAnswerButtons(R.id.question_6, radiosSix, question6);
 
     submitAnswers.setOnClickListener(new OnClickListener() {
       @Override
@@ -112,7 +92,7 @@ public class MultipleChoice extends GameFragment {
         boolean isThreeCorrect = (boolean) selected3.getTag();
         boolean isFourCorrect = (boolean) selected4.getTag();
 
-        //TODO Register results with Room
+// TODO Register results with Room
       }
     });
 
@@ -124,17 +104,18 @@ public class MultipleChoice extends GameFragment {
    * exception if the number of McAnswers taken from McQuestions is not equal to the number of radio
    * buttons in the radioGroup.
    *
+   * @param questionId - the view to be populated for the text questions.
    * @param radioGroup - the buttons for the multiple choice questions.
    * @param mcQuestion - the questions for the multiple choice
    */
-  private void populateQuestionsAndAnswerButtons(RadioGroup radioGroup, McQuestion mcQuestion,
-      TextView textView) {
+  private void populateQuestionsAndAnswerButtons(int questionId, RadioGroup radioGroup,
+      McQuestion mcQuestion) {
     List<McAnswer> answers = mcQuestion.getAnswers();
     Iterator<McAnswer> it = answers.iterator();
 
     Collections.shuffle(answers);
 
-    textView.setText(mcQuestion.getQuestion());
+    ((TextView) view.findViewById(questionId)).setText(mcQuestion.getQuestion());
 
     for (int i = 0; i < radioGroup.getChildCount(); i++) {
       RadioButton button = (RadioButton) radioGroup.getChildAt(i);
@@ -143,15 +124,15 @@ public class MultipleChoice extends GameFragment {
       button.setText(answer.getAnswerText());
       button.setTag(answer.isCorrect());
     }
-
   }
 
-  private class GetQuestionsTask extends AsyncTask<Void, Void, McAnswer> {
+  private class GetQuestionsTask extends AsyncTask<Void, Void, McQuestion> {
 
     @Override
-    protected McAnswer doInBackground(Void... voids) {
+    protected McQuestion doInBackground(Void... voids) {
 
-//TODO Get questions from room
+// TODO Get questions from room
+// TODO Get
 
       return null;
     }
