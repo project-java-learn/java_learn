@@ -3,11 +3,11 @@
   <color name="colorPrimary">#00796b</color>
   <color name="colorPrimaryDark">#004c40</color>
   <color name="colorAccent">#ce93d8</color>
-  <color name="background_material_light">#ffc4ff</color>
-  <color name="foreground_material_light">#00796b</color>
+  <color name="backgroundMaterialLight">#ffc4ff</color>
+  <color name="foregroundMaterialLight">#00796b</color>
   <color name="colorNavigationBar">#004c40</color>
   <color name="textColorPrimary">#040000</color>
-  <color name="primary_material_dark">#c62828</color>
-  <color name="primary_dark_material_dark">#8e0000</color>
-  <color name="accent_material_dark">#ff5f52</color>
+  <color name="primaryColor">#c62828</color>
+  <color name="darkColor">#8e0000</color>
+  <color name="accentColor">#ff5f52</color>
 </resources>

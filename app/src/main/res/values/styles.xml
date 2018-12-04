@@ -3,10 +3,10 @@
   <!-- Base application theme. -->
   <style name="AppTheme" parent="Theme.AppTheme.NoActionBar">
     <!-- Customize your theme here. -->
-    <item name="colorPrimary">@color/primary_material_dark</item>
-    <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
-    <item name="colorAccent">@color/accent_material_dark</item>
-    <item name="android:colorBackground">@color/accent_material_dark</item>
+    <item name="colorPrimary">@color/primaryColor</item>
+    <item name="colorPrimaryDark">@color/darkColor</item>
+    <item name="colorAccent">@color/accentColor</item>
+    <item name="android:colorBackground">@color/accentColor</item>
     <item name="android:textViewStyle">@font/leaguespartanbold</item>
     <item name="android:fontFamily">@font/leaguespartanbold</item>
     <item name="colorControlNormal">#FFFFFF</item>
@@ -55,7 +55,7 @@
     <item name="cardElevation">2dp</item>
     <item name="android:translationZ">8dp</item>
     <item name="cardUseCompatPadding">true</item>
-    <item name="cardBackgroundColor">@color/primary_material_dark</item>
+    <item name="cardBackgroundColor">@color/primaryColor</item>
   </style>
 
   <!--<style name="Mermain" parent="AppTheme">-->
@@ -66,9 +66,9 @@
   <!--</style>-->
 
   <style name="Theme.AppTheme.NoActionBar" parent="android:Theme.Material.NoActionBar">
-    <item name="android:colorPrimary">@color/primary_material_dark</item>
-    <item name="android:colorPrimaryDark">@color/primary_dark_material_dark</item>
-    <item name="android:colorAccent">@color/accent_material_dark</item>
+    <item name="android:colorPrimary">@color/primaryColor</item>
+    <item name="android:colorPrimaryDark">@color/darkColor</item>
+    <item name="android:colorAccent">@color/accentColor</item>
     <item name="android:navigationBarColor">?android:attr/colorEdgeEffect</item>
   </style>
 
