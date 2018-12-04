@@ -9,10 +9,19 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import edu.cnm.deepdive.java_learn.model.dao.DDAnswerDao;
 import edu.cnm.deepdive.java_learn.model.dao.DDQuestionDao;
+import edu.cnm.deepdive.java_learn.model.dao.FBAnswerDao;
+import edu.cnm.deepdive.java_learn.model.dao.FBQuestionDao;
+import edu.cnm.deepdive.java_learn.model.dao.HLAnswerDao;
+import edu.cnm.deepdive.java_learn.model.dao.HLQuestionDao;
 import edu.cnm.deepdive.java_learn.model.dao.LevelDao;
+import edu.cnm.deepdive.java_learn.model.dao.MCAnswerDao;
+import edu.cnm.deepdive.java_learn.model.dao.MCImageDao;
+import edu.cnm.deepdive.java_learn.model.dao.MCQuestionDao;
 import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.DDQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.FBAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
+import edu.cnm.deepdive.java_learn.model.entity.MCImage;
 
 @Database(
     entities = {Level.class, DDAnswer.class, DDQuestion.class},
@@ -45,6 +54,21 @@ public abstract class JavaLearnDB extends RoomDatabase {
   public abstract DDQuestionDao getDDQuestionDao();
 
   public abstract DDAnswerDao getDDAnswerDao();
+
+  public abstract FBQuestionDao getFBQuestionDao();
+
+  public abstract FBAnswerDao getFBAnswerDao();
+
+  public abstract HLQuestionDao getHLQuestionDao();
+
+  public abstract HLAnswerDao getHLAnswerDao();
+
+  public abstract MCQuestionDao getMCQuestionDao();
+
+  public abstract MCAnswerDao getMCAnswerDao();
+
+  public abstract MCImageDao getMCImageDao();
+
 
   private static class Callback extends RoomDatabase.Callback {
 
