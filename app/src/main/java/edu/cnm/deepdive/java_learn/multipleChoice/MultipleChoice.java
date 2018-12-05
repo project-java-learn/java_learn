@@ -20,6 +20,11 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * This is the MultipleChoice.java class game that retrieves 1 random question(populated in the
+ * textView the correct answer(populated next to a random radio button in the same RadioGroup as
+ * the corresponding populated question) and 3 random wrong answers.
+ */
 public class MultipleChoice extends GameFragment {
 
   private View view;
@@ -125,7 +130,10 @@ public class MultipleChoice extends GameFragment {
       button.setTag(answer.isCorrect());
     }
   }
-
+/**
+ *
+ * @param
+ */
   private class GetQuestionsTask extends AsyncTask<Void, Void, McQuestion> {
 
     @Override
