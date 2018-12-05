@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * This is the MultipleChoice.java class game that retrieves 1 random question(populated in the
+ * This is the MultipleChoice class game that retrieves 1 random question(populated in the
  * textView the correct answer(populated next to a random radio button in the same RadioGroup as
  * the corresponding populated question) and 3 random wrong answers.
  */

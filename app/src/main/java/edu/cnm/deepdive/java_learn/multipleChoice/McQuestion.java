@@ -3,7 +3,7 @@ package edu.cnm.deepdive.java_learn.multipleChoice;
 import java.util.List;
 
 /**
- * McQuestion.java class lists the setters and getters for the MultipleChoice class to retrieve the
+ * McQuestion class lists the setters and getters for the MultipleChoice class to retrieve the
  * questions and answers from the JavaLearnDB.java database
  */
 public class McQuestion {
@@ -13,8 +13,8 @@ public class McQuestion {
 
   /**
    *
-   * @param question -
-   * @param answers -
+   * @param question - object passed passed thorough nonstatic class method
+   * @param answers - object passed through nonstatic class method
    */
   public McQuestion(String question, List<McAnswer> answers) {
     this.question = question;
