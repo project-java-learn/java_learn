@@ -12,7 +12,10 @@ import edu.cnm.deepdive.java_learn.highlight.HighlightFragment;
 import edu.cnm.deepdive.java_learn.multipleChoice.MultipleChoice;
 import edu.cnm.deepdive.java_learn.view.DefinitionsFragment;
 
-
+/**
+ * LevelsFragment class allows the user to select between 4 different game levels
+ * HighLight, Drag and Drop, Fill in the blank, and Multiple Choice.
+ */
 public class LevelsFragment extends Fragment {
 
   private CardView levelOneButton;

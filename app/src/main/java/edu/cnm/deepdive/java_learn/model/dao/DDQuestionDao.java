@@ -7,6 +7,9 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.DDQuestion;
 import java.util.List;
 
+/**
+ * DDQuestionDao interface class allows the user to insert questions to and from the database.
+ */
 @Dao
 public interface DDQuestionDao {
 

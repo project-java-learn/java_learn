@@ -7,6 +7,9 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import java.util.List;
 
+/**
+ * LevelDao Interface class that allows the user to insert and query list levels.
+ */
 @Dao
 public interface LevelDao {
 

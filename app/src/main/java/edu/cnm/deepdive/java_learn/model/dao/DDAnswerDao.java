@@ -7,6 +7,9 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
 import java.util.List;
 
+/**
+ * DDAnswerDao interface class allows the user to insert and query answers to/from the database.
+ */
 @Dao
 public interface DDAnswerDao {
 

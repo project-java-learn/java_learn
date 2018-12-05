@@ -14,6 +14,9 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Login class allows the user to login with their google account.
+ */
 public class login extends AppCompatActivity {
   private static final String TAG = "LoginActivity";
   private static final int REQUEST_SIGNUP = 0;

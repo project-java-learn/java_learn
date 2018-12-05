@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import edu.cnm.deepdive.java_learn.view.HomeFragment;
 
+/**
+ * MainActivity class allows the user to select levels and games they want to interact with.
+ */
 public class MainActivity extends AppCompatActivity {
 
   private FloatingActionButton fab;

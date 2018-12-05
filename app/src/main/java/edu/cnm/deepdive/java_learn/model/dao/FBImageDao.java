@@ -7,6 +7,7 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.FBImage;
 import java.util.List;
 
+
 @Dao
 public interface FBImageDao {
 

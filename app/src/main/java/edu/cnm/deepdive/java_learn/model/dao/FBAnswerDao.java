@@ -7,6 +7,9 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.FBAnswer;
 import java.util.List;
 
+/**
+ * FBAnswerDao interface class allows the user to insert answers into the database and query them.
+ */
 @Dao
 public interface FBAnswerDao {
 

@@ -7,6 +7,10 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.HLQuestion;
 import java.util.List;
 
+/**
+ * HLQuestionDao interface class that will allow the user to insert to the database
+ * and query questions from the database.
+ */
 @Dao
 public interface HLQuestionDao {
 

@@ -13,6 +13,10 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
+/**
+ * The SignupActivity class allows the user to signup and save their progress.
+ */
 public class signupActivity extends AppCompatActivity {
   private static final String TAG = "SignupActivity";
 

@@ -7,6 +7,12 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.MCQuestion;
 import java.util.List;
 
+
+/**
+ * MCQuestionDao Interface class that allows the user to to insert and query questions from the
+ * database.
+ *
+ */
 @Dao
 public interface MCQuestionDao {
 

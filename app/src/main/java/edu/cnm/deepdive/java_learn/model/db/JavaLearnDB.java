@@ -26,6 +26,11 @@ import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.model.entity.MCAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.MCQuestion;
 
+/**
+ * JavaLearnDB class allows the user to create a database for holding user levels, game progress
+ * and holds the questions and answers for Drag and Drop, HighLight, Fill-in-the-Blank, and Multiple
+ * Choice.
+ */
 @Database(
     entities = {Level.class, DDAnswer.class, DDQuestion.class, FBAnswer.class, FBQuestion.class,
         HLAnswer.class, HLQuestion.class, MCAnswer.class, MCQuestion.class},
@@ -53,17 +58,24 @@ public abstract class JavaLearnDB extends RoomDatabase {
     instance = null;
   }
 
+
   public abstract LevelDao getLevelDao();
+
 
   public abstract DDQuestionDao getDDQuestionDao();
 
+
   public abstract DDAnswerDao getDDAnswerDao();
+
 
   public abstract FBQuestionDao getFBQuestionDao();
 
+
   public abstract FBAnswerDao getFBAnswerDao();
 
+
   public abstract HLQuestionDao getHLQuestionDao();
+
 
   public abstract HLAnswerDao getHLAnswerDao();
 
@@ -72,6 +84,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
   public abstract MCAnswerDao getMCAnswerDao();
 
 //  public abstract MCImageDao getMCImageDao();
+
 
   private static class Callback extends RoomDatabase.Callback {
 

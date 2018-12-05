@@ -7,6 +7,9 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.FBQuestion;
 import java.util.List;
 
+/**
+ * FBQuestionDao interface class allows the user to insert and query fill-in-the-blank questions.
+ */
 @Dao
 public interface FBQuestionDao {
 

@@ -7,6 +7,9 @@ import android.arch.persistence.room.Query;
 import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
 import java.util.List;
 
+/**
+ * HLAnswerDao interface class allows the user to insert and query answers that can be highlighted.
+ */
 @Dao
 public interface HLAnswerDao {
 
