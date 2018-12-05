@@ -10,7 +10,7 @@
   <android.support.v7.widget.CardView
     style="@style/cardView"
     android:layout_width="550dp"
-    android:layout_height="550dp"
+    android:layout_height="650dp"
     android:layout_centerInParent="true"
     >
 
