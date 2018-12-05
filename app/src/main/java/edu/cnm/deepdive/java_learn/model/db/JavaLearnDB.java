@@ -15,16 +15,20 @@ import edu.cnm.deepdive.java_learn.model.dao.HLAnswerDao;
 import edu.cnm.deepdive.java_learn.model.dao.HLQuestionDao;
 import edu.cnm.deepdive.java_learn.model.dao.LevelDao;
 import edu.cnm.deepdive.java_learn.model.dao.MCAnswerDao;
-import edu.cnm.deepdive.java_learn.model.dao.MCImageDao;
 import edu.cnm.deepdive.java_learn.model.dao.MCQuestionDao;
 import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.DDQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.FBAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.FBQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.HLQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
-import edu.cnm.deepdive.java_learn.model.entity.MCImage;
+import edu.cnm.deepdive.java_learn.model.entity.MCAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.MCQuestion;
 
 @Database(
-    entities = {Level.class, DDAnswer.class, DDQuestion.class},
+    entities = {Level.class, DDAnswer.class, DDQuestion.class, FBAnswer.class, FBQuestion.class,
+        HLAnswer.class, HLQuestion.class, MCAnswer.class, MCQuestion.class},
     version = 1,
     exportSchema = true
 )
@@ -67,7 +71,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
 
   public abstract MCAnswerDao getMCAnswerDao();
 
-  public abstract MCImageDao getMCImageDao();
+//  public abstract MCImageDao getMCImageDao();
 
   private static class Callback extends RoomDatabase.Callback {
 

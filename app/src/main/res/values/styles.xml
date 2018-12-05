@@ -1,17 +1,15 @@
 <resources>
 
   <!-- Base application theme. -->
-  <style name="AppTheme" parent="Theme.AppTheme.NoActionBar">
+  <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
     <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/primaryColor</item>
     <item name="colorPrimaryDark">@color/darkColor</item>
     <item name="colorAccent">@color/accentColor</item>
-    <item name="android:colorBackground">@color/accentColor</item>
     <item name="android:textViewStyle">@font/leaguespartanbold</item>
     <item name="android:fontFamily">@font/leaguespartanbold</item>
-    <item name="colorControlNormal">#FFFFFF</item>
-    <item name="colorControlActivated">#FFFFFF</item>
-    <item name="colorControlHighlight">#FFFFFF</item>
+    <item name="android:navigationBarColor">@color/darkColor</item>
+    <item name="android:windowBackground">@color/accentColor</item>
   </style>
 
   <!--<style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">-->

@@ -28,9 +28,9 @@ public class FBQuestion {
 
   @NonNull
   @ColumnInfo(name = "fb_question")
-  private Image fbQuestion;
+  private String fbQuestion;
 
-  public FBQuestion(@NonNull Image fbQuestion, long levelId) {
+  public FBQuestion(@NonNull String fbQuestion, long levelId) {
     this.levelId = levelId;
     this.fbQuestion = fbQuestion;
   }
@@ -52,11 +52,11 @@ public class FBQuestion {
   }
 
   @NonNull
-  public Image getFbQuestion() {
+  public String getFbQuestion() {
     return fbQuestion;
   }
 
-  public void setFbQuestion(@NonNull Image fbQuestion) {
+  public void setFbQuestion(@NonNull String fbQuestion) {
     this.fbQuestion = fbQuestion;
   }
 }

@@ -38,6 +38,12 @@ public class DDAnswer {
     this.isCorrect = isCorrect;
   }
 
+  @NonNull
+  @Override
+  public String toString() {
+    return getDdAnswer();
+  }
+
   public long getDdAnswerId() {
     return ddAnswerId;
   }
