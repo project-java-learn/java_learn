@@ -13,7 +13,8 @@
     android:layout_width="150dp"
     android:layout_height="150dp"
     app:layout_constraintRight_toRightOf="parent"
-    android:src="@drawable/java_learn_logo_circle"/>
+    android:src="@drawable/java_learn_logo_circle"
+    />
 
   <android.support.v7.widget.CardView
     android:id="@+id/definitions_card"
@@ -196,6 +197,17 @@
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     />
+
+  <android.support.design.widget.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:fabSize="auto"
+    app:fabCustomSize="60dp"
+    app:maxImageSize="40dp"
+    android:backgroundTint="@color/darkColor"
+    android:src="@drawable/ic_home"/>
 
 </android.support.constraint.ConstraintLayout>
 
