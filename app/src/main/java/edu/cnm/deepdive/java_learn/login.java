@@ -3,6 +3,7 @@ package edu.cnm.deepdive.java_learn;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.content.Intent;
@@ -17,14 +18,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import edu.cnm.deepdive.java_learn.view.HomeFragment;
 
 public class login extends AppCompatActivity {
   private static final String TAG = "LoginActivity";
   private static final int REQUEST_SIGNUP = 0;
 
-  @BindView(R.id.email_input) EditText _emailText;
-  @BindView(R.id.password_input) EditText _passwordText;
+  @BindView(R.id.email_input) TextInputEditText _emailText;
+  @BindView(R.id.password_input) TextInputEditText _passwordText;
   @BindView(R.id.login_button) Button _loginButton;
   @BindView(R.id.link_signup) TextView _signupLink;
 
@@ -33,6 +35,8 @@ public class login extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.fragment_login);
     ButterKnife.bind(this);
+    SignInButton signIn = findViewById(R.id.sign_in_button);
+    signIn.setOnClickListener((view) -> login());
 
     _loginButton.setOnClickListener(new View.OnClickListener() {
 
