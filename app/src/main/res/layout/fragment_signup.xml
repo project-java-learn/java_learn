@@ -102,17 +102,4 @@
 
   </android.support.v7.widget.CardView>
 
-
-  <android.support.design.widget.FloatingActionButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentRight="true"
-    android:layout_alignParentBottom="true"
-    android:layout_margin="12dp"
-    app:fabSize="auto"
-    app:fabCustomSize="60dp"
-    app:maxImageSize="40dp"
-    android:backgroundTint="@color/darkColor"
-    android:src="@drawable/ic_home"/>
-
 </RelativeLayout>

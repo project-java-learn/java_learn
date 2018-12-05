@@ -378,15 +378,4 @@
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toBottomOf="@id/all_questions_card"/>
 
-  <android.support.design.widget.FloatingActionButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:fabSize="auto"
-    app:fabCustomSize="60dp"
-    app:maxImageSize="40dp"
-    android:backgroundTint="@color/darkColor"
-    android:src="@drawable/ic_home"/>
-
 </android.support.constraint.ConstraintLayout>

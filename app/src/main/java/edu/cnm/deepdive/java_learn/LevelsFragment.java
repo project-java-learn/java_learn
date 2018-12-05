@@ -23,7 +23,8 @@ public class LevelsFragment extends Fragment {
   @Override
   public View onCreateView(final LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
+    // Inflate the layout f
+    // or this fragment
     View view = inflater.inflate(R.layout.fragment_levels_cards, container, false);
     levelOneButton = view.findViewById(R.id.highlight_card);
     levelOneButton.setOnClickListener(new OnClickListener() {
