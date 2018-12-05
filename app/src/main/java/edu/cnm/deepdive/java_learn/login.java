@@ -13,6 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import edu.cnm.deepdive.java_learn.view.HomeFragment;
 
 public class login extends AppCompatActivity {
   private static final String TAG = "LoginActivity";
@@ -46,6 +51,27 @@ public class login extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_SIGNUP);
       }
     });
+
+    // Configure sign-in to request the user's ID, email address, and basic
+// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        .requestEmail()
+        .build();
+
+    // Build a GoogleSignInClient with the options specified by gso.
+    GoogleSignInClient mGoogleSignInClient = GoogleSignIn
+        .getClient(this, gso);
+  }
+
+  @Override
+  protected void onStart() {
+    // Check for existing Google Sign In account, if the user is already signed in
+// the GoogleSignInAccount will be non-null.
+    GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+    if (account != null) {
+      onLoginSuccess();
+    }
+    super.onStart();
   }
 
   public void login() {
@@ -101,7 +127,8 @@ public class login extends AppCompatActivity {
 
   public void onLoginSuccess() {
     _loginButton.setEnabled(true);
-    finish();
+    Intent intent = new Intent(this, MainActivity.class);
+    startActivity(intent);
   }
 
   public void onLoginFailed() {
