@@ -83,5 +83,8 @@
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="login_button">login</string>
+  <string name="client_id">404380885732-s2llm82hf26adu3j4g9ecnm0jdbsbncv.apps.googleusercontent.com</string>
+  <string name="google_signin_failure">Unable to Sign In with Google</string>
+  <string name="authorization_header_format">Bearer %s</string>
 
 </resources>
