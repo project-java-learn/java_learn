@@ -5,7 +5,7 @@
   <string name="definition_two_question">A type that defines the implementation of a particular kind of object.</string>
   <string name="definition_three_question">The principal building blocks of object-oriented programs.</string>
   <string name="fourth_definition_question">A data member of a class.</string>
-  <string name="definition_five_question">A Java programming language keyword used in a class definition to specify that a class is not to be instantiated, but rather inherited by other classes.</string>
+  <string name="definition_five_question">A Java keyword used in a class definition to specify that a class is to be inherited by other classes.</string>
   <string name="fill_blank_submit">SUBMIT</string>
 
 
@@ -36,7 +36,7 @@
   </string-array>
 
   <string-array name="fill_in_one_entries">
-    <item>1</item>
+    <item>Select an answer…</item>
     <item>try</item>
     <item>Random</item>
     <item>IOException e</item>
@@ -47,7 +47,7 @@
     <item>do</item>
   </string-array>
   <string-array name="fill_in_two_entries">
-    <item>2</item>
+    <item>Select an answer…</item>
     <item>try</item>
     <item>Random</item>
     <item>IOException e</item>
@@ -58,7 +58,7 @@
     <item>do</item>
   </string-array>
   <string-array name="fill_in_three_entries">
-    <item>3</item>
+    <item>Select an answer…</item>
     <item>try</item>
     <item>Random</item>
     <item>IOException e</item>
@@ -69,7 +69,7 @@
     <item>do</item>
   </string-array>
   <string-array name="fill_in_four_entries">
-    <item>4</item>
+    <item>Select an answer…</item>
     <item>try</item>
     <item>Random</item>
     <item>IOException e</item>

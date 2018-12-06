@@ -10,15 +10,15 @@
 
   <ImageView
     android:id="@+id/logo_definitions"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
     app:layout_constraintRight_toRightOf="parent"
     android:src="@drawable/java_learn_logo_circle"/>
 
   <android.support.v7.widget.CardView
     android:id="@+id/snip_of_code_card"
     style="@style/cardView"
-    android:layout_width="wrap_content"
+    android:layout_width="350dp"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -33,9 +33,9 @@
   <android.support.v7.widget.CardView
     android:id="@+id/all_questions_card"
     style="@style/cardView"
-    android:layout_width="500dp"
+    android:layout_width="400dp"
     android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/submit_answers"
     app:layout_constraintLeft_toRightOf="@id/snip_of_code_card"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent">
@@ -61,7 +61,7 @@
 
           <TextView
             android:id="@+id/question_1"
-            style="@style/TextViewStyleMedium"
+            style="@style/TextViewStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -71,7 +71,7 @@
 
           <TextView
             android:id="@+id/question_2"
-            style="@style/TextViewStyleMedium"
+            style="@style/TextViewStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -81,7 +81,7 @@
 
           <TextView
             android:id="@+id/question_3"
-            style="@style/TextViewStyleMedium"
+            style="@style/TextViewStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -215,7 +215,7 @@
           android:paddingTop="15dp">
           <TextView
             android:id="@+id/question_4"
-            style="@style/TextViewStyleMedium"
+            style="@style/TextViewStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -225,7 +225,7 @@
 
           <TextView
             android:id="@+id/question_5"
-            style="@style/TextViewStyleMedium"
+            style="@style/TextViewStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -235,7 +235,7 @@
 
           <TextView
             android:id="@+id/question_6"
-            style="@style/TextViewStyleMedium"
+            style="@style/TextViewStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -362,14 +362,13 @@
 
   <Button
     android:id="@+id/submit_answers"
-    android:layout_width="wrap_content"
+    android:layout_width="75dp"
     android:layout_height="wrap_content"
-    style="@style/TextViewStyle20"
+    style="@style/TextViewStyleSmall"
     android:text="SUBMIT"
     android:clickable="true"
     android:focusable="true"
     android:translationZ="6dp"
-    android:padding="10dp"
     android:textColor="#FFFFFFFF"
     android:background="@drawable/my_button"
     android:textAlignment="center"

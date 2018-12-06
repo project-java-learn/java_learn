@@ -10,8 +10,8 @@
 
   <ImageView
     android:id="@+id/logo_definitions"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
     app:layout_constraintRight_toRightOf="parent"
     android:src="@drawable/java_learn_logo_circle"
     />
@@ -35,9 +35,9 @@
     <TableRow>
       <TextView
         android:id="@+id/first_definition"
-        style="@style/TextViewStyle20"
+        style="@style/TextViewStyleMedium"
         android:layout_width="625dp"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:padding="20dp"
         android:singleLine="false"
         android:text="@string/definition_one_question"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
+        android:padding="10dp"
         android:entries="@array/definition_one_entries">
       </android.support.v7.widget.AppCompatSpinner>
 
@@ -64,9 +64,9 @@
     <TableRow>
       <TextView
         android:id="@+id/second_definition"
-        style="@style/TextViewStyle20"
-        android:layout_width="625dp"
-        android:layout_height="wrap_content"
+        style="@style/TextViewStyleMedium"
+        android:layout_width="425dp"
+        android:layout_height="fill_parent"
         android:padding="20dp"
         android:text="@string/definition_two_question"
         />
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
+        android:padding="10dp"
         android:entries="@array/definition_two_entries">
       </android.support.v7.widget.AppCompatSpinner>
 
@@ -93,9 +93,9 @@
     <TableRow>
       <TextView
         android:id="@+id/third_definition"
-        style="@style/TextViewStyle20"
+        style="@style/TextViewStyleMedium"
         android:layout_width="625dp"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:padding="20dp"
         android:text="@string/definition_three_question"
         />
@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
+        android:padding="10dp"
         android:entries="@array/definition_three_entries">
       </android.support.v7.widget.AppCompatSpinner>
 
@@ -121,9 +121,9 @@
     <TableRow>
       <TextView
         android:id="@+id/fourth_definition"
-        style="@style/TextViewStyle20"
+        style="@style/TextViewStyleMedium"
         android:layout_width="625dp"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:padding="20dp"
         android:text="@string/fourth_definition_question"
         />
@@ -133,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
+        android:padding="10dp"
         android:entries="@array/definition_four_entries">
       </android.support.v7.widget.AppCompatSpinner>
 
@@ -149,11 +149,11 @@
     <TableRow>
       <TextView
         android:id="@+id/fifth_definition"
-        style="@style/TextViewStyle20"
+        style="@style/TextViewStyleMedium"
         android:layout_width="625dp"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_gravity="center"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="@string/definition_five_question"
         />
       <android.support.v7.widget.AppCompatSpinner
@@ -161,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
+        android:padding="10dp"
         android:entries="@array/definition_five_entries"
         >
       </android.support.v7.widget.AppCompatSpinner>
@@ -183,12 +183,12 @@
 
   <Button
     android:id="@+id/submit_definitions"
-    android:layout_width="wrap_content"
+    android:layout_width="75dp"
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
     android:translationZ="4dp"
-    style="@style/TextViewStyleMedium"
+    style="@style/TextViewStyleSmall"
     android:text="SUBMIT"
     android:background="@drawable/my_button"
     android:textAlignment="center"
