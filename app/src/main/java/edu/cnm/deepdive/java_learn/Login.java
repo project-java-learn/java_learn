@@ -2,84 +2,67 @@ package edu.cnm.deepdive.java_learn;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.content.Intent;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
-import edu.cnm.deepdive.java_learn.view.HomeFragment;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
+import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
-/**
- * Login class allows the user to login with their google account.
- */
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
   private static final String TAG = "LoginActivity";
   private static final int REQUEST_SIGNUP = 0;
+  private static final int GOOGLE_REQUEST_SIGNIN = 1000;
+
 
   @BindView(R.id.email_input) TextInputEditText _emailText;
   @BindView(R.id.password_input) TextInputEditText _passwordText;
   @BindView(R.id.login_button) Button _loginButton;
   @BindView(R.id.link_signup) TextView _signupLink;
+  @BindView(R.id.google_sign_in_button) com.google.android.gms.common.SignInButton _googleSignInButton;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.fragment_login);
     ButterKnife.bind(this);
-    SignInButton signIn = findViewById(R.id.sign_in_button);
-    signIn.setOnClickListener((view) -> login());
 
-    _loginButton.setOnClickListener(new View.OnClickListener() {
+    _googleSignInButton.setOnClickListener(v -> googleSignIn());
 
-      @Override
-      public void onClick(View v) {
-        login();
-      }
+    _loginButton.setOnClickListener(v -> login());
+
+    _signupLink.setOnClickListener(v -> {
+      // Start the Signup activity
+      Intent intent = new Intent(getApplicationContext(), signupActivity.class);
+      startActivityForResult(intent, REQUEST_SIGNUP);
     });
 
-    _signupLink.setOnClickListener(new View.OnClickListener() {
-
-      @Override
-      public void onClick(View v) {
-        // Start the Signup activity
-        Intent intent = new Intent(getApplicationContext(), signupActivity.class);
-        startActivityForResult(intent, REQUEST_SIGNUP);
-      }
-    });
-
-    // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestEmail()
-        .build();
-
-    // Build a GoogleSignInClient with the options specified by gso.
-    GoogleSignInClient mGoogleSignInClient = GoogleSignIn
-        .getClient(this, gso);
   }
 
   @Override
   protected void onStart() {
+    super.onStart();
     // Check for existing Google Sign In account, if the user is already signed in
 // the GoogleSignInAccount will be non-null.
     GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
     if (account != null) {
-      onLoginSuccess();
+      JavaLearnApplication.getInstance().setAccount(account);
+      switchToMain();
     }
-    super.onStart();
+
   }
+
+
 
   public void login() {
     Log.d(TAG, "Login");
@@ -93,7 +76,7 @@ public class login extends AppCompatActivity {
 
     _loginButton.setEnabled(false);
 
-    final ProgressDialog progressDialog = new ProgressDialog(login.this,
+    final ProgressDialog progressDialog = new ProgressDialog(Login.this,
         R.style.AppTheme);
     progressDialog.setIndeterminate(true);
     progressDialog.setMessage("Authenticating...");
@@ -125,8 +108,19 @@ public class login extends AppCompatActivity {
         // By default we just finish the Activity and log them in automatically
         this.finish();
       }
+    } else if (requestCode == GOOGLE_REQUEST_SIGNIN) {
+      try {
+        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+        GoogleSignInAccount account = task.getResult(ApiException.class);
+        JavaLearnApplication.getInstance().setAccount(account);
+        switchToMain();
+      } catch (ApiException e) {
+        Toast.makeText(this, getString(R.string.google_signin_failure), Toast.LENGTH_LONG).show();
+      }
+
     }
   }
+
 
   @Override
   public void onBackPressed() {
@@ -168,4 +162,17 @@ public class login extends AppCompatActivity {
 
     return valid;
   }
+
+  private void googleSignIn() {
+    Intent intent = JavaLearnApplication.getInstance().getClient().getSignInIntent();
+    startActivityForResult(intent, GOOGLE_REQUEST_SIGNIN);
+  }
+
+  private void switchToMain() {
+    Intent intent = new Intent(this, MainActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
+  }
+
+
 }

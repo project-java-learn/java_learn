@@ -4,6 +4,7 @@ package edu.cnm.deepdive.java_learn;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,13 +20,19 @@ import butterknife.ButterKnife;
  * The SignupActivity class allows the user to signup and save their progress.
  */
 public class signupActivity extends AppCompatActivity {
+
   private static final String TAG = "SignupActivity";
 
-  @BindView(R.id.input_name) EditText _nameText;
-  @BindView(R.id.email_input) EditText _emailText;
-  @BindView(R.id.password_input) EditText _passwordText;
-  @BindView(R.id.signup_button) Button _signupButton;
-  @BindView(R.id.link_login) TextView _loginLink;
+  @BindView(R.id.input_name)
+  TextInputEditText _nameText;
+  @BindView(R.id.email_input)
+  TextInputEditText _emailText;
+  @BindView(R.id.password_input)
+  TextInputEditText _passwordText;
+  @BindView(R.id.signup_button)
+  Button _signupButton;
+  @BindView(R.id.link_login)
+  TextView _loginLink;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
