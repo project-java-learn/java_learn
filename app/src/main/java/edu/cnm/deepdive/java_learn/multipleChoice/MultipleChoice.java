@@ -14,7 +14,12 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.model.dao.MCQuestionDao;
+import edu.cnm.deepdive.java_learn.model.entity.Level;
+import edu.cnm.deepdive.java_learn.model.entity.MCAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.MCQuestion;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
+import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -77,13 +82,6 @@ public class MultipleChoice extends GameFragment {
 
 // TODO end of test code
 
-    populateQuestionsAndAnswerButtons(R.id.question_1, radiosOne, question1);
-    populateQuestionsAndAnswerButtons(R.id.question_2, radiosTwo, question2);
-    populateQuestionsAndAnswerButtons(R.id.question_3, radiosThree, question3);
-    populateQuestionsAndAnswerButtons(R.id.question_4, radiosFour, question4);
-    populateQuestionsAndAnswerButtons(R.id.question_5, radiosFive, question5);
-    populateQuestionsAndAnswerButtons(R.id.question_6, radiosSix, question6);
-
     submitAnswers.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -131,21 +129,60 @@ public class MultipleChoice extends GameFragment {
     }
   }
 
-/**
- *
- * @param
- */
-  private class GetQuestionsTask extends AsyncTask<Void, Void, McQuestion> {
+  /**
+   *
+   * @param
+   */
+  private class GetQuestionsTask extends AsyncTask<Void, Void, MCQuestion> {
 
     @Override
-    protected McQuestion doInBackground(Void... voids) {
+    protected MCQuestion doInBackground(Void... voids) {
 
+      JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
+      MCQuestion mcQuestion = db.getMCQuestionDao().select("Test");
+
+      if (mcQuestion != null) {
+        long mcQuestionLevelId = mcQuestion.getMCQuestionId();
+        mcQuestion.addAll(db.getMCQuestionDao().select(mcQuestionLevelId));
+      }
 // TODO Get questions from room
-// TODO Get
 
       return null;
     }
-  }
 
+    @Override
+    protected void onPostExecute(List<MCQuestion> mcQuestions) {
+      new GetAnswerTask().execute();
+
+    }
+
+    private class GetAnswerTask extends AsyncTask<Void, Void, List<MCAnswer>> {
+
+      @Override
+      protected List<MCAnswer> doInBackground(Void... voids) {
+      JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
+
+// TODO use question list to populate questions
+
+
+      populateQuestionsAndAnswerButtons(R.id.question_1, radiosOne, question1);
+      populateQuestionsAndAnswerButtons(R.id.question_2, radiosTwo, question2);
+      populateQuestionsAndAnswerButtons(R.id.question_3, radiosThree, question3);
+      populateQuestionsAndAnswerButtons(R.id.question_4, radiosFour, question4);
+      populateQuestionsAndAnswerButtons(R.id.question_5, radiosFive, question5);
+      populateQuestionsAndAnswerButtons(R.id.question_6, radiosSix, question6);
+
+
+
+        return null;
+      }
+
+
+    @Override
+    protected void onPostExecute(List<McAnswer> answers) {
+    }
+
+  }
 }
+
 

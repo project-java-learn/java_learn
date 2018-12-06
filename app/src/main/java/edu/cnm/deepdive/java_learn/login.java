@@ -84,10 +84,12 @@ public class login extends AppCompatActivity {
   public void login() {
     Log.d(TAG, "Login");
 
-    if (!validate()) {
-      onLoginFailed();
-      return;
-    }
+
+// TODO comment or uncomment this to control login button
+     if (!validate()) {
+       onLoginFailed();
+       return;
+     }
 
     _loginButton.setEnabled(false);
 

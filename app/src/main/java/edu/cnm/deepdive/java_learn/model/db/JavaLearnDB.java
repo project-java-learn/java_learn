@@ -172,35 +172,35 @@ public abstract class JavaLearnDB extends RoomDatabase {
       mcADao.insert(new MCAnswer("A dance", false, que6Id));
       mcADao.insert(new MCAnswer("A card game", false, que6Id));
 
-      long que7Id = mcQDao.insert(new MCQuestion("What is an instance?", levId));
-      mcADao.insert(new MCAnswer("This is the correct answer", true, que7Id));
-      mcADao.insert(new MCAnswer("This is not", false, que7Id));
-      mcADao.insert(new MCAnswer("This is pie", false, que7Id));
-      mcADao.insert(new MCAnswer("This is cake", false, que7Id));
+      long que7Id = mcQDao.insert(new MCQuestion("What does a FOR loop consist of", levId));
+      mcADao.insert(new MCAnswer("for (){};", true, que7Id));
+      mcADao.insert(new MCAnswer("for", false, que7Id));
+      mcADao.insert(new MCAnswer("if;", false, que7Id));
+      mcADao.insert(new MCAnswer("public static", false, que7Id));
 
-      long que8Id = mcQDao.insert(new MCQuestion("What is an Integer?", levId));
-      mcADao.insert(new MCAnswer("Happiness is correct", true, que8Id));
-      mcADao.insert(new MCAnswer("Rainbows", false, que8Id));
-      mcADao.insert(new MCAnswer("A monitor", false, que8Id));
-      mcADao.insert(new MCAnswer("A shoestring", false, que8Id));
+      long que8Id = mcQDao.insert(new MCQuestion("What is the method?", levId));
+      mcADao.insert(new MCAnswer("main(String[] args);", true, que8Id));
+      mcADao.insert(new MCAnswer("if(isUnique)", false, que8Id));
+      mcADao.insert(new MCAnswer("if(!isDivisible)", false, que8Id));
+      mcADao.insert(new MCAnswer("for()", false, que8Id));
 
-      long que9Id = mcQDao.insert(new MCQuestion("What is a byte?", levId));
-      mcADao.insert(new MCAnswer("Only one? are you kidding me? this is correct", true, que9Id));
-      mcADao.insert(new MCAnswer("Teeth Marks", false, que9Id));
-      mcADao.insert(new MCAnswer("Pumpkin", false, que9Id));
-      mcADao.insert(new MCAnswer("A shark", false, que9Id));
+      long que9Id = mcQDao.insert(new MCQuestion("Where are the parameters located?", levId));
+      mcADao.insert(new MCAnswer("between parentheses", true, que9Id));
+      mcADao.insert(new MCAnswer("In an if statement", false, que9Id));
+      mcADao.insert(new MCAnswer("before the class starts", false, que9Id));
+      mcADao.insert(new MCAnswer("Inbetween {}", false, que9Id));
 
-      long que10Id = mcQDao.insert(new MCQuestion("What is a char?", levId ));
-      mcADao.insert(new MCAnswer("Nickname for a pokemon, this is correct" , true, que10Id));
-      mcADao.insert(new MCAnswer("A character in a play", false, que10Id));
-      mcADao.insert(new MCAnswer("Charcoal", false, que10Id));
-      mcADao.insert(new MCAnswer("Wood thats been burned in a fire", false, que10Id));
+      long que10Id = mcQDao.insert(new MCQuestion("What is the boolean value for isUnique?", levId ));
+      mcADao.insert(new MCAnswer("true" , true, que10Id));
+      mcADao.insert(new MCAnswer("false", false, que10Id));
+      mcADao.insert(new MCAnswer("i", false, que10Id));
+      mcADao.insert(new MCAnswer("0", false, que10Id));
 
-      long que11Id =  mcQDao.insert(new MCQuestion("What is a String?", levId));
-      mcADao.insert(new MCAnswer("Something that you can tie", true, que11Id));
-      mcADao.insert(new MCAnswer("Floss", false, que11Id));
-      mcADao.insert(new MCAnswer("Yarn", false, que11Id));
-      mcADao.insert(new MCAnswer("Thread", false, que11Id));
+      long que11Id =  mcQDao.insert(new MCQuestion("What does int j equal?", levId));
+      mcADao.insert(new MCAnswer(" 0", true, que11Id));
+      mcADao.insert(new MCAnswer("True", false, que11Id));
+      mcADao.insert(new MCAnswer("False", false, que11Id));
+      mcADao.insert(new MCAnswer("isUnique", false, que11Id));
 
       forgetInstance(context);
 
