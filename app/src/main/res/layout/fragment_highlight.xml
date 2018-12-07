@@ -8,7 +8,7 @@
   android:padding="30dp"
   android:orientation="horizontal"
   android:clipToPadding="false"
-  tools:context=".fillInBlank.FillBlank">
+  tools:context=".highlight.HighlightFragment">
 
   <ImageView
     android:id="@+id/logo_highlight"
@@ -23,7 +23,7 @@
     android:layout_height="450dp"
     style="@style/cardView">
 
-    <TextView
+    <edu.cnm.deepdive.java_learn.view.TextViewCursorWatcher
       android:id="@+id/highlight_text"
       android:layout_width="250dp"
       android:layout_height="350dp"
@@ -85,7 +85,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/blue_button"
-        android:text="Field"
         />
 
       <Button
@@ -103,7 +102,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/green_button"
-        android:text="Method"
         />
 
       <Button
@@ -122,7 +120,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Constructor"
         />
 
 
