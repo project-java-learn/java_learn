@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.java_learn;
 
+import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,10 +8,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
-import edu.cnm.deepdive.java_learn.model.UserPojo;
+import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
+import edu.cnm.deepdive.java_learn.model.pojo.UserPojo;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 import edu.cnm.deepdive.java_learn.service.JavaLearnService;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
@@ -36,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
-
-    setupRetrofit();
-
-    UserPojo user = new UserPojo();
-    user.setUsername(email);
-
+//    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+//
+//    setupRetrofit();
+//
+//    UserPojo user = new UserPojo();
+//    user.setUsername(email);
+//
 //    service.newUser(user).enqueue(new Callback<UserPojo>() {
 //      @Override
 //      public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
@@ -99,6 +99,15 @@ public class MainActivity extends AppCompatActivity {
         .build();
 
     service = retrofit.create(JavaLearnService.class);
+  }
+
+  private class InitializeDatabaseTask extends AsyncTask<Void, Void, Void> {
+
+    @Override
+    protected Void doInBackground(Void... voids) {
+      JavaLearnDB.getInstance(MainActivity.this).getLevelDao().select("");
+      return null;
+    }
   }
 
 

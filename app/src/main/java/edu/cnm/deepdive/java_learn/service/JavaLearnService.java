@@ -1,14 +1,11 @@
 package edu.cnm.deepdive.java_learn.service;
 
-import edu.cnm.deepdive.java_learn.model.ProgressPojo;
-import edu.cnm.deepdive.java_learn.model.UserPojo;
+import edu.cnm.deepdive.java_learn.model.pojo.ProgressPojo;
+import edu.cnm.deepdive.java_learn.model.pojo.UserPojo;
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface JavaLearnService {
 

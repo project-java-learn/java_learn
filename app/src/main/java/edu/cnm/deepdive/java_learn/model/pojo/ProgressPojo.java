@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn.model;
+package edu.cnm.deepdive.java_learn.model.pojo;
 
 import java.util.List;
 

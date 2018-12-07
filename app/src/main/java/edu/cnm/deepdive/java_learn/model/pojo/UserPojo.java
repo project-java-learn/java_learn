@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn.model;
+package edu.cnm.deepdive.java_learn.model.pojo;
 
 import com.google.gson.annotations.Expose;
 
