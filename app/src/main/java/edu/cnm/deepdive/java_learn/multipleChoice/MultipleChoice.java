@@ -68,7 +68,7 @@ public class MultipleChoice extends GameFragment {
           int checkedId = group.getCheckedRadioButtonId();
           if (checkedId >= 0) {
             RadioButton button = getActivity().findViewById(checkedId);
-            if (((Boolean) button.getTag()).booleanValue()) {
+            if ((Boolean) button.getTag()) {
               Log.d(MultipleChoice.class.getSimpleName(), "Correct!");
             }
           }
