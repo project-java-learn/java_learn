@@ -19,13 +19,13 @@
     android:id="@+id/snip_of_code_card"
     style="@style/cardView"
     android:layout_width="350dp"
-    android:layout_height="wrap_content">
+    android:layout_height="500dp">
 
     <ImageView
       android:id="@+id/snip_of_code"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:padding="20dp"
+      android:padding="15dp"
       android:src="@drawable/mc_snip_of_code"/>
 
   </android.support.v7.widget.CardView>
