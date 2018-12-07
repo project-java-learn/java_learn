@@ -12,16 +12,6 @@
     <item name="android:windowBackground">@color/accentColor</item>
   </style>
 
-  <!--<style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">-->
-  <!--<item name="colorPrimary">@color/colorPrimary</item>-->
-  <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-  <!--<item name="colorAccent">@color/colorAccent</item>-->
-  <!--</style>-->
-  <!---->
-    <!--<item name="colorControlNormal">#434b4d</item>-->
-    <!--<item name="colorControlActivated">#FFFFFF</item>-->
-    <!--<item name="colorControlHighlight">#FFFFFF</item>-->
-
   <style name="TextViewStyle50">
     <item name="android:textSize">50sp</item>
     <item name="android:textStyle">bold</item>
@@ -69,6 +59,5 @@
     <item name="android:colorAccent">@color/accentColor</item>
     <item name="android:navigationBarColor">?android:attr/colorEdgeEffect</item>
   </style>
-
 
 </resources>

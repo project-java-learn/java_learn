@@ -8,7 +8,7 @@
   android:padding="30dp"
   android:orientation="horizontal"
   android:clipToPadding="false"
-  tools:context=".fillInBlank.FillBlank">
+  tools:context=".fillInBlank.FillBlankFragment">
 
   <ImageView
     android:id="@+id/logo_fill_in"
@@ -71,8 +71,6 @@
         android:padding="8dp"
         android:popupBackground="@color/accentColor"
         android:backgroundTint="@color/accentColor"
-        android:spinnerMode="dialog"
-        android:entries="@array/fill_in_one_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fill_in_rules"
@@ -84,7 +82,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:entries="@array/fill_in_two_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fill_in_one_spinner"
@@ -96,7 +93,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:entries="@array/fill_in_three_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fill_in_two_spinner"
@@ -108,7 +104,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:entries="@array/fill_in_four_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fill_in_three_spinner"

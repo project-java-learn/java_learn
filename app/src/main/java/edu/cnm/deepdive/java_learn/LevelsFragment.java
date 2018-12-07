@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import edu.cnm.deepdive.java_learn.fillInBlank.FillBlank;
+import edu.cnm.deepdive.java_learn.fillInBlank.FillBlankFragment;
 import edu.cnm.deepdive.java_learn.highlight.HighlightFragment;
 import edu.cnm.deepdive.java_learn.multipleChoice.MultipleChoice;
 import edu.cnm.deepdive.java_learn.view.DefinitionsFragment;
@@ -42,7 +42,7 @@ public class LevelsFragment extends Fragment {
     levelTwoButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        FillBlank fb = new FillBlank();
+        FillBlankFragment fb = new FillBlankFragment();
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, fb)
             .addToBackStack("Fill In The Blank Level").commit();
       }

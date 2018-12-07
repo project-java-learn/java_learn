@@ -82,20 +82,17 @@ public class DefinitionsFragment extends GameFragment {
   }
 
   private void setSubmitButton() {
-    submitButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        int correct = 0;
+    submitButton.setOnClickListener(v -> {
+      int correct = 0;
 
-        for (Spinner spinner : spinners) {
-          DDAnswer answer = (DDAnswer) spinner.getSelectedItem();
-          if (answer.isCorrect()) {
-            correct++;
-          }
+      for (Spinner spinner : spinners) {
+        DDAnswer answer = (DDAnswer) spinner.getSelectedItem();
+        if (answer.isCorrect()) {
+          correct++;
         }
-        Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
-            .show();
       }
+      Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
+          .show();
     });
   }
 

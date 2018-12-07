@@ -29,13 +29,13 @@ public class HLAnswer {
   @ColumnInfo(name = "hl_answer")
   private String hlAnswer;
 
-  @ColumnInfo(name = "is_correct")
-  private boolean isCorrect;
+  @ColumnInfo(name = "type")
+  private String type;
 
-  public HLAnswer( @NonNull String hlAnswer, boolean isCorrect ,long hlQuestionId) {
+  public HLAnswer( @NonNull String hlAnswer, String type, long hlQuestionId) {
     this.hlQuestionId = hlQuestionId;
     this.hlAnswer = hlAnswer;
-    this.isCorrect = isCorrect;
+    this.type = type;
   }
 
   public long getHlAnswerId() {
@@ -63,11 +63,11 @@ public class HLAnswer {
     this.hlAnswer = hlAnswer;
   }
 
-  public boolean isCorrect() {
-    return isCorrect;
+  public String getType() {
+    return type;
   }
 
-  public void setCorrect(boolean correct) {
-    isCorrect = correct;
+  public void setType(String type) {
+    this.type = type;
   }
 }

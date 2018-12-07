@@ -43,27 +43,24 @@ public class HomeFragment extends Fragment {
 
 
   private void setupListener() {
-    listener = new OnClickListener() {
-      @Override
-      public void onClick(View v) {
+    listener = v -> {
 
-        int id = v.getId();
-        Fragment fragment;
+      int id = v.getId();
+      Fragment fragment;
 
-        switch (id) {
-          case R.id.levels_button:
-            fragment = new LevelsFragment();
-            break;
-          case R.id.profile_button:
-            fragment = new ProfileFragment();
-            break;
-          default:
-            fragment = new LevelsFragment();
-        }
-
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment)
-            .addToBackStack("home").commit();
+      switch (id) {
+        case R.id.levels_button:
+          fragment = new LevelsFragment();
+          break;
+        case R.id.profile_button:
+          fragment = new ProfileFragment();
+          break;
+        default:
+          fragment = new LevelsFragment();
       }
+
+      getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment)
+          .addToBackStack("home").commit();
     };
 
     fabSignOut.setOnClickListener(v -> {

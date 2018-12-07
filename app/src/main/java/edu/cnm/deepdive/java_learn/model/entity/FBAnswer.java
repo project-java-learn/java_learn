@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 @Entity(
     foreignKeys = {
         @ForeignKey(
-            entity = FBQuestion.class,
+            entity = Level.class,
             parentColumns = "fb_question_id",
             childColumns = "fb_question_id",
             onDelete = ForeignKey.CASCADE
@@ -36,6 +36,11 @@ public class FBAnswer {
     this.fbQuestionId = fbQuestionId;
     this.fbAnswer = fbAnswer;
     this.isCorrect = isCorrect;
+  }
+
+  @Override
+  public String toString() {
+    return getFbAnswer();
   }
 
   public long getFbAnswerId() {
