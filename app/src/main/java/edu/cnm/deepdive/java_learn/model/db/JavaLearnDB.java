@@ -166,41 +166,42 @@ public abstract class JavaLearnDB extends RoomDatabase {
       aDao.insert(new DDAnswer("Field", false, que5Id));
       aDao.insert(new DDAnswer("Abstract", true, que5Id));
 
-      long que6Id = mcQDao.insert(new MCQuestion("What is Java?",  levId));
-      mcADao.insert(new MCAnswer("A Programming Language", true, que6Id));
-      mcADao.insert(new MCAnswer("Coffee", false, que6Id));
-      mcADao.insert(new MCAnswer("A dance", false, que6Id));
-      mcADao.insert(new MCAnswer("A card game", false, que6Id));
+      long que6Id = mcQDao.insert(new MCQuestion("What is the access modifier\nfor the main method?",
+          levId));
+      mcADao.insert(new MCAnswer("public", true, que6Id));
+      mcADao.insert(new MCAnswer("private", false, que6Id));
+      mcADao.insert(new MCAnswer("protected", false, que6Id));
+      mcADao.insert(new MCAnswer("package private", false, que6Id));
 
-      long que7Id = mcQDao.insert(new MCQuestion("What does a FOR loop consist of", levId));
-      mcADao.insert(new MCAnswer("for (){};", true, que7Id));
-      mcADao.insert(new MCAnswer("for", false, que7Id));
-      mcADao.insert(new MCAnswer("if;", false, que7Id));
-      mcADao.insert(new MCAnswer("public static", false, que7Id));
+      long que7Id = mcQDao.insert(new MCQuestion("How many methods does\nthis class contain?", levId));
+      mcADao.insert(new MCAnswer("2", true, que7Id));
+      mcADao.insert(new MCAnswer("5", false, que7Id));
+      mcADao.insert(new MCAnswer("6", false, que7Id));
+      mcADao.insert(new MCAnswer("3", false, que7Id));
 
-      long que8Id = mcQDao.insert(new MCQuestion("What is the method?", levId));
-      mcADao.insert(new MCAnswer("main(String[] args);", true, que8Id));
-      mcADao.insert(new MCAnswer("if(isUnique)", false, que8Id));
-      mcADao.insert(new MCAnswer("if(!isDivisible)", false, que8Id));
-      mcADao.insert(new MCAnswer("for()", false, que8Id));
+      long que8Id = mcQDao.insert(new MCQuestion("What does toString return", levId));
+      mcADao.insert(new MCAnswer("A String", true, que8Id));
+      mcADao.insert(new MCAnswer("StringBuilder", false, que8Id));
+      mcADao.insert(new MCAnswer("StringBuffer", false, que8Id));
+      mcADao.insert(new MCAnswer("StringWriter", false, que8Id));
 
-      long que9Id = mcQDao.insert(new MCQuestion("Where are the parameters located?", levId));
-      mcADao.insert(new MCAnswer("between parentheses", true, que9Id));
-      mcADao.insert(new MCAnswer("In an if statement", false, que9Id));
-      mcADao.insert(new MCAnswer("before the class starts", false, que9Id));
-      mcADao.insert(new MCAnswer("Inbetween {}", false, que9Id));
+      long que9Id = mcQDao.insert(new MCQuestion("What is the name\n of the class?", levId));
+      mcADao.insert(new MCAnswer("Decompose", true, que9Id));
+      mcADao.insert(new MCAnswer("main", false, que9Id));
+      mcADao.insert(new MCAnswer("toString", false, que9Id));
+      mcADao.insert(new MCAnswer("QRDecomposition", false, que9Id));
 
-      long que10Id = mcQDao.insert(new MCQuestion("What is the boolean value for isUnique?", levId ));
-      mcADao.insert(new MCAnswer("true" , true, que10Id));
-      mcADao.insert(new MCAnswer("false", false, que10Id));
-      mcADao.insert(new MCAnswer("i", false, que10Id));
-      mcADao.insert(new MCAnswer("0", false, que10Id));
+      long que10Id = mcQDao.insert(new MCQuestion("How many imports is\n this class using?", levId ));
+      mcADao.insert(new MCAnswer("4" , true, que10Id));
+      mcADao.insert(new MCAnswer("2", false, que10Id));
+      mcADao.insert(new MCAnswer("5", false, que10Id));
+      mcADao.insert(new MCAnswer("6", false, que10Id));
 
-      long que11Id =  mcQDao.insert(new MCQuestion("What does int j equal?", levId));
-      mcADao.insert(new MCAnswer(" 0", true, que11Id));
-      mcADao.insert(new MCAnswer("True", false, que11Id));
-      mcADao.insert(new MCAnswer("False", false, que11Id));
-      mcADao.insert(new MCAnswer("isUnique", false, que11Id));
+      long que11Id =  mcQDao.insert(new MCQuestion("Which object is asking\nfor an array of arrays?", levId));
+      mcADao.insert(new MCAnswer(" Matrix", true, que11Id));
+      mcADao.insert(new MCAnswer("toString", false, que11Id));
+      mcADao.insert(new MCAnswer("QRDecomposition", false, que11Id));
+      mcADao.insert(new MCAnswer("main", false, que11Id));
 
       forgetInstance(context);
 
