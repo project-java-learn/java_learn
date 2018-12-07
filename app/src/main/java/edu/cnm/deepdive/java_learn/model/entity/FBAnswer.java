@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 @Entity(
     foreignKeys = {
         @ForeignKey(
-            entity = Level.class,
+            entity = FBQuestion.class,
             parentColumns = "fb_question_id",
             childColumns = "fb_question_id",
             onDelete = ForeignKey.CASCADE

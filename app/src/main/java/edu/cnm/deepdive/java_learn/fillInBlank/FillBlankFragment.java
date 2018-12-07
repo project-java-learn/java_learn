@@ -25,6 +25,7 @@ public class FillBlankFragment extends GameFragment {
   private Spinner spinner3;
   private Spinner spinner4;
   private List<Spinner> spinners;
+  private List<FBQuestion> questions;
   private List<FBAnswer> answers;
   private Button submit;
 
@@ -34,6 +35,10 @@ public class FillBlankFragment extends GameFragment {
     // Inflate the layout for this fragment
 
     View view = inflater.inflate(R.layout.fragment_fill_blank, container, false);
+
+    answers = new ArrayList<>();
+    questions = new ArrayList<>();
+    spinners = new ArrayList<>();
 
     spinner1 = view.findViewById(R.id.fill_in_one_spinner);
     spinner2 = view.findViewById(R.id.fill_in_two_spinner);
@@ -47,6 +52,7 @@ public class FillBlankFragment extends GameFragment {
     spinners.add(spinner3);
     spinners.add(spinner4);
 
+    new AnswerTask().execute();
 
     return view;
   }
@@ -61,7 +67,7 @@ public class FillBlankFragment extends GameFragment {
           correct++;
         }
       }
-      Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
+      Toast.makeText(getContext(), "You have " + correct + "/4 correct.", Toast.LENGTH_LONG)
           .show();
     });
   }
@@ -71,9 +77,7 @@ public class FillBlankFragment extends GameFragment {
     @Override
     protected FBAnswer doInBackground(Void... voids) {
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
-      Level level = db.getLevelDao().select("Highlight Test");
-      List<FBQuestion> questions = new ArrayList<>();
-
+      Level level = db.getLevelDao().select("Fill Blank Test");
 
       if (level != null) {
         long levId = level.getLevelId();
@@ -85,6 +89,11 @@ public class FillBlankFragment extends GameFragment {
         answers.addAll(db.getFBAnswerDao().select(queId));
       }
 
+      return null;
+    }
+
+    @Override
+    protected void onPostExecute(FBAnswer fbAnswer) {
       int index = 0;
       for (FBQuestion q : questions) {
         List<FBAnswer> ans = new ArrayList<>();
@@ -100,11 +109,6 @@ public class FillBlankFragment extends GameFragment {
         index++;
       }
 
-      return null;
-    }
-
-    @Override
-    protected void onPostExecute(FBAnswer fbAnswer) {
       setSubmitButton();
     }
   }
