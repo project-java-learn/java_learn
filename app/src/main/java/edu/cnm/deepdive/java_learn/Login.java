@@ -24,11 +24,11 @@ public class Login extends AppCompatActivity {
   private static final int GOOGLE_REQUEST_SIGNIN = 1000;
 
 
-  @BindView(R.id.email_input) TextInputEditText _emailText;
-  @BindView(R.id.password_input) TextInputEditText _passwordText;
-  @BindView(R.id.login_button) Button _loginButton;
-  @BindView(R.id.link_signup) TextView _signupLink;
-  @BindView(R.id.google_sign_in_button) com.google.android.gms.common.SignInButton _googleSignInButton;
+  @BindView(R.id.email_input) TextInputEditText emailText;
+  @BindView(R.id.password_input) TextInputEditText passwordText;
+  @BindView(R.id.login_button) Button loginButton;
+  @BindView(R.id.link_signup) TextView signupLink;
+  @BindView(R.id.google_sign_in_button) com.google.android.gms.common.SignInButton googleSignInButton;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -36,11 +36,11 @@ public class Login extends AppCompatActivity {
     setContentView(R.layout.fragment_login);
     ButterKnife.bind(this);
 
-    _googleSignInButton.setOnClickListener(v -> googleSignIn());
+    googleSignInButton.setOnClickListener(v -> googleSignIn());
 
-    _loginButton.setOnClickListener(v -> login());
+    loginButton.setOnClickListener(v -> login());
 
-    _signupLink.setOnClickListener(v -> {
+    signupLink.setOnClickListener(v -> {
       // Start the Signup activity
       Intent intent = new Intent(getApplicationContext(), signupActivity.class);
       startActivityForResult(intent, REQUEST_SIGNUP);
@@ -58,10 +58,7 @@ public class Login extends AppCompatActivity {
       JavaLearnApplication.getInstance().setAccount(account);
       switchToMain();
     }
-
   }
-
-
 
   public void login() {
     Log.d(TAG, "Login");
@@ -73,7 +70,7 @@ public class Login extends AppCompatActivity {
        return;
      }
 
-    _loginButton.setEnabled(false);
+    loginButton.setEnabled(false);
 
     final ProgressDialog progressDialog = new ProgressDialog(Login.this,
         R.style.AppTheme);
@@ -81,19 +78,17 @@ public class Login extends AppCompatActivity {
     progressDialog.setMessage("Authenticating...");
     progressDialog.show();
 
-    String email = _emailText.getText().toString();
-    String password = _passwordText.getText().toString();
+    String email = emailText.getText().toString();
+    String password = passwordText.getText().toString();
 
     // TODO: Implement your own authentication logic here.
 
     new android.os.Handler().postDelayed(
-        new Runnable() {
-          public void run() {
-            // On complete call either onLoginSuccess or onLoginFailed
-            onLoginSuccess();
-            // onLoginFailed();
-            progressDialog.dismiss();
-          }
+        () -> {
+          // On complete call either onLoginSuccess or onLoginFailed
+          onLoginSuccess();
+          // onLoginFailed();
+          progressDialog.dismiss();
         }, 3000);
   }
 
@@ -128,7 +123,7 @@ public class Login extends AppCompatActivity {
   }
 
   public void onLoginSuccess() {
-    _loginButton.setEnabled(true);
+    loginButton.setEnabled(true);
     Intent intent = new Intent(this, MainActivity.class);
     startActivity(intent);
   }
@@ -136,27 +131,27 @@ public class Login extends AppCompatActivity {
   public void onLoginFailed() {
     Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
-    _loginButton.setEnabled(true);
+    loginButton.setEnabled(true);
   }
 
   public boolean validate() {
     boolean valid = true;
 
-    String email = _emailText.getText().toString();
-    String password = _passwordText.getText().toString();
+    String email = emailText.getText().toString();
+    String password = passwordText.getText().toString();
 
     if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-      _emailText.setError("enter a valid email address");
+      emailText.setError("enter a valid email address");
       valid = false;
     } else {
-      _emailText.setError(null);
+      emailText.setError(null);
     }
 
     if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-      _passwordText.setError("between 4 and 10 alphanumeric characters");
+      passwordText.setError("between 4 and 10 alphanumeric characters");
       valid = false;
     } else {
-      _passwordText.setError(null);
+      passwordText.setError(null);
     }
 
     return valid;
@@ -172,6 +167,5 @@ public class Login extends AppCompatActivity {
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }
-
 
 }

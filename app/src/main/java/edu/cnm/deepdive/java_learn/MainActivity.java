@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.java_learn;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -36,18 +37,23 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-//    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
-//
-//    setupRetrofit();
-//
-//    UserPojo user = new UserPojo();
-//    user.setUsername(email);
-//
-//    service.newUser(user).enqueue(new Callback<UserPojo>() {
+    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+
+    setupRetrofit();
+
+    UserPojo user = new UserPojo();
+    user.setUsername(email);
+
+    String token = getString(
+        R.string.authorization_header_format, JavaLearnApplication.getInstance().getAccount().getIdToken());
+
+//    service.newUser(token, user).enqueue(new Callback<UserPojo>() {
 //      @Override
 //      public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
 //        if(response.isSuccessful()) {
 //
+//        } else {
+//          //googleSignOut();
 //        }
 //      }
 //
@@ -99,6 +105,16 @@ public class MainActivity extends AppCompatActivity {
         .build();
 
     service = retrofit.create(JavaLearnService.class);
+  }
+
+  public void googleSignOut() {
+    JavaLearnApplication application = JavaLearnApplication.getInstance();
+    application.getClient().signOut().addOnCompleteListener(this, (task) -> {
+      application.setAccount(null);
+      Intent intent = new Intent(this, Login.class);
+      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(intent);
+    });
   }
 
   private class InitializeDatabaseTask extends AsyncTask<Void, Void, Void> {

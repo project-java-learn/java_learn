@@ -40,19 +40,11 @@ public class signupActivity extends AppCompatActivity {
     setContentView(R.layout.fragment_signup);
     ButterKnife.bind(this);
 
-    _signupButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        signup();
-      }
-    });
+    _signupButton.setOnClickListener(v -> signup());
 
-    _loginLink.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        // Finish the registration screen and return to the Login activity
-        finish();
-      }
+    _loginLink.setOnClickListener(v -> {
+      // Finish the registration screen and return to the Login activity
+      finish();
     });
   }
 
@@ -79,14 +71,12 @@ public class signupActivity extends AppCompatActivity {
     // TODO: Implement your own signup logic here.
 
     new android.os.Handler().postDelayed(
-        new Runnable() {
-          public void run() {
-            // On complete call either onSignupSuccess or onSignupFailed
-            // depending on success
-            onSignupSuccess();
-            // onSignupFailed();
-            progressDialog.dismiss();
-          }
+        () -> {
+          // On complete call either onSignupSuccess or onSignupFailed
+          // depending on success
+          onSignupSuccess();
+          // onSignupFailed();
+          progressDialog.dismiss();
         }, 3000);
   }
 

@@ -8,7 +8,7 @@
   android:padding="30dp"
   android:orientation="horizontal"
   android:clipToPadding="false"
-  tools:context=".fillInBlank.FillBlank">
+  tools:context=".highlight.HighlightFragment">
 
   <ImageView
     android:id="@+id/logo_highlight"
@@ -23,11 +23,12 @@
     android:layout_height="700dp"
     style="@style/cardView">
 
-    <TextView
+    <edu.cnm.deepdive.java_learn.view.TextViewCursorWatcher
       android:id="@+id/highlight_text"
       android:layout_width="400dp"
       android:layout_height="500dp"
       android:layout_gravity="center"
+      android:textIsSelectable="true"
       style="@style/TextViewStyleSmall"
       android:background="@drawable/rounded_corner"
       android:textAlignment="center"
@@ -134,7 +135,7 @@
   </android.support.v7.widget.CardView>
 
   <Button
-    android:id="@+id/fill_blank_submit_button"
+    android:id="@+id/hl_submit_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/my_button"
