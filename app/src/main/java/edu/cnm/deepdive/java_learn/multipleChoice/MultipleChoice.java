@@ -3,7 +3,6 @@ package edu.cnm.deepdive.java_learn.multipleChoice;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,19 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import edu.cnm.deepdive.java_learn.R;
-import edu.cnm.deepdive.java_learn.model.dao.MCQuestionDao;
-import edu.cnm.deepdive.java_learn.model.entity.Level;
-import edu.cnm.deepdive.java_learn.model.entity.MCAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.MCQuestion;
-import edu.cnm.deepdive.java_learn.model.pojo.MCQuestionWithAnswers;
+import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
+import edu.cnm.deepdive.java_learn.model.pojo.MultipleChoiceQWithA;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -99,14 +92,14 @@ public class MultipleChoice extends GameFragment {
    * @param question - the questions for the multiple choice
    */
   private void populateQuestionsAndAnswerButtons(TextView questionView, RadioGroup radioGroup,
-      MCQuestionWithAnswers question) {
-    List<MCAnswer> answers = question.getAnswers();
+      MultipleChoiceQWithA question) {
+    List<MultipleChoiceA> answers = question.getAnswers();
 
     Collections.shuffle(answers);
 
     questionView.setText(question.getQuestion().getMcQuestion());
     int answerNumber = 0;
-    for (MCAnswer answer : answers) {
+    for (MultipleChoiceA answer : answers) {
       RadioButton button = (RadioButton) radioGroup.getChildAt(answerNumber);
       button.setText(answer.getMcAnswer());
       button.setTag(answer.isCorrect());
@@ -119,19 +112,19 @@ public class MultipleChoice extends GameFragment {
    *
    * @param
    */
-  private class GetQuestionsTask extends AsyncTask<Long, Void, List<MCQuestionWithAnswers>> {
+  private class GetQuestionsTask extends AsyncTask<Long, Void, List<MultipleChoiceQWithA>> {
 
     @Override
-    protected List<MCQuestionWithAnswers> doInBackground(Long... levels) {
+    protected List<MultipleChoiceQWithA> doInBackground(Long... levels) {
 
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
       return db.getMCQuestionDao().selectWithAnswers(levels[0], 6); // HACK
     }
 
     @Override
-    protected void onPostExecute(List<MCQuestionWithAnswers> questions) {
+    protected void onPostExecute(List<MultipleChoiceQWithA> questions) {
       int questionNumber = 0;
-      for (MCQuestionWithAnswers question : questions) {
+      for (MultipleChoiceQWithA question : questions) {
         populateQuestionsAndAnswerButtons(questionViews[questionNumber], answerGroups[questionNumber], question);
         questionNumber++;
       }
