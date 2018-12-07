@@ -4,7 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
-import edu.cnm.deepdive.java_learn.model.entity.MCAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
 import java.util.List;
 
 /**
@@ -13,8 +13,8 @@ import java.util.List;
 @Dao
 public interface MCAnswerDao {
   @Insert(onConflict = OnConflictStrategy.FAIL)
-  long insert(MCAnswer answer);
+  long insert(MultipleChoiceA answer);
 
-  @Query("SELECT * FROM MCAnswer WHERE mc_question_id = :mcQuestionId")
-  List<MCAnswer> select(long mcQuestionId);
+  @Query("SELECT * FROM MultipleChoiceA WHERE mc_question_id = :mcQuestionId")
+  List<MultipleChoiceA> select(long mcQuestionId);
 }

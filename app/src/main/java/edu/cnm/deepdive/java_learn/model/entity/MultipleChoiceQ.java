@@ -16,7 +16,7 @@ import android.support.annotation.NonNull;
         )
     }
 )
-public class MCQuestion {
+public class MultipleChoiceQ {
 
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "mc_question_id")
@@ -29,9 +29,9 @@ public class MCQuestion {
   @ColumnInfo(name = "mc_question")
   private String mcQuestion;
 
-  public MCQuestion() {}
+  public MultipleChoiceQ() {}
 
-  public MCQuestion(@NonNull String mcQuestion, long levelId) {
+  public MultipleChoiceQ(@NonNull String mcQuestion, long levelId) {
     this.levelId = levelId;
     this.mcQuestion = mcQuestion;
   }
