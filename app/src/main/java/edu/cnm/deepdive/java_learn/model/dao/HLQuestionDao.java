@@ -19,4 +19,7 @@ public interface HLQuestionDao {
 
   @Query("SELECT * FROM HLQuestion WHERE level_id = :levelId")
   List<HLQuestion> select(long levelId);
+
+  @Query("SELECT * FROM HLQuestion WHERE hl_question = :hlQuestion")
+  HLQuestion select(String hlQuestion);
 }

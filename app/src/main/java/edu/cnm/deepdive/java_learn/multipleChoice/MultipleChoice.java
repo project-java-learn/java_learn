@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
 import edu.cnm.deepdive.java_learn.model.pojo.MultipleChoiceQWithA;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
@@ -61,24 +62,20 @@ public class MultipleChoice extends GameFragment {
     };
 
     submitAnswers = view.findViewById(R.id.submit_answers);
-    submitAnswers.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        for (RadioGroup group : answerGroups) {
-          int checkedId = group.getCheckedRadioButtonId();
-          if (checkedId >= 0) {
-            RadioButton button = getActivity().findViewById(checkedId);
-            if (((Boolean) button.getTag()).booleanValue()) {
-              Log.d(MultipleChoice.class.getSimpleName(), "Correct!");
-            }
+    submitAnswers.setOnClickListener(v -> {
+      for (RadioGroup group : answerGroups) {
+        int checkedId = group.getCheckedRadioButtonId();
+        if (checkedId >= 0) {
+          RadioButton button = getActivity().findViewById(checkedId);
+          if ((Boolean) button.getTag()) {
+            Log.d(MultipleChoice.class.getSimpleName(), "Correct!");
           }
         }
-
-        // TODO Register results with Room
       }
 
+      // TODO Register results with Room
     });
-    new GetQuestionsTask().execute(1L); // FIXME Should not be hardcoded 1
+    new GetQuestionsTask().execute(); // FIXME Should not be hardcoded 1
     return view;
   }
 
@@ -112,13 +109,14 @@ public class MultipleChoice extends GameFragment {
    *
    * @param
    */
-  private class GetQuestionsTask extends AsyncTask<Long, Void, List<MultipleChoiceQWithA>> {
+  private class GetQuestionsTask extends AsyncTask<Void, Void, List<MultipleChoiceQWithA>> {
 
     @Override
-    protected List<MultipleChoiceQWithA> doInBackground(Long... levels) {
+    protected List<MultipleChoiceQWithA> doInBackground(Void... voids) {
 
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
-      return db.getMCQuestionDao().selectWithAnswers(levels[0], 6); // HACK
+      Level level = db.getLevelDao().select("Multiple Choice Test");
+      return db.getMCQuestionDao().selectWithAnswers(level.getLevelId(), 6); // HACK
     }
 
     @Override

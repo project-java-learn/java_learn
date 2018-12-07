@@ -38,6 +38,11 @@ public class FBAnswer {
     this.isCorrect = isCorrect;
   }
 
+  @Override
+  public String toString() {
+    return getFbAnswer();
+  }
+
   public long getFbAnswerId() {
     return fbAnswerId;
   }
