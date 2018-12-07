@@ -12,21 +12,21 @@
 
   <ImageView
     android:id="@+id/logo_highlight"
-    android:layout_width="80dp"
-    android:layout_height="80dp"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     app:layout_constraintRight_toRightOf="parent"
     android:src="@drawable/java_learn_logo_circle"/>
 
   <android.support.v7.widget.CardView
     android:id="@+id/fill_blank_code"
-    android:layout_width="350dp"
-    android:layout_height="450dp"
+    android:layout_width="600dp"
+    android:layout_height="700dp"
     style="@style/cardView">
 
     <TextView
       android:id="@+id/highlight_text"
-      android:layout_width="250dp"
-      android:layout_height="350dp"
+      android:layout_width="400dp"
+      android:layout_height="500dp"
       android:layout_gravity="center"
       style="@style/TextViewStyleSmall"
       android:background="@drawable/rounded_corner"
@@ -43,12 +43,12 @@
   <android.support.v7.widget.CardView
     android:id="@+id/spinner_card"
     style="@style/cardView"
-    android:layout_width="350dp"
-    android:layout_height="350dp"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
     app:layout_constraintLeft_toRightOf="@id/fill_blank_code"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintBottom_toTopOf="@id/fill_blank_submit_button"
-    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/logo_highlight"
     >
 
     <android.support.constraint.ConstraintLayout
@@ -66,16 +66,16 @@
         android:padding="15dp"
         android:paddingBottom="20dp"
         android:text="Highlight and mark each item as the appropriate identifier"
-        style="@style/TextViewStyleMedium"
+        style="@style/TextViewStyle20"
         android:textAlignment="center"
         />
 
       <Button
         android:id="@+id/red_button"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/highlight_buttons"
-        style="@style/TextViewStyleSmall"
+        style="@style/TextViewStyleMedium"
         android:layout_margin="15dp"
         android:clickable="true"
         android:focusable="true"
@@ -90,10 +90,10 @@
 
       <Button
         android:id="@+id/blue_button"
-        android:layout_width="75dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/highlight_buttons"
-        style="@style/TextViewStyleSmall"
+        style="@style/TextViewStyleMedium"
         android:layout_margin="15dp"
         android:clickable="true"
         android:focusable="true"
@@ -108,10 +108,10 @@
 
       <Button
         android:id="@+id/green_button"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/highlight_buttons"
-        style="@style/TextViewStyleSmall"
+        style="@style/TextViewStyleMedium"
         android:layout_margin="15dp"
         android:padding="10dp"
         android:clickable="true"
@@ -135,7 +135,7 @@
 
   <Button
     android:id="@+id/fill_blank_submit_button"
-    android:layout_width="75dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/my_button"
     style="@style/TextViewStyleMedium"

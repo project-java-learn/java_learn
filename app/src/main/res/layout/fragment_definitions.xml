@@ -10,16 +10,16 @@
 
   <ImageView
     android:id="@+id/logo_definitions"
-    android:layout_width="80dp"
-    android:layout_height="80dp"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     app:layout_constraintRight_toRightOf="parent"
     android:src="@drawable/java_learn_logo_circle"
     />
 
   <android.support.v7.widget.CardView
     android:id="@+id/definitions_card"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="900dp"
+    android:layout_height="500dp"
     style="@style/cardView"
     app:layout_constraintTop_toBottomOf="@id/logo_definitions"
     app:layout_constraintBottom_toTopOf="@+id/submit_definitions"
@@ -29,16 +29,21 @@
 
   <TableLayout
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center">
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:padding="20dp">
 
-    <TableRow>
+    <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_gravity="center_vertical"
+      android:padding="12dp">
+
       <TextView
         android:id="@+id/first_definition"
-        style="@style/TextViewStyleMedium"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="fill_parent"
-        android:padding="20dp"
         android:singleLine="false"
         android:text="@string/definition_one_question"
         />
@@ -61,13 +66,16 @@
         />
 
     </TableRow>
-    <TableRow>
+    <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_gravity="center_vertical"
+      android:padding="12dp">
       <TextView
         android:id="@+id/second_definition"
-        style="@style/TextViewStyleMedium"
+        style="@style/TextViewStyle20"
         android:layout_width="425dp"
         android:layout_height="fill_parent"
-        android:padding="20dp"
         android:text="@string/definition_two_question"
         />
 
@@ -90,13 +98,16 @@
 
     </TableRow>
 
-    <TableRow>
+    <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_gravity="center_vertical"
+      android:padding="12dp">
       <TextView
         android:id="@+id/third_definition"
-        style="@style/TextViewStyleMedium"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="fill_parent"
-        android:padding="20dp"
         android:text="@string/definition_three_question"
         />
 
@@ -118,13 +129,16 @@
         />
 
     </TableRow>
-    <TableRow>
+    <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_gravity="center_vertical"
+      android:padding="12dp">
       <TextView
         android:id="@+id/fourth_definition"
-        style="@style/TextViewStyleMedium"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="fill_parent"
-        android:padding="20dp"
         android:text="@string/fourth_definition_question"
         />
 
@@ -146,14 +160,17 @@
         />
 
     </TableRow>
-    <TableRow>
+    <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_gravity="center_vertical"
+      android:padding="12dp">
       <TextView
         android:id="@+id/fifth_definition"
-        style="@style/TextViewStyleMedium"
+        style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="fill_parent"
         android:layout_gravity="center"
-        android:padding="10dp"
         android:text="@string/definition_five_question"
         />
       <android.support.v7.widget.AppCompatSpinner
@@ -183,12 +200,12 @@
 
   <Button
     android:id="@+id/submit_definitions"
-    android:layout_width="75dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
     android:translationZ="4dp"
-    style="@style/TextViewStyleSmall"
+    style="@style/TextViewStyleMedium"
     android:text="SUBMIT"
     android:background="@drawable/my_button"
     android:textAlignment="center"

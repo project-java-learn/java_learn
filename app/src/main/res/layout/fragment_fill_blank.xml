@@ -12,22 +12,23 @@
 
   <ImageView
     android:id="@+id/logo_fill_in"
-    android:layout_width="80dp"
-    android:layout_height="80dp"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     app:layout_constraintRight_toRightOf="parent"
     android:src="@drawable/java_learn_logo_circle"/>
 
 
   <android.support.v7.widget.CardView
       android:id="@+id/fill_blank_code"
-      android:layout_width="500dp"
-      android:layout_height="wrap_content"
+      android:layout_width="600dp"
+      android:layout_height="700dp"
       style="@style/cardView">
 
     <ImageView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:src="@drawable/fill_in_blank_sample_blanks"
+      android:layout_gravity="center"
       android:padding="10dp"
       />
 
@@ -37,8 +38,8 @@
   <android.support.v7.widget.CardView
     android:id="@+id/spinner_card"
     style="@style/cardView"
-    android:layout_width="300dp"
-    android:layout_height="300dp"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
     app:layout_constraintLeft_toRightOf="@id/fill_blank_code"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintBottom_toTopOf="@id/fill_blank_submit_button"
@@ -60,7 +61,7 @@
         android:padding="15dp"
         android:paddingBottom="20dp"
         android:text="Fill in the correct answer with the corresponding number."
-        style="@style/TextViewStyleMedium"
+        style="@style/TextViewStyle20"
         android:textAlignment="center"
         />
 
@@ -68,7 +69,7 @@
         android:id="@+id/fill_in_one_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="12dp"
         android:popupBackground="@color/accentColor"
         android:backgroundTint="@color/accentColor"
         android:spinnerMode="dialog"
@@ -83,7 +84,7 @@
         android:id="@+id/fill_in_two_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="12dp"
         android:entries="@array/fill_in_two_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -95,7 +96,7 @@
         android:id="@+id/fill_in_three_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="12dp"
         android:entries="@array/fill_in_three_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -107,7 +108,7 @@
         android:id="@+id/fill_in_four_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="12dp"
         android:entries="@array/fill_in_four_entries"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -122,10 +123,10 @@
 
   <Button
     android:id="@+id/fill_blank_submit_button"
-    android:layout_width="75dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/my_button"
-    style="@style/TextViewStyleSmall"
+    style="@style/TextViewStyleMedium"
     android:padding="10dp"
     android:clickable="true"
     android:focusable="true"
