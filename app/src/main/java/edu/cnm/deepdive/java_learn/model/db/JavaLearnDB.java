@@ -23,8 +23,8 @@ import edu.cnm.deepdive.java_learn.model.entity.FBQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.HLQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
-import edu.cnm.deepdive.java_learn.model.entity.MCAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.MCQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
+import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceQ;
 
 /**
  * JavaLearnDB class allows the user to create a database for holding user levels, game progress
@@ -33,7 +33,7 @@ import edu.cnm.deepdive.java_learn.model.entity.MCQuestion;
  */
 @Database(
     entities = {Level.class, DDAnswer.class, DDQuestion.class, FBAnswer.class, FBQuestion.class,
-        HLAnswer.class, HLQuestion.class, MCAnswer.class, MCQuestion.class},
+        HLAnswer.class, HLQuestion.class, MultipleChoiceA.class, MultipleChoiceQ.class},
     version = 1,
     exportSchema = true
 )
@@ -120,6 +120,8 @@ public abstract class JavaLearnDB extends RoomDatabase {
       LevelDao lDao = db.getLevelDao();
       DDQuestionDao qDao = db.getDDQuestionDao();
       DDAnswerDao aDao = db.getDDAnswerDao();
+      MCQuestionDao mcQDao = db.getMCQuestionDao();
+      MCAnswerDao mcADao = db.getMCAnswerDao();
 
       long levId = lDao.insert(new Level("Definitions Test"));
 
@@ -163,6 +165,43 @@ public abstract class JavaLearnDB extends RoomDatabase {
       aDao.insert(new DDAnswer("Object", false, que5Id));
       aDao.insert(new DDAnswer("Field", false, que5Id));
       aDao.insert(new DDAnswer("Abstract", true, que5Id));
+
+      long que6Id = mcQDao.insert(new MultipleChoiceQ("What is the access modifier\nfor the main method?",
+          levId));
+      mcADao.insert(new MultipleChoiceA("public", true, que6Id));
+      mcADao.insert(new MultipleChoiceA("private", false, que6Id));
+      mcADao.insert(new MultipleChoiceA("protected", false, que6Id));
+      mcADao.insert(new MultipleChoiceA("package private", false, que6Id));
+
+      long que7Id = mcQDao.insert(new MultipleChoiceQ("How many methods does\nthis class contain?", levId));
+      mcADao.insert(new MultipleChoiceA("2", true, que7Id));
+      mcADao.insert(new MultipleChoiceA("5", false, que7Id));
+      mcADao.insert(new MultipleChoiceA("6", false, que7Id));
+      mcADao.insert(new MultipleChoiceA("3", false, que7Id));
+
+      long que8Id = mcQDao.insert(new MultipleChoiceQ("What does toString return", levId));
+      mcADao.insert(new MultipleChoiceA("A String", true, que8Id));
+      mcADao.insert(new MultipleChoiceA("StringBuilder", false, que8Id));
+      mcADao.insert(new MultipleChoiceA("StringBuffer", false, que8Id));
+      mcADao.insert(new MultipleChoiceA("StringWriter", false, que8Id));
+
+      long que9Id = mcQDao.insert(new MultipleChoiceQ("What is the name\n of the class?", levId));
+      mcADao.insert(new MultipleChoiceA("Decompose", true, que9Id));
+      mcADao.insert(new MultipleChoiceA("main", false, que9Id));
+      mcADao.insert(new MultipleChoiceA("toString", false, que9Id));
+      mcADao.insert(new MultipleChoiceA("QRDecomposition", false, que9Id));
+
+      long que10Id = mcQDao.insert(new MultipleChoiceQ("How many imports is\n this class using?", levId ));
+      mcADao.insert(new MultipleChoiceA("4" , true, que10Id));
+      mcADao.insert(new MultipleChoiceA("2", false, que10Id));
+      mcADao.insert(new MultipleChoiceA("5", false, que10Id));
+      mcADao.insert(new MultipleChoiceA("6", false, que10Id));
+
+      long que11Id =  mcQDao.insert(new MultipleChoiceQ("Which object is asking\nfor an array of arrays?", levId));
+      mcADao.insert(new MultipleChoiceA(" Matrix", true, que11Id));
+      mcADao.insert(new MultipleChoiceA("toString", false, que11Id));
+      mcADao.insert(new MultipleChoiceA("QRDecomposition", false, que11Id));
+      mcADao.insert(new MultipleChoiceA("main", false, que11Id));
 
       forgetInstance(context);
 
