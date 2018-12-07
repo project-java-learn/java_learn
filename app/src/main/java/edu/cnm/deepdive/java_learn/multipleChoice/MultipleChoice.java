@@ -4,6 +4,7 @@ package edu.cnm.deepdive.java_learn.multipleChoice;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -70,8 +71,16 @@ public class MultipleChoice extends GameFragment {
     submitAnswers.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
+        for (RadioGroup group : answerGroups) {
+          int checkedId = group.getCheckedRadioButtonId();
+          if (checkedId >= 0) {
+            RadioButton button = getActivity().findViewById(checkedId);
+            if (((Boolean) button.getTag()).booleanValue()) {
+              Log.d(MultipleChoice.class.getSimpleName(), "Correct!");
+            }
+          }
+        }
 
-        //TODO Iterate over answer groups and check for correct answers
         // TODO Register results with Room
       }
 
