@@ -23,6 +23,7 @@ public class JavaLearnApplication extends Application {
     GoogleSignInOptions options = new Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
         .requestEmail()
         .requestId()
+        .requestProfile()
         .requestIdToken(getString(R.string.client_id))
         .build();
 

@@ -10,6 +10,9 @@ public class UserPojo {
   @Expose(serialize = false)
   private String uuid;
 
+  @Expose
+  private String oauthId;
+
   public String getUsername() {
     return username;
   }
@@ -24,5 +27,13 @@ public class UserPojo {
 
   public void setUuid(String uuid) {
     this.uuid = uuid;
+  }
+
+  public String getOauthId() {
+    return oauthId;
+  }
+
+  public void setOauthId(String oauthId) {
+    this.oauthId = oauthId;
   }
 }

@@ -13,11 +13,14 @@ import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.LoginActivity;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
+import edu.cnm.deepdive.java_learn.model.pojo.ProgressPojo;
 import edu.cnm.deepdive.java_learn.model.pojo.UserPojo;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 import edu.cnm.deepdive.java_learn.service.JavaLearnService;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
 import edu.cnm.deepdive.java_learn.view.HomeFragment;
+import java.util.ArrayList;
+import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,31 +42,13 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+    String id = JavaLearnApplication.getInstance().getAccount().getId();
+
     new InitializeDatabaseTask().execute();
 
     setupRetrofit();
 
-    UserPojo user = new UserPojo();
-    user.setUsername(email);
-
-    String token = getString(
-        R.string.authorization_header_format, JavaLearnApplication.getInstance().getAccount().getIdToken());
-
-    service.newUser(token, user).enqueue(new Callback<UserPojo>() {
-      @Override
-      public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
-        if(!response.isSuccessful()) {
-          googleSignOut();
-        }
-      }
-
-      @Override
-      public void onFailure(Call<UserPojo> call, Throwable t) {
-        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
-        throw new RuntimeException(t);
-      }
-    });
+    testCheckUser();
 
     HomeFragment homeFragment = new HomeFragment();
     fab = findViewById(R.id.fab);
@@ -75,13 +60,14 @@ public class MainActivity extends AppCompatActivity {
       Fragment fragment = new HomeFragment();
 
       if (getSupportFragmentManager()
-          .findFragmentById((R.id.fragment_container)) instanceof GameFragment){
+          .findFragmentById((R.id.fragment_container)) instanceof GameFragment) {
         AlertDialog.Builder builder = new Builder(this);
         builder.setTitle("Back to Home Page");
         builder.setTitle("Go back to home screen?");
 
         builder.setPositiveButton("Yes", (dialog, which) -> {
-          getSupportFragmentManager().popBackStack("home", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+          getSupportFragmentManager()
+              .popBackStack("home", FragmentManager.POP_BACK_STACK_INCLUSIVE);
           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment)
               .commit();
         });
@@ -116,6 +102,61 @@ public class MainActivity extends AppCompatActivity {
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
       startActivity(intent);
     });
+  }
+
+  private void testCheckUser() {
+    UserPojo user = new UserPojo();
+    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+    user.setUsername(email);
+
+    String token = getString(
+        R.string.authorization_header_format,
+        JavaLearnApplication.getInstance().getAccount().getIdToken());
+
+    service.checkUser(token).enqueue(new Callback<UserPojo>() {
+      @Override
+      public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
+        if (!response.isSuccessful()) {
+          googleSignOut();
+        }
+
+        testPostProgress();
+      }
+
+      @Override
+      public void onFailure(Call<UserPojo> call, Throwable t) {
+        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
+        throw new RuntimeException(t);
+      }
+    });
+  }
+
+  private void testPostProgress() {
+    ProgressPojo progress = new ProgressPojo();
+    List<String> test = new ArrayList<>();
+    test.add("test");
+    test.add("testing");
+    progress.setScore(500);
+    progress.setLevels(test);
+
+    String token = getString(
+        R.string.authorization_header_format,
+        JavaLearnApplication.getInstance().getAccount().getIdToken());
+
+    service.postProgress(token, progress).enqueue(new Callback<ProgressPojo>() {
+      @Override
+      public void onResponse(Call<ProgressPojo> call, Response<ProgressPojo> response) {
+        if (!response.isSuccessful()) {
+          Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
+        }
+      }
+
+      @Override
+      public void onFailure(Call<ProgressPojo> call, Throwable t) {
+        throw new RuntimeException(t);
+      }
+    });
+
   }
 
   private class InitializeDatabaseTask extends AsyncTask<Void, Void, Void> {

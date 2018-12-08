@@ -100,7 +100,6 @@ public class MultipleChoiceFragment extends GameFragment {
       button.setTag(answer.isCorrect());
       answerNumber++;
     }
-
   }
 
   /**

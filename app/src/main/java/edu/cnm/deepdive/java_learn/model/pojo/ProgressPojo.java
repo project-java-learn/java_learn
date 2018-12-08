@@ -1,11 +1,14 @@
 package edu.cnm.deepdive.java_learn.model.pojo;
 
+import com.google.gson.annotations.Expose;
 import java.util.List;
 
 public class ProgressPojo {
 
+  @Expose
   private int score;
 
+  @Expose
   private List<String> levels;
 
   public int getScore() {
