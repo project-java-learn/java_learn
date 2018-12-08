@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn.multipleChoice;
+package edu.cnm.deepdive.java_learn.view;
 
 
 import android.os.AsyncTask;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -16,17 +15,16 @@ import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
 import edu.cnm.deepdive.java_learn.model.pojo.MultipleChoiceQWithA;
-import edu.cnm.deepdive.java_learn.view.GameFragment;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * This is the MultipleChoice class game that retrieves 1 random question(populated in the
+ * This is the MultipleChoiceFragment class game that retrieves 1 random question(populated in the
  * textView the correct answer(populated next to a random radio button in the same RadioGroup as
  * the corresponding populated question) and 3 random wrong answers.
  */
-public class MultipleChoice extends GameFragment {
+public class MultipleChoiceFragment extends GameFragment {
 
   private View view;
   private TextView[] questionViews;
@@ -68,7 +66,7 @@ public class MultipleChoice extends GameFragment {
         if (checkedId >= 0) {
           RadioButton button = getActivity().findViewById(checkedId);
           if ((Boolean) button.getTag()) {
-            Log.d(MultipleChoice.class.getSimpleName(), "Correct!");
+            Log.d(MultipleChoiceFragment.class.getSimpleName(), "Correct!");
           }
         }
       }

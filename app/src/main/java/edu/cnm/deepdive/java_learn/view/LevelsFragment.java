@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn;
+package edu.cnm.deepdive.java_learn.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,9 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import edu.cnm.deepdive.java_learn.fillInBlank.FillBlankFragment;
-import edu.cnm.deepdive.java_learn.highlight.HighlightFragment;
-import edu.cnm.deepdive.java_learn.multipleChoice.MultipleChoice;
+import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.view.FillBlankFragment;
+import edu.cnm.deepdive.java_learn.view.HighlightFragment;
+import edu.cnm.deepdive.java_learn.view.MultipleChoiceFragment;
 import edu.cnm.deepdive.java_learn.view.DefinitionsFragment;
 
 /**
@@ -60,7 +61,7 @@ public class LevelsFragment extends Fragment {
     levelFourButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        MultipleChoice mc = new MultipleChoice();
+        MultipleChoiceFragment mc = new MultipleChoiceFragment();
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, mc)
             .addToBackStack("Multiple Choice Level").commit();
       }

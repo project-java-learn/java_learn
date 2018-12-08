@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn;
+package edu.cnm.deepdive.java_learn.controller;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,6 +10,8 @@ import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+import edu.cnm.deepdive.java_learn.LoginActivity;
+import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import edu.cnm.deepdive.java_learn.model.pojo.UserPojo;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+    new InitializeDatabaseTask().execute();
 
     setupRetrofit();
 
@@ -47,22 +50,20 @@ public class MainActivity extends AppCompatActivity {
     String token = getString(
         R.string.authorization_header_format, JavaLearnApplication.getInstance().getAccount().getIdToken());
 
-//    service.newUser(token, user).enqueue(new Callback<UserPojo>() {
-//      @Override
-//      public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
-//        if(response.isSuccessful()) {
-//
-//        } else {
-//          //googleSignOut();
-//        }
-//      }
-//
-//      @Override
-//      public void onFailure(Call<UserPojo> call, Throwable t) {
-//        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
-//        throw new RuntimeException(t);
-//      }
-//    });
+    service.newUser(token, user).enqueue(new Callback<UserPojo>() {
+      @Override
+      public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
+        if(!response.isSuccessful()) {
+          googleSignOut();
+        }
+      }
+
+      @Override
+      public void onFailure(Call<UserPojo> call, Throwable t) {
+        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
+        throw new RuntimeException(t);
+      }
+    });
 
     HomeFragment homeFragment = new HomeFragment();
     fab = findViewById(R.id.fab);
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     JavaLearnApplication application = JavaLearnApplication.getInstance();
     application.getClient().signOut().addOnCompleteListener(this, (task) -> {
       application.setAccount(null);
-      Intent intent = new Intent(this, Login.class);
+      Intent intent = new Intent(this, LoginActivity.class);
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
       startActivity(intent);
     });

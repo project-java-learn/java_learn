@@ -16,9 +16,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import edu.cnm.deepdive.java_learn.controller.MainActivity;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
   private static final String TAG = "LoginActivity";
   private static final int REQUEST_SIGNUP = 0;
   private static final int GOOGLE_REQUEST_SIGNIN = 1000;
@@ -42,7 +43,7 @@ public class Login extends AppCompatActivity {
 
     signupLink.setOnClickListener(v -> {
       // Start the Signup activity
-      Intent intent = new Intent(getApplicationContext(), signupActivity.class);
+      Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
       startActivityForResult(intent, REQUEST_SIGNUP);
     });
 
@@ -61,7 +62,7 @@ public class Login extends AppCompatActivity {
   }
 
   public void login() {
-    Log.d(TAG, "Login");
+    Log.d(TAG, "LoginActivity");
 
 
 // TODO comment or uncomment this to control login button
@@ -72,7 +73,7 @@ public class Login extends AppCompatActivity {
 
     loginButton.setEnabled(false);
 
-    final ProgressDialog progressDialog = new ProgressDialog(Login.this,
+    final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
         R.style.AppTheme);
     progressDialog.setIndeterminate(true);
     progressDialog.setMessage("Authenticating...");
@@ -129,7 +130,7 @@ public class Login extends AppCompatActivity {
   }
 
   public void onLoginFailed() {
-    Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+    Toast.makeText(getBaseContext(), "LoginActivity failed", Toast.LENGTH_LONG).show();
 
     loginButton.setEnabled(true);
   }

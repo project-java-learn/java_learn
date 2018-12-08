@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn.fillInBlank;
+package edu.cnm.deepdive.java_learn.view;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import edu.cnm.deepdive.java_learn.model.entity.FBAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.FBQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
-import edu.cnm.deepdive.java_learn.view.GameFragment;
 import java.util.ArrayList;
 import java.util.List;
 
