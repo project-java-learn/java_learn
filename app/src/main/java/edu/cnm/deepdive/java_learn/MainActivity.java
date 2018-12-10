@@ -38,15 +38,12 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+//    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
 
-    setupRetrofit();
-
-    UserPojo user = new UserPojo();
-    user.setUsername(email);
-
-    String token = getString(
-        R.string.authorization_header_format, JavaLearnApplication.getInstance().getAccount().getIdToken());
+//    setupRetrofit();
+//
+//    UserPojo user = new UserPojo();
+//    user.setUsername(email);
 
 //    service.newUser(token, user).enqueue(new Callback<UserPojo>() {
 //      @Override

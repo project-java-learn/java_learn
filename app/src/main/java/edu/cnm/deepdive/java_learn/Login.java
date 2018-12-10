@@ -3,11 +3,15 @@ package edu.cnm.deepdive.java_learn;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
@@ -22,6 +26,7 @@ import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
  * The type Login.
  */
 public class Login extends AppCompatActivity {
+
   private static final String TAG = "LoginActivity";
   private static final int REQUEST_SIGNUP = 0;
   private static final int GOOGLE_REQUEST_SIGNIN = 1000;
@@ -30,23 +35,28 @@ public class Login extends AppCompatActivity {
   /**
    * The Email text.
    */
-  @BindView(R.id.email_input) TextInputEditText emailText;
+  @BindView(R.id.email_input)
+  TextInputEditText emailText;
   /**
    * The Password text.
    */
-  @BindView(R.id.password_input) TextInputEditText passwordText;
+  @BindView(R.id.password_input)
+  TextInputEditText passwordText;
   /**
    * The Login button.
    */
-  @BindView(R.id.login_button) Button loginButton;
+  @BindView(R.id.login_button)
+  Button loginButton;
   /**
    * The Signup link.
    */
-  @BindView(R.id.link_signup) TextView signupLink;
+  @BindView(R.id.link_signup)
+  TextView signupLink;
   /**
    * The Google sign in button.
    */
-  @BindView(R.id.google_sign_in_button) com.google.android.gms.common.SignInButton googleSignInButton;
+  @BindView(R.id.google_sign_in_button)
+  com.google.android.gms.common.SignInButton googleSignInButton;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +73,9 @@ public class Login extends AppCompatActivity {
       Intent intent = new Intent(getApplicationContext(), signupActivity.class);
       startActivityForResult(intent, REQUEST_SIGNUP);
     });
+
+    TextInputLayout password = (TextInputLayout) findViewById(R.id.password_input_layout);
+    password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/leaguespartanbold.otf"));
 
   }
 
@@ -84,12 +97,11 @@ public class Login extends AppCompatActivity {
   public void login() {
     Log.d(TAG, "Login");
 
-
 // TODO comment or uncomment this to control login button
-     if (!validate()) {
-       onLoginFailed();
-       return;
-     }
+    if (!validate()) {
+      onLoginFailed();
+      return;
+    }
 
     loginButton.setEnabled(false);
 
