@@ -1,20 +1,15 @@
+1. Your aims or motivations for selecting the given topic for your project. That is, why did you choose to develop this particular project, and why is this (at least potentially) a useful or interesting project?
 
-### 1. Your aims or motivations for selecting the given topic for your project. That is, why did you choose to develop this particular project, and why is this (at least potentially) a useful or interesting project?
-```
     * To help others learn the Java programming language. Everyone should learn how to code, if they are willing to. 
     * There are so many devices that use Java.
-```
 
-### 2. A “functional inventory” for that repository—i.e. what functional components of the overall project are implemented by code in that repository?
-```
+2. A “functional inventory” for that repository—i.e. what functional components of the overall project are implemented by code in that repository?
 
-```
-### 3. A team roster, showing members’ names and primary responsibilities in the project.
-```
+3. A team roster, showing members’ names and primary responsibilities in the project.
+
     * Chantelle Rey-Smith - XML layouts, Google SignIn, and Login Screen
     * Matthew Morgan - Definitions, Highlight, Fill In the Blank, and Backend
     * Leslie Hinds -  Multiple Choice functionality
-```
 
 ### 4. If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
 ```
