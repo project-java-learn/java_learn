@@ -63,17 +63,16 @@
 ```
 
 ```
-### 11. Links to the most recent wireframes and up-to-date user stories for your project.
-```
+11. Links to the most recent wireframes and up-to-date user stories for your project.
+
     * [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
     * [User Stories](Java_Learn_UserStories.pdf )
-```
 
 ### 12. Links to the up-to-date ERD and DDL for this component’s data model, unless the component doesn’t have it’s own database.
-```
+
     * [JavaLearnERD](java_learn_erd.pdf)
     * [JavaLearnDDL](java_learn_ddl.pdf)
-```
+
 
 ### 13. A link to generated Javadoc HTML pages in your repository (see below).
 ```
