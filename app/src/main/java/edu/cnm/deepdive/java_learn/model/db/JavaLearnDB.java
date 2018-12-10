@@ -163,8 +163,8 @@ public abstract class JavaLearnDB extends RoomDatabase {
       aDao.insert(new DDAnswer("Field", true, que4Id));
       aDao.insert(new DDAnswer("Abstract", false, que4Id));
 
-      long que5Id = qDao.insert(new DDQuestion("A Java programming language keyword used in a class"
-          + " definition to specify that a class is not to be instantiated, but rather inherited by "
+      long que5Id = qDao.insert(new DDQuestion("A Java keyword used to specify that a "
+          + "class is to be inherited by "
           + "other classes.", levId));
 
       aDao.insert(new DDAnswer("Method", false, que5Id));

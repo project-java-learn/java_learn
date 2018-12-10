@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ public class DefinitionsFragment extends GameFragment {
   private List<DDAnswer> answers;
   private List<Spinner> spinners;
   private List<TextView> questionTexts;
+  private List<ImageView> checkMarks;
   private Spinner spinner1;
   private Spinner spinner2;
   private Spinner spinner3;
@@ -40,6 +42,11 @@ public class DefinitionsFragment extends GameFragment {
   private TextView question3;
   private TextView question4;
   private TextView question5;
+  private ImageView checkMark1;
+  private ImageView checkMark2;
+  private ImageView checkMark3;
+  private ImageView checkMark4;
+  private ImageView checkMark5;
   private Button submitButton;
 
 
@@ -51,6 +58,7 @@ public class DefinitionsFragment extends GameFragment {
     answers = new ArrayList<>();
     spinners = new ArrayList<>();
     questionTexts = new ArrayList<>();
+    checkMarks = new ArrayList<>();
 
     spinner1 = view.findViewById(R.id.definition_one_spinner);
     spinner2 = view.findViewById(R.id.definition_second_spinner);
@@ -63,6 +71,12 @@ public class DefinitionsFragment extends GameFragment {
     question3 = view.findViewById(R.id.third_definition);
     question4 = view.findViewById(R.id.fourth_definition);
     question5 = view.findViewById(R.id.fifth_definition);
+
+    checkMark1 = view.findViewById(R.id.check_mark_1);
+    checkMark2 = view.findViewById(R.id.check_mark_2);
+    checkMark3 = view.findViewById(R.id.check_mark_3);
+    checkMark4 = view.findViewById(R.id.check_mark_4);
+    checkMark5 = view.findViewById(R.id.check_mark_5);
 
     submitButton = view.findViewById(R.id.submit_definitions);
     setSubmitButton();
@@ -79,6 +93,16 @@ public class DefinitionsFragment extends GameFragment {
     questionTexts.add(question4);
     questionTexts.add(question5);
 
+    checkMarks.add(checkMark1);
+    checkMarks.add(checkMark2);
+    checkMarks.add(checkMark3);
+    checkMarks.add(checkMark4);
+    checkMarks.add(checkMark5);
+
+    for (ImageView iv: checkMarks) {
+      iv.setVisibility(View.INVISIBLE);
+    }
+
     new QuestionTask().execute();
 
     return view;
@@ -87,12 +111,15 @@ public class DefinitionsFragment extends GameFragment {
   private void setSubmitButton() {
     submitButton.setOnClickListener(v -> {
       int correct = 0;
+      int index = 0;
 
       for (Spinner spinner : spinners) {
         DDAnswer answer = (DDAnswer) spinner.getSelectedItem();
         if (answer.isCorrect()) {
           correct++;
+          checkMarks.get(index).setVisibility(View.VISIBLE);
         }
+        index++;
       }
       Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
           .show();
