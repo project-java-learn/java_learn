@@ -11,8 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
 import edu.cnm.deepdive.java_learn.model.pojo.MultipleChoiceQWithA;
@@ -79,15 +82,6 @@ public class MultipleChoice extends GameFragment {
     return view;
   }
 
-  /**
-   * Populates the radio group buttons and the correct answer tag. This method will throw and
-   * exception if the number of McAnswers taken from McQuestions is not equal to the number of radio
-   * buttons in the radioGroup.
-   *
-   * @param questionView - the view to be populated for the text questions.
-   * @param radioGroup - the buttons for the multiple choice questions.
-   * @param question - the questions for the multiple choice
-   */
   private void populateQuestionsAndAnswerButtons(TextView questionView, RadioGroup radioGroup,
       MultipleChoiceQWithA question) {
     List<MultipleChoiceA> answers = question.getAnswers();
@@ -105,10 +99,6 @@ public class MultipleChoice extends GameFragment {
 
   }
 
-  /**
-   *
-   * @param
-   */
   private class GetQuestionsTask extends AsyncTask<Void, Void, List<MultipleChoiceQWithA>> {
 
     @Override
@@ -118,6 +108,7 @@ public class MultipleChoice extends GameFragment {
       Level level = db.getLevelDao().select("Multiple Choice Test");
       return db.getMCQuestionDao().selectWithAnswers(level.getLevelId(), 6); // HACK
     }
+
 
     @Override
     protected void onPostExecute(List<MultipleChoiceQWithA> questions) {
