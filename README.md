@@ -87,7 +87,7 @@ To help others learn the Java programming language. Everyone should learn how to
 ```
 
 ### 16. A link to instructions for building the component.
-
+[Build Instructions](JavaLearn_BuildComp.pdf)
 
 ### 17. A link to basic instructions for using this component, or the project as a whole.
 
