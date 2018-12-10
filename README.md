@@ -1,7 +1,8 @@
 
 ### 1. Your aims or motivations for selecting the given topic for your project. That is, why did you choose to develop this particular project, and why is this (at least potentially) a useful or interesting project?
 ```
-    To help others learn the Java programming language. Everyone should learn how to code, if they are willing to. There are so many devices that use Java.
+    * To help others learn the Java programming language. Everyone should learn how to code, if they are willing to. 
+    * There are so many devices that use Java.
 ```
 
 ### 2. A “functional inventory” for that repository—i.e. what functional components of the overall project are implemented by code in that repository?
