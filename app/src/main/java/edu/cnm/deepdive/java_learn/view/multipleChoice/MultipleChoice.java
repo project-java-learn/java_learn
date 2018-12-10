@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn.multipleChoice;
+package edu.cnm.deepdive.java_learn.view.multipleChoice;
 
 
 import android.os.AsyncTask;
@@ -6,16 +6,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.R;
-import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
 import edu.cnm.deepdive.java_learn.model.pojo.MultipleChoiceQWithA;
@@ -25,9 +21,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * This is the MultipleChoice class game that retrieves 1 random question(populated in the
- * textView the correct answer(populated next to a random radio button in the same RadioGroup as
- * the corresponding populated question) and 3 random wrong answers.
+ * This is the MultipleChoice class game that retrieves 1 random question(populated in the textView
+ * the correct answer(populated next to a random radio button in the same RadioGroup as the
+ * corresponding populated question) and 3 random wrong answers.
  */
 public class MultipleChoice extends GameFragment {
 

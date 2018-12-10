@@ -5,17 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import edu.cnm.deepdive.java_learn.LevelsFragment;
 import edu.cnm.deepdive.java_learn.Login;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
+/**
+ * The type Home fragment.
+ */
 public class HomeFragment extends Fragment {
 
   private Button levelsButton;
@@ -71,6 +72,9 @@ public class HomeFragment extends Fragment {
   }
 
 
+  /**
+   * Google sign out.
+   */
   public void googleSignOut() {
     JavaLearnApplication application = JavaLearnApplication.getInstance();
     application.getClient().signOut().addOnCompleteListener(getActivity(), (task) -> {

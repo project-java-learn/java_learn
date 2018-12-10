@@ -18,16 +18,34 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
+/**
+ * The type Login.
+ */
 public class Login extends AppCompatActivity {
   private static final String TAG = "LoginActivity";
   private static final int REQUEST_SIGNUP = 0;
   private static final int GOOGLE_REQUEST_SIGNIN = 1000;
 
 
+  /**
+   * The Email text.
+   */
   @BindView(R.id.email_input) TextInputEditText emailText;
+  /**
+   * The Password text.
+   */
   @BindView(R.id.password_input) TextInputEditText passwordText;
+  /**
+   * The Login button.
+   */
   @BindView(R.id.login_button) Button loginButton;
+  /**
+   * The Signup link.
+   */
   @BindView(R.id.link_signup) TextView signupLink;
+  /**
+   * The Google sign in button.
+   */
   @BindView(R.id.google_sign_in_button) com.google.android.gms.common.SignInButton googleSignInButton;
 
   @Override
@@ -60,6 +78,9 @@ public class Login extends AppCompatActivity {
     }
   }
 
+  /**
+   * Login.
+   */
   public void login() {
     Log.d(TAG, "Login");
 
@@ -122,18 +143,29 @@ public class Login extends AppCompatActivity {
     moveTaskToBack(true);
   }
 
+  /**
+   * On login success.
+   */
   public void onLoginSuccess() {
     loginButton.setEnabled(true);
     Intent intent = new Intent(this, MainActivity.class);
     startActivity(intent);
   }
 
+  /**
+   * On login failed.
+   */
   public void onLoginFailed() {
     Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
     loginButton.setEnabled(true);
   }
 
+  /**
+   * Validate boolean.
+   *
+   * @return the boolean
+   */
   public boolean validate() {
     boolean valid = true;
 

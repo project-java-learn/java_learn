@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn.fillInBlank;
+package edu.cnm.deepdive.java_learn.view.fillInBlank;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,6 +19,9 @@ import edu.cnm.deepdive.java_learn.view.GameFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Fill blank fragment.
+ */
 public class FillBlankFragment extends GameFragment {
 
   private Spinner spinner1;

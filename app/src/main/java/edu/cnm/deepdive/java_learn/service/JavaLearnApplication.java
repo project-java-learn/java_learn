@@ -8,6 +8,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions.Builder;
 import edu.cnm.deepdive.java_learn.R;
 
+/**
+ * The type Java learn application.
+ */
 public class JavaLearnApplication extends Application {
 
   private static JavaLearnApplication instance = null;
@@ -32,22 +35,47 @@ public class JavaLearnApplication extends Application {
         .getClient(this, gso);
   }
 
+  /**
+   * Gets instance.
+   *
+   * @return the instance
+   */
   public static JavaLearnApplication getInstance() {
     return instance;
   }
 
+  /**
+   * Gets client.
+   *
+   * @return the client
+   */
   public GoogleSignInClient getClient() {
     return client;
   }
 
+  /**
+   * Sets client.
+   *
+   * @param client the client
+   */
   public void setClient(GoogleSignInClient client) {
     this.client = client;
   }
 
+  /**
+   * Gets account.
+   *
+   * @return the account
+   */
   public GoogleSignInAccount getAccount() {
     return account;
   }
 
+  /**
+   * Sets account.
+   *
+   * @param account the account
+   */
   public void setAccount(GoogleSignInAccount account) {
     this.account = account;
   }

@@ -8,7 +8,7 @@
   android:padding="30dp"
   android:orientation="horizontal"
   android:clipToPadding="false"
-  tools:context=".highlight.HighlightFragment">
+  tools:context=".view.highlight.HighlightFragment">
 
   <ImageView
     android:id="@+id/logo_highlight"
@@ -23,7 +23,7 @@
     android:layout_height="700dp"
     style="@style/cardView">
 
-    <edu.cnm.deepdive.java_learn.view.TextViewCursorWatcher
+    <edu.cnm.deepdive.java_learn.view.highlight.TextViewCursorWatcher
       android:id="@+id/highlight_text"
       android:layout_width="400dp"
       android:layout_height="500dp"

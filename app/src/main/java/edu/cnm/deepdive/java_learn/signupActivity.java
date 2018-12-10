@@ -17,20 +17,35 @@ import butterknife.ButterKnife;
 
 
 /**
- * The SignupActivity class allows the user to signup and save their progress.
+ * The type Signup activity.
  */
 public class signupActivity extends AppCompatActivity {
 
   private static final String TAG = "SignupActivity";
 
+  /**
+   * The Name text.
+   */
   @BindView(R.id.input_name)
   TextInputEditText _nameText;
+  /**
+   * The Email text.
+   */
   @BindView(R.id.email_input)
   TextInputEditText _emailText;
+  /**
+   * The Password text.
+   */
   @BindView(R.id.password_input)
   TextInputEditText _passwordText;
+  /**
+   * The Signup button.
+   */
   @BindView(R.id.signup_button)
   Button _signupButton;
+  /**
+   * The Login link.
+   */
   @BindView(R.id.link_login)
   TextView _loginLink;
 
@@ -48,6 +63,9 @@ public class signupActivity extends AppCompatActivity {
     });
   }
 
+  /**
+   * Signup.
+   */
   public void signup() {
     Log.d(TAG, "Signup");
 
@@ -81,6 +99,9 @@ public class signupActivity extends AppCompatActivity {
   }
 
 
+  /**
+   * On signup success.
+   */
   public void onSignupSuccess() {
     _signupButton.setEnabled(true);
     setResult(RESULT_OK, null);
@@ -88,12 +109,20 @@ public class signupActivity extends AppCompatActivity {
     startActivity(intent);
   }
 
+  /**
+   * On signup failed.
+   */
   public void onSignupFailed() {
     Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
     _signupButton.setEnabled(true);
   }
 
+  /**
+   * Validate boolean.
+   *
+   * @return the boolean
+   */
   public boolean validate() {
     boolean valid = true;
 

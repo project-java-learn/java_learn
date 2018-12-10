@@ -21,6 +21,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The type Definitions fragment.
+ */
 public class DefinitionsFragment extends GameFragment {
 
   private List<DDQuestion> questions;

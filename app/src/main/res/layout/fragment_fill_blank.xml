@@ -8,7 +8,7 @@
   android:padding="30dp"
   android:orientation="horizontal"
   android:clipToPadding="false"
-  tools:context=".fillInBlank.FillBlank">
+  tools:context=".view.fillInBlank.FillBlank">
 
   <ImageView
     android:id="@+id/logo_fill_in"

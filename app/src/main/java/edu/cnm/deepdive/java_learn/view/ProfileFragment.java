@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import edu.cnm.deepdive.java_learn.R;
 
+/**
+ * The type Profile fragment.
+ */
 public class ProfileFragment extends Fragment {
 
   private Button friendsButton;

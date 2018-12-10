@@ -1,11 +1,9 @@
-package edu.cnm.deepdive.java_learn.highlight;
+package edu.cnm.deepdive.java_learn.view.highlight;
 
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.card.MaterialCardView;
-import android.support.v4.app.Fragment;
 import android.text.Spannable;
 import android.text.style.BackgroundColorSpan;
 import android.view.LayoutInflater;
@@ -13,24 +11,21 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import android.widget.Toast;
-import edu.cnm.deepdive.java_learn.MainActivity;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
-import edu.cnm.deepdive.java_learn.model.entity.DDQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.HLQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
-import edu.cnm.deepdive.java_learn.view.TextViewCursorWatcher;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Highlight fragment.
+ */
 public class HighlightFragment extends GameFragment {
 
   private List<HLQuestion> questions;

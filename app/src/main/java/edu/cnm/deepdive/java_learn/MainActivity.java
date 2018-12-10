@@ -22,8 +22,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 /**
- * MainActivity class allows the user to select levels and games they want to interact with.
+ * The type Main activity.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -107,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
     service = retrofit.create(JavaLearnService.class);
   }
 
+  /**
+   * Google sign out.
+   */
   public void googleSignOut() {
     JavaLearnApplication application = JavaLearnApplication.getInstance();
     application.getClient().signOut().addOnCompleteListener(this, (task) -> {
