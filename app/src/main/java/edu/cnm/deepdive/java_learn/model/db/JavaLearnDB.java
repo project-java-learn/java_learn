@@ -221,6 +221,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
       hlADao.insert(new HLAnswer("Solution", "3", que14Id));
 
       long que15Id = fbQDao.insert(new FBQuestion(levId4));
+      fbADao.insert(new FBAnswer("Select an answer...", false, que15Id));
       fbADao.insert(new FBAnswer("try", true, que15Id));
       fbADao.insert(new FBAnswer("do", false, que15Id));
       fbADao.insert(new FBAnswer("printf", false, que15Id));
@@ -229,6 +230,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
       fbADao.insert(new FBAnswer("IOException e", false, que15Id));
 
       long que16Id = fbQDao.insert(new FBQuestion(levId4));
+      fbADao.insert(new FBAnswer("Select an answer...", false, que16Id));
       fbADao.insert(new FBAnswer("try", false, que16Id));
       fbADao.insert(new FBAnswer("do", false, que16Id));
       fbADao.insert(new FBAnswer("printf", false, que16Id));
@@ -237,6 +239,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
       fbADao.insert(new FBAnswer("IOException e", false, que16Id));
 
       long que17Id = fbQDao.insert(new FBQuestion(levId4));
+      fbADao.insert(new FBAnswer("Select an answer...", false, que17Id));
       fbADao.insert(new FBAnswer("try", false, que17Id));
       fbADao.insert(new FBAnswer("do", false, que17Id));
       fbADao.insert(new FBAnswer("printf", false, que17Id));
@@ -245,6 +248,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
       fbADao.insert(new FBAnswer("IOException e", true, que17Id));
 
       long que18Id = fbQDao.insert(new FBQuestion(levId4));
+      fbADao.insert(new FBAnswer("Select an answer...", false, que18Id));
       fbADao.insert(new FBAnswer("try", false, que18Id));
       fbADao.insert(new FBAnswer("do", false, que18Id));
       fbADao.insert(new FBAnswer("printf", false, que18Id));

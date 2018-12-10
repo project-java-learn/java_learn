@@ -52,18 +52,6 @@
           android:text="Highlight"
           />
 
-
-        <ImageView
-          android:id="@+id/mastered_check_basic_one"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:padding="20dp"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/game_title_highlight"
-          app:layout_constraintRight_toRightOf="parent"
-          android:src="@drawable/ic_check"
-          />
-
       </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
@@ -106,17 +94,6 @@
           />
 
 
-        <ImageView
-          android:id="@+id/mastered_check_basic_two"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:padding="20dp"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/game_title_fill_in"
-          app:layout_constraintRight_toRightOf="parent"
-          android:src="@drawable/ic_check"
-          />
-
       </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
@@ -155,18 +132,6 @@
           app:layout_constraintTop_toTopOf="parent"
           app:layout_constraintBottom_toBottomOf="parent"
           android:text="Definitions"
-          />
-
-
-        <ImageView
-          android:id="@+id/mastered_check_basic_three"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:padding="20dp"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/game_title_definition"
-          app:layout_constraintRight_toRightOf="parent"
-          android:src="@drawable/ic_check"
           />
 
       </android.support.constraint.ConstraintLayout>
@@ -208,18 +173,6 @@
           app:layout_constraintTop_toTopOf="parent"
           app:layout_constraintBottom_toBottomOf="parent"
           android:text="Multiple Choice"
-          />
-
-
-        <ImageView
-          android:id="@+id/mastered_check_basic_four"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:padding="20dp"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/game_title_multiple"
-          app:layout_constraintRight_toRightOf="parent"
-          android:src="@drawable/ic_check"
           />
 
       </android.support.constraint.ConstraintLayout>
