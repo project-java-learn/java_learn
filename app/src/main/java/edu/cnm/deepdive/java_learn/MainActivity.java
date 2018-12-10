@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    new InitializeDatabaseTask().execute();
+
 //    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
 
 //    setupRetrofit();

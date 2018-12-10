@@ -1,22 +1,28 @@
 package edu.cnm.deepdive.java_learn.view.multipleChoice;
 
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatRadioButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
 import edu.cnm.deepdive.java_learn.model.pojo.MultipleChoiceQWithA;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -37,13 +43,24 @@ public class MultipleChoice extends GameFragment {
   private RadioGroup radiosFive;
   private RadioGroup radiosSix;
   private Button submitAnswers;
+  private ImageView checkMark1;
+  private ImageView checkMark2;
+  private ImageView checkMark3;
+  private ImageView checkMark4;
+  private ImageView checkMark5;
+  private ImageView checkMark6;
+  private List<ImageView> checkMarks;
 
+  @SuppressLint("RestrictedApi")
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
 
     view = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
-    questionViews = new TextView[] {
+
+    checkMarks = new ArrayList<>();
+
+    questionViews = new TextView[]{
         view.findViewById(R.id.question_1),
         view.findViewById(R.id.question_2),
         view.findViewById(R.id.question_3),
@@ -51,7 +68,7 @@ public class MultipleChoice extends GameFragment {
         view.findViewById(R.id.question_5),
         view.findViewById(R.id.question_6)
     };
-    answerGroups = new RadioGroup[] {
+    answerGroups = new RadioGroup[]{
         view.findViewById(R.id.radios_one),
         view.findViewById(R.id.radios_two),
         view.findViewById(R.id.radios_three),
@@ -60,17 +77,43 @@ public class MultipleChoice extends GameFragment {
         view.findViewById(R.id.radios_six)
     };
 
+    checkMark1 = view.findViewById(R.id.check_mark_1);
+    checkMark2 = view.findViewById(R.id.check_mark_2);
+    checkMark3 = view.findViewById(R.id.check_mark_3);
+    checkMark4 = view.findViewById(R.id.check_mark_4);
+    checkMark5 = view.findViewById(R.id.check_mark_5);
+    checkMark6 = view.findViewById(R.id.check_mark_6);
+
+    checkMarks.add(checkMark1);
+    checkMarks.add(checkMark2);
+    checkMarks.add(checkMark3);
+    checkMarks.add(checkMark4);
+    checkMarks.add(checkMark5);
+    checkMarks.add(checkMark6);
+
+    for (ImageView iv: checkMarks) {
+      iv.setVisibility(View.INVISIBLE);
+    }
+
     submitAnswers = view.findViewById(R.id.submit_answers);
     submitAnswers.setOnClickListener(v -> {
+      int correct = 0;
+      int index =0;
+
       for (RadioGroup group : answerGroups) {
         int checkedId = group.getCheckedRadioButtonId();
         if (checkedId >= 0) {
           RadioButton button = getActivity().findViewById(checkedId);
           if ((Boolean) button.getTag()) {
+            correct++;
+            checkMarks.get(index).setVisibility(View.VISIBLE);
             Log.d(MultipleChoice.class.getSimpleName(), "Correct!");
           }
         }
+        index++;
       }
+
+      Toast.makeText(getContext(), "You have " + correct + " out of 6", Toast.LENGTH_LONG).show();
 
       // TODO Register results with Room
     });
@@ -110,7 +153,8 @@ public class MultipleChoice extends GameFragment {
     protected void onPostExecute(List<MultipleChoiceQWithA> questions) {
       int questionNumber = 0;
       for (MultipleChoiceQWithA question : questions) {
-        populateQuestionsAndAnswerButtons(questionViews[questionNumber], answerGroups[questionNumber], question);
+        populateQuestionsAndAnswerButtons(questionViews[questionNumber],
+            answerGroups[questionNumber], question);
         questionNumber++;
       }
     }

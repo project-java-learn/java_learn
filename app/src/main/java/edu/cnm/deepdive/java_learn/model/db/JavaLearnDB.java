@@ -186,7 +186,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
       mcADao.insert(new MultipleChoiceA("6", false, que7Id));
       mcADao.insert(new MultipleChoiceA("3", false, que7Id));
 
-      long que8Id = mcQDao.insert(new MultipleChoiceQ("What does toString return", levId2));
+      long que8Id = mcQDao.insert(new MultipleChoiceQ("What does toString return?", levId2));
       mcADao.insert(new MultipleChoiceA("A String", true, que8Id));
       mcADao.insert(new MultipleChoiceA("StringBuilder", false, que8Id));
       mcADao.insert(new MultipleChoiceA("StringBuffer", false, que8Id));
@@ -215,6 +215,7 @@ public abstract class JavaLearnDB extends RoomDatabase {
       hlADao.insert(new HLAnswer("double[] remainder", "1", que12Id));
 
       long que13Id = hlQDao.insert(new HLQuestion("Access Modifier", levId3));
+      hlADao.insert(new HLAnswer("public", "2", que13Id));
       hlADao.insert(new HLAnswer("private", "2", que13Id));
 
       long que14Id = hlQDao.insert(new HLQuestion("Class Name", levId3));

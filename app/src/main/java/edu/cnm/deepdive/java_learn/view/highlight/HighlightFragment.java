@@ -61,15 +61,15 @@ public class HighlightFragment extends GameFragment {
     submit.setVisibility(View.INVISIBLE);
 
     textViewCursorWatcher.setTextColor(Color.BLACK);
-    textViewCursorWatcher.setText("private static class Solution {\n" +
+    textViewCursorWatcher.setText("public static class Solution {\n" +
         "        double[] quotient;\n "
         + "       double[] remainder;\n" +
         " \n" +
-        "        void set(double[] q, double[] r) {\n" +
-        "            this.quotient = q;\n" +
-        "            this.remainder = r;\n" +
-        "        }\n" +
-        "    }", BufferType.SPANNABLE);
+        "    private void set(double[] q, double[] r) {\n" +
+        "           this.quotient = q;\n" +
+        "           this.remainder = r;\n" +
+        "      }\n" +
+        "  }", BufferType.SPANNABLE);
 
     new QuestionTask().execute();
     return view;

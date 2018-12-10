@@ -38,7 +38,7 @@
     android:id="@+id/all_questions_card"
     style="@style/cardView"
     android:layout_width="550dp"
-    android:layout_height="500dp"
+    android:layout_height="550dp"
     app:layout_constraintBottom_toTopOf="@id/submit_answers"
     app:layout_constraintLeft_toRightOf="@id/snip_of_code_card"
     app:layout_constraintRight_toRightOf="parent"
@@ -108,8 +108,8 @@
               android:id="@+id/answer_1_a"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-
               />
+
             <RadioButton
               android:id="@+id/answer_1_b"
               android:layout_width="wrap_content"
@@ -119,14 +119,12 @@
               android:id="@+id/answer_1_c"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-
               />
             <RadioButton
               android:id="@+id/answer_1_d"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               />
-
           </RadioGroup>
 
 
@@ -198,6 +196,36 @@
 
           </RadioGroup>
 
+        </TableRow>
+
+        <TableRow>
+
+          <ImageView
+            android:id="@+id/check_mark_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:padding="20dp"
+            />
+
+          <ImageView
+            android:id="@+id/check_mark_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:padding="20dp"
+            />
+
+          <ImageView
+            android:id="@+id/check_mark_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:padding="20dp"
+            />
         </TableRow>
 
         <TableRow
@@ -329,6 +357,36 @@
 
           </RadioGroup>
 
+        </TableRow>
+
+        <TableRow>
+
+          <ImageView
+            android:id="@+id/check_mark_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:padding="20dp"
+            />
+
+          <ImageView
+            android:id="@+id/check_mark_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:padding="20dp"
+            />
+
+          <ImageView
+            android:id="@+id/check_mark_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:padding="20dp"
+            />
         </TableRow>
       </TableLayout>
     </LinearLayout>
