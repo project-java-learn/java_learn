@@ -96,7 +96,7 @@
     * [Stetho](https://github.com/facebook/stetho/blob/master/LICENSE)
     * [Retrofit](https://github.com/square/retrofit/blob/master/LICENSE.txt)
     * [ButterKnife](http://jakewharton.github.io/butterknife/)
-    * [Java Learn License]()
+    * [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 ```
 
 ### 16. A link to instructions for building the component.
