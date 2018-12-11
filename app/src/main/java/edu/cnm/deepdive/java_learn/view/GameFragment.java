@@ -39,7 +39,6 @@ public abstract class GameFragment extends Fragment {
 
     @Override
     protected Void doInBackground(String... strings) {
-
       ProgressPojo pojo;
       String token = getString(R.string.authorization_header_format,
           JavaLearnApplication.getInstance().getAccount().getIdToken());
