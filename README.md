@@ -16,7 +16,17 @@ a tool for Java students to supplement their education.
 4. If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
 
 
-5. A description of the current state of completion/readiness of this component, or your project as a whole. This should include a “hit list” of deficiencies: any unimplemented/incomplete elements, and known bugs, that would have to be implemented or corrected for a usable prototype (i.e. one that could be given to a skilled user for testing and feedback), ordered with the most urgent items first.
+### Deficiencies
+
+* Attaching the client and server side together
+
+### Stretch Goals
+
+* User points to be calculated and presented to the user
+* Let the user choose a picture for their profile
+* Add Intermediate and Advanced levels
+* Add a glossary 
+* Let users add friends and see their profile
 
 
 ## Platforms
@@ -39,10 +49,6 @@ a tool for Java students to supplement their education.
 ## External Services
 
 * Google SignIn
- 
-9. For client side components, a list of aesthetic/cosmetic (not functional) improvements that you think would improve this component. This list should be ordered, with those that would give the most improvement (in your opinion) listed first.
-
-10. A list of functional stretch goals. These should be sorted either with those that would add the most utility at the top, or with those that would be the simplest to implement at the top.
 
 ## Links
 
