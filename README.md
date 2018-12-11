@@ -46,18 +46,18 @@
 
 ## Links
 
-    * [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
-    * [User Stories](Java_Learn_UserStories.pdf )
-    * [JavaLearnERD](java_learn_erd.pdf)
-    * [JavaLearnDDL](java_learn_ddl.pdf)
-    * [JavaLearn JavadocHTML]()
-    * [Spring](https://spring.io/projects/spring-restdocs)
-    * [Apache](http://www.apache.org/licenses/LICENSE-2.0)
-    * [Stetho](https://github.com/facebook/stetho/blob/master/LICENSE)
-    * [Retrofit](https://github.com/square/retrofit/blob/master/LICENSE.txt)
-    * [ButterKnife](http://jakewharton.github.io/butterknife/)
-    * [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
-    * [Build Instructions](JavaLearn_BuildComp.pdf)    
-    * [Basic Instructions](JavaLearn_BasicIns.pdf)
+[JavaLearn Wireframes](JavaLearn_Mockup.pdf)
+[User Stories](Java_Learn_UserStories.pdf )
+[JavaLearnERD](java_learn_erd.pdf)
+[JavaLearnDDL](java_learn_ddl.pdf)
+[JavaLearn JavadocHTML]()
+[Spring](https://spring.io/projects/spring-restdocs)
+[Apache](http://www.apache.org/licenses/LICENSE-2.0)
+[Stetho](https://github.com/facebook/stetho/blob/master/LICENSE)
+[Retrofit](https://github.com/square/retrofit/blob/master/LICENSE.txt)
+[ButterKnife](http://jakewharton.github.io/butterknife/)
+[Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
+[Build Instructions](JavaLearn_BuildComp.pdf)    
+[Basic Instructions](JavaLearn_BasicIns.pdf)
     
 
