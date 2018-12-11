@@ -170,7 +170,6 @@
         style="@style/TextViewStyle20"
         android:layout_width="625dp"
         android:layout_height="fill_parent"
-        android:layout_gravity="center"
         android:text="@string/definition_five_question"
         />
       <android.support.v7.widget.AppCompatSpinner

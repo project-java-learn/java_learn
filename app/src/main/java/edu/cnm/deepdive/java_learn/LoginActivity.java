@@ -112,7 +112,6 @@ public class LoginActivity extends AppCompatActivity {
       } catch (ApiException e) {
         Toast.makeText(this, getString(R.string.google_signin_failure), Toast.LENGTH_LONG).show();
       }
-
     }
   }
 

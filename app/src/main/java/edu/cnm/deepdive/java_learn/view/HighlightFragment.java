@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView.BufferType;
 import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.controller.MainActivity;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.HLQuestion;
@@ -58,14 +59,14 @@ public class HighlightFragment extends GameFragment {
 
     textViewCursorWatcher.setTextColor(Color.BLACK);
     textViewCursorWatcher.setText("private static class Solution {\n" +
-        "        double[] quotient;\n "
-        + "       double[] remainder;\n" +
+        "   double[] quotient;\n "
+        + "  double[] remainder;\n" +
         " \n" +
-        "        void set(double[] q, double[] r) {\n" +
-        "            this.quotient = q;\n" +
-        "            this.remainder = r;\n" +
-        "        }\n" +
-        "    }", BufferType.SPANNABLE);
+        "   void set(double[] q, double[] r) {\n" +
+        "     this.quotient = q;\n" +
+        "     this.remainder = r;\n" +
+        "   }\n" +
+        "}", BufferType.SPANNABLE);
 
     new QuestionTask().execute();
     return view;

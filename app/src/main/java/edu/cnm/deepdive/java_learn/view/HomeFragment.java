@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import edu.cnm.deepdive.java_learn.LoginActivity;
 import edu.cnm.deepdive.java_learn.R;
+import edu.cnm.deepdive.java_learn.controller.MainActivity;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
 public class HomeFragment extends Fragment {

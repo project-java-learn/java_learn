@@ -42,13 +42,11 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    String id = JavaLearnApplication.getInstance().getAccount().getId();
-
     new InitializeDatabaseTask().execute();
 
     setupRetrofit();
 
-    testCheckUser();
+   // testCheckUser();
 
     HomeFragment homeFragment = new HomeFragment();
     fab = findViewById(R.id.fab);
