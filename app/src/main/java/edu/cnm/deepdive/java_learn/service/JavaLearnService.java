@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
 public interface JavaLearnService {
@@ -23,6 +24,10 @@ public interface JavaLearnService {
   @POST("progress")
   Call<ProgressPojo> postProgress(@Header("Authorization") String authorization,
       @Body ProgressPojo progressPojo);
+
+  @PATCH
+  Call<ProgressPojo> updateProgress(@Header("Authorization") String authorization,
+      @Body ProgressPojo progress);
 
   @GET("user/{userId}/progress/{progressId}/score")
   Call<ProgressPojo> getScore(@Header("Authorization") String authorization,
@@ -42,10 +47,6 @@ public interface JavaLearnService {
 
   @POST("users")
   Call<UserPojo> newUser(@Header("Authorization") String authorization, @Body UserPojo user);
-
-  @POST("users/{userId}/progress")
-  Call<ProgressPojo> updateProgress(@Header("Authorization") String authorization,
-      @Body ProgressPojo progress);
 
 
 }

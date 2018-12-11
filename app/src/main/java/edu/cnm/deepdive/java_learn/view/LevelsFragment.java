@@ -5,13 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import edu.cnm.deepdive.java_learn.R;
-import edu.cnm.deepdive.java_learn.view.FillBlankFragment;
-import edu.cnm.deepdive.java_learn.view.HighlightFragment;
-import edu.cnm.deepdive.java_learn.view.MultipleChoiceFragment;
-import edu.cnm.deepdive.java_learn.view.DefinitionsFragment;
 
 /**
  * LevelsFragment class allows the user to select between 4 different game levels
@@ -31,40 +26,28 @@ public class LevelsFragment extends Fragment {
     // or this fragment
     View view = inflater.inflate(R.layout.fragment_levels_cards, container, false);
     levelOneButton = view.findViewById(R.id.highlight_card);
-    levelOneButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        HighlightFragment hf = new HighlightFragment();
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, hf)
-            .addToBackStack("Highlight Level").commit();
-      }
+    levelOneButton.setOnClickListener(v -> {
+      HighlightFragment hf = new HighlightFragment();
+      getFragmentManager().beginTransaction().replace(R.id.fragment_container, hf)
+          .addToBackStack("Highlight Level").commit();
     });
     levelTwoButton = view.findViewById(R.id.fill_in_card);
-    levelTwoButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        FillBlankFragment fb = new FillBlankFragment();
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, fb)
-            .addToBackStack("Fill In The Blank Level").commit();
-      }
+    levelTwoButton.setOnClickListener(v -> {
+      FillBlankFragment fb = new FillBlankFragment();
+      getFragmentManager().beginTransaction().replace(R.id.fragment_container, fb)
+          .addToBackStack("Fill In The Blank Level").commit();
     });
     levelThreeButton = view.findViewById(R.id.definitions_card);
-    levelThreeButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        DefinitionsFragment df = new DefinitionsFragment();
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, df)
-            .addToBackStack("Definitions Level").commit();
-      }
+    levelThreeButton.setOnClickListener(v -> {
+      DefinitionsFragment df = new DefinitionsFragment();
+      getFragmentManager().beginTransaction().replace(R.id.fragment_container, df)
+          .addToBackStack("Definitions Level").commit();
     });
     levelFourButton = view.findViewById(R.id.multiple_choice_card);
-    levelFourButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        MultipleChoiceFragment mc = new MultipleChoiceFragment();
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, mc)
-            .addToBackStack("Multiple Choice Level").commit();
-      }
+    levelFourButton.setOnClickListener(v -> {
+      MultipleChoiceFragment mc = new MultipleChoiceFragment();
+      getFragmentManager().beginTransaction().replace(R.id.fragment_container, mc)
+          .addToBackStack("Multiple Choice Level").commit();
     });
     return view;
   }
