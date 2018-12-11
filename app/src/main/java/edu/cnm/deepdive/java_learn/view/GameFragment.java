@@ -7,7 +7,6 @@ import edu.cnm.deepdive.java_learn.model.pojo.ProgressPojo;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 import edu.cnm.deepdive.java_learn.service.JavaLearnService;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Response;
 import retrofit2.Retrofit;

@@ -11,11 +11,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
+import edu.cnm.deepdive.java_learn.model.pojo.ProgressPojo;
 import edu.cnm.deepdive.java_learn.model.pojo.UserPojo;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 import edu.cnm.deepdive.java_learn.service.JavaLearnService;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
 import edu.cnm.deepdive.java_learn.view.HomeFragment;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,29 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
     new InitializeDatabaseTask().execute();
 
-//    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+    setupRetrofit();
 
-//    setupRetrofit();
-//
-//    UserPojo user = new UserPojo();
-//    user.setUsername(email);
-
-//    service.newUser(token, user).enqueue(new Callback<UserPojo>() {
-//      @Override
-//      public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
-//        if(response.isSuccessful()) {
-//
-//        } else {
-//          //googleSignOut();
-//        }
-//      }
-//
-//      @Override
-//      public void onFailure(Call<UserPojo> call, Throwable t) {
-//        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
-//        throw new RuntimeException(t);
-//      }
-//    });
+    new CheckBackEndTask().execute();
 
     HomeFragment homeFragment = new HomeFragment();
     fab = findViewById(R.id.fab);
@@ -74,13 +58,14 @@ public class MainActivity extends AppCompatActivity {
       Fragment fragment = new HomeFragment();
 
       if (getSupportFragmentManager()
-          .findFragmentById((R.id.fragment_container)) instanceof GameFragment){
+          .findFragmentById((R.id.fragment_container)) instanceof GameFragment) {
         AlertDialog.Builder builder = new Builder(this);
         builder.setTitle("Back to Home Page");
         builder.setTitle("Go back to home screen?");
 
         builder.setPositiveButton("Yes", (dialog, which) -> {
-          getSupportFragmentManager().popBackStack("home", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+          getSupportFragmentManager()
+              .popBackStack("home", FragmentManager.POP_BACK_STACK_INCLUSIVE);
           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment)
               .commit();
         });
@@ -120,6 +105,80 @@ public class MainActivity extends AppCompatActivity {
     });
   }
 
+  private void testCheckUser() {
+    UserPojo user = new UserPojo();
+    String email = JavaLearnApplication.getInstance().getAccount().getEmail();
+    user.setUsername(email);
+
+    String token = getString(
+        R.string.authorization_header_format,
+        JavaLearnApplication.getInstance().getAccount().getIdToken());
+
+    try {
+      Response<UserPojo> response = service.checkUser(token).execute();
+      if (response.isSuccessful()) {
+        testPostProgress();
+      } else {
+        googleSignOut();
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  private void testPostProgress() {
+    ProgressPojo progress = new ProgressPojo();
+    List<String> test = new ArrayList<>();
+    test.add("test");
+    test.add("testing");
+    progress.setScore(500);
+    progress.setLevels(test);
+
+    String token = getString(
+        R.string.authorization_header_format,
+        JavaLearnApplication.getInstance().getAccount().getIdToken());
+
+    try {
+      Response<ProgressPojo> response = service.postProgress(token, progress).execute();
+      if (response.isSuccessful()) {
+        testUpdateProgress();
+      } else {
+        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+
+  }
+
+  private void testUpdateProgress() {
+    ProgressPojo pojo;
+    String token = getString(R.string.authorization_header_format,
+        JavaLearnApplication.getInstance().getAccount().getIdToken());
+    try {
+      Response<ProgressPojo> response = service.checkProgress(token).execute();
+      if (response.isSuccessful()) {
+        pojo = response.body();
+        List<String> moreLevels = pojo.getLevels();
+        int score = pojo.getScore();
+        moreLevels.add("check check");
+        score += 250;
+
+        pojo.setLevels(moreLevels);
+        pojo.setScore(score);
+
+        Response response1 = service.updateProgress(token, pojo).execute();
+        if (!response1.isSuccessful()) {
+          Toast.makeText(MainActivity.this, "Update progress failed", Toast.LENGTH_LONG).show();
+        }
+
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
   private class InitializeDatabaseTask extends AsyncTask<Void, Void, Void> {
 
     @Override
@@ -129,6 +188,13 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+  private class CheckBackEndTask extends AsyncTask<Void, Void, Void> {
 
+    @Override
+    protected Void doInBackground(Void... voids) {
+      testCheckUser();
+      return null;
+    }
+  }
 }
 

@@ -25,7 +25,7 @@ public interface JavaLearnService {
   Call<ProgressPojo> postProgress(@Header("Authorization") String authorization,
       @Body ProgressPojo progressPojo);
 
-  @PATCH
+  @PATCH("progress")
   Call<ProgressPojo> updateProgress(@Header("Authorization") String authorization,
       @Body ProgressPojo progress);
 
