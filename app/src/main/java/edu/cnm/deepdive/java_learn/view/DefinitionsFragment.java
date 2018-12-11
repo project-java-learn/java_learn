@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
@@ -27,56 +29,55 @@ import java.util.List;
  */
 public class DefinitionsFragment extends GameFragment {
 
+  @BindView(R.id.definition_one_spinner)
+  Spinner spinner1;
+  @BindView(R.id.definition_second_spinner)
+  Spinner spinner2;
+  @BindView(R.id.definition_third_spinner)
+  Spinner spinner3;
+  @BindView(R.id.definition_fourth_spinner)
+  Spinner spinner4;
+  @BindView(R.id.definition_fifth_spinner)
+  Spinner spinner5;
+  @BindView(R.id.first_definition)
+  TextView question1;
+  @BindView(R.id.second_definition)
+  TextView question2;
+  @BindView(R.id.third_definition)
+  TextView question3;
+  @BindView(R.id.fourth_definition)
+  TextView question4;
+  @BindView(R.id.fifth_definition)
+  TextView question5;
+  @BindView(R.id.def_check_mark_1)
+  ImageView checkMark1;
+  @BindView(R.id.def_check_mark_2)
+  ImageView checkMark2;
+  @BindView(R.id.def_check_mark_3)
+  ImageView checkMark3;
+  @BindView(R.id.def_check_mark_4)
+  ImageView checkMark4;
+  @BindView(R.id.def_check_mark_5)
+  ImageView checkMark5;
+
+  private Button submitButton;
   private List<DDQuestion> questions;
   private List<DDAnswer> answers;
   private List<Spinner> spinners;
   private List<TextView> questionTexts;
   private List<ImageView> checkMarks;
-  private Spinner spinner1;
-  private Spinner spinner2;
-  private Spinner spinner3;
-  private Spinner spinner4;
-  private Spinner spinner5;
-  private TextView question1;
-  private TextView question2;
-  private TextView question3;
-  private TextView question4;
-  private TextView question5;
-  private ImageView checkMark1;
-  private ImageView checkMark2;
-  private ImageView checkMark3;
-  private ImageView checkMark4;
-  private ImageView checkMark5;
-  private Button submitButton;
 
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_definitions, container, false);
+    ButterKnife.bind(this, view);
     questions = new ArrayList<>();
     answers = new ArrayList<>();
     spinners = new ArrayList<>();
     questionTexts = new ArrayList<>();
     checkMarks = new ArrayList<>();
-
-    spinner1 = view.findViewById(R.id.definition_one_spinner);
-    spinner2 = view.findViewById(R.id.definition_second_spinner);
-    spinner3 = view.findViewById(R.id.definition_third_spinner);
-    spinner4 = view.findViewById(R.id.definition_fourth_spinner);
-    spinner5 = view.findViewById(R.id.definition_fifth_spinner);
-
-    question1 = view.findViewById(R.id.first_definition);
-    question2 = view.findViewById(R.id.second_definition);
-    question3 = view.findViewById(R.id.third_definition);
-    question4 = view.findViewById(R.id.fourth_definition);
-    question5 = view.findViewById(R.id.fifth_definition);
-
-    checkMark1 = view.findViewById(R.id.check_mark_1);
-    checkMark2 = view.findViewById(R.id.check_mark_2);
-    checkMark3 = view.findViewById(R.id.check_mark_3);
-    checkMark4 = view.findViewById(R.id.check_mark_4);
-    checkMark5 = view.findViewById(R.id.check_mark_5);
 
     submitButton = view.findViewById(R.id.submit_definitions);
     setSubmitButton();
@@ -99,7 +100,7 @@ public class DefinitionsFragment extends GameFragment {
     checkMarks.add(checkMark4);
     checkMarks.add(checkMark5);
 
-    for (ImageView iv: checkMarks) {
+    for (ImageView iv : checkMarks) {
       iv.setVisibility(View.INVISIBLE);
     }
 

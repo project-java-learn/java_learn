@@ -60,7 +60,7 @@
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
-        android:id="@+id/check_mark_1"
+        android:id="@+id/def_check_mark_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -94,7 +94,7 @@
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
-        android:id="@+id/check_mark_2"
+        android:id="@+id/def_check_mark_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -129,7 +129,7 @@
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
-        android:id="@+id/check_mark_3"
+        android:id="@+id/def_check_mark_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -163,7 +163,7 @@
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
-        android:id="@+id/check_mark_4"
+        android:id="@+id/def_check_mark_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -197,7 +197,7 @@
       </android.support.v7.widget.AppCompatSpinner>
 
       <ImageView
-        android:id="@+id/check_mark_5"
+        android:id="@+id/def_check_mark_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

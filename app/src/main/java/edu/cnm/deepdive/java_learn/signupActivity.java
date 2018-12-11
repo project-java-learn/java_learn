@@ -69,9 +69,8 @@ public class signupActivity extends AppCompatActivity {
 //    EditText password = (TextInputEditText) findViewById(R.id.password_input);
 //    password.setTransformationMethod(new PasswordTransformationMethod());
 
-    TextInputLayout password = (TextInputLayout) findViewById(R.id.password_input_layout);
-    password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/leaguespartanbold.otf"));
-
+//    TextInputLayout password = (TextInputLayout) findViewById(R.id.password_input_layout);
+//    password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/leaguespartanbold.otf"));
   }
 
   /**

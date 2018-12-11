@@ -16,6 +16,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
@@ -33,23 +35,24 @@ import java.util.List;
  */
 public class MultipleChoice extends GameFragment {
 
+  @BindView(R.id.check_mark_1)
+  ImageView checkMark1;
+  @BindView(R.id.check_mark_2)
+  ImageView checkMark2;
+  @BindView(R.id.check_mark_3)
+  ImageView checkMark3;
+  @BindView(R.id.check_mark_4)
+  ImageView checkMark4;
+  @BindView(R.id.check_mark_5)
+  ImageView checkMark5;
+  @BindView(R.id.check_mark_6)
+  ImageView checkMark6;
+
+  private List<ImageView> checkMarks;
   private View view;
   private TextView[] questionViews;
   private RadioGroup[] answerGroups;
-  private RadioGroup radiosOne;
-  private RadioGroup radiosTwo;
-  private RadioGroup radiosThree;
-  private RadioGroup radiosFour;
-  private RadioGroup radiosFive;
-  private RadioGroup radiosSix;
   private Button submitAnswers;
-  private ImageView checkMark1;
-  private ImageView checkMark2;
-  private ImageView checkMark3;
-  private ImageView checkMark4;
-  private ImageView checkMark5;
-  private ImageView checkMark6;
-  private List<ImageView> checkMarks;
 
   @SuppressLint("RestrictedApi")
   @Override
@@ -57,6 +60,7 @@ public class MultipleChoice extends GameFragment {
       Bundle savedInstanceState) {
 
     view = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
+    ButterKnife.bind(this, view);
 
     checkMarks = new ArrayList<>();
 
@@ -76,13 +80,6 @@ public class MultipleChoice extends GameFragment {
         view.findViewById(R.id.radios_five),
         view.findViewById(R.id.radios_six)
     };
-
-    checkMark1 = view.findViewById(R.id.check_mark_1);
-    checkMark2 = view.findViewById(R.id.check_mark_2);
-    checkMark3 = view.findViewById(R.id.check_mark_3);
-    checkMark4 = view.findViewById(R.id.check_mark_4);
-    checkMark5 = view.findViewById(R.id.check_mark_5);
-    checkMark6 = view.findViewById(R.id.check_mark_6);
 
     checkMarks.add(checkMark1);
     checkMarks.add(checkMark2);
