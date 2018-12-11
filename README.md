@@ -70,19 +70,13 @@ a tool for Java students to supplement their education.
 
 #### JavaDocs
 
-[JavaLearn JavadocHTML](file:///C:/Users/creys/Desktop/Bootcamp/projects/java_learn/app/docs/api/index.html)
+[JavaLearn JavadocHTML]()
 
 #### Licenses 
 
 [Spring](https://spring.io/projects/spring-restdocs)
 
-[Apache](http://www.apache.org/licenses/LICENSE-2.0)
-
-[Stetho](https://github.com/facebook/stetho/blob/master/LICENSE)
-
-[Retrofit](https://github.com/square/retrofit/blob/master/LICENSE.txt)
-
-[ButterKnife](http://jakewharton.github.io/butterknife/)
+[Link to Licenses used in project](licenses.md)
 
 [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 
