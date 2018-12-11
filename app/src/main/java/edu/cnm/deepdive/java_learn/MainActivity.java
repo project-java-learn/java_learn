@@ -20,8 +20,6 @@ import edu.cnm.deepdive.java_learn.view.HomeFragment;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -99,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     JavaLearnApplication application = JavaLearnApplication.getInstance();
     application.getClient().signOut().addOnCompleteListener(this, (task) -> {
       application.setAccount(null);
-      Intent intent = new Intent(this, Login.class);
+      Intent intent = new Intent(this, LoginActivity.class);
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
       startActivity(intent);
     });

@@ -4,8 +4,6 @@ package edu.cnm.deepdive.java_learn.view.multipleChoice;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatRadioButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,11 +27,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * This is the MultipleChoice class game that retrieves 1 random question(populated in the textView
+ * This is the MultipleChoiceFragment class game that retrieves 1 random question(populated in the textView
  * the correct answer(populated next to a random radio button in the same RadioGroup as the
  * corresponding populated question) and 3 random wrong answers.
  */
-public class MultipleChoice extends GameFragment {
+public class MultipleChoiceFragment extends GameFragment {
 
   @BindView(R.id.check_mark_1)
   ImageView checkMark1;
@@ -49,7 +47,6 @@ public class MultipleChoice extends GameFragment {
   ImageView checkMark6;
 
   private List<ImageView> checkMarks;
-  private View view;
   private TextView[] questionViews;
   private RadioGroup[] answerGroups;
   private Button submitAnswers;
@@ -59,7 +56,7 @@ public class MultipleChoice extends GameFragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
 
-    view = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
+    View view = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
     ButterKnife.bind(this, view);
 
     checkMarks = new ArrayList<>();
@@ -104,7 +101,7 @@ public class MultipleChoice extends GameFragment {
           if ((Boolean) button.getTag()) {
             correct++;
             checkMarks.get(index).setVisibility(View.VISIBLE);
-            Log.d(MultipleChoice.class.getSimpleName(), "Correct!");
+            Log.d(MultipleChoiceFragment.class.getSimpleName(), "Correct!");
           }
         }
         index++;

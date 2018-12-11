@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
@@ -23,9 +21,9 @@ import com.google.android.gms.tasks.Task;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
 /**
- * The type Login.
+ * The type LoginActivity.
  */
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
   private static final String TAG = "LoginActivity";
   private static final int REQUEST_SIGNUP = 0;
@@ -43,7 +41,7 @@ public class Login extends AppCompatActivity {
   @BindView(R.id.password_input)
   TextInputEditText passwordText;
   /**
-   * The Login button.
+   * The LoginActivity button.
    */
   @BindView(R.id.login_button)
   Button loginButton;
@@ -70,11 +68,11 @@ public class Login extends AppCompatActivity {
 
     signupLink.setOnClickListener(v -> {
       // Start the Signup activity
-      Intent intent = new Intent(getApplicationContext(), signupActivity.class);
+      Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
       startActivityForResult(intent, REQUEST_SIGNUP);
     });
 
-    TextInputLayout password = (TextInputLayout) findViewById(R.id.password_input_layout);
+    TextInputLayout password = findViewById(R.id.password_input_layout);
     password.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/leaguespartanbold.otf"));
 
   }
@@ -92,10 +90,10 @@ public class Login extends AppCompatActivity {
   }
 
   /**
-   * Login.
+   * LoginActivity.
    */
   public void login() {
-    Log.d(TAG, "Login");
+    Log.d(TAG, "LoginActivity");
 
 // TODO comment or uncomment this to control login button
     if (!validate()) {
@@ -105,7 +103,7 @@ public class Login extends AppCompatActivity {
 
     loginButton.setEnabled(false);
 
-    final ProgressDialog progressDialog = new ProgressDialog(Login.this,
+    final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
         R.style.AppTheme);
     progressDialog.setIndeterminate(true);
     progressDialog.setMessage("Authenticating...");
@@ -168,7 +166,7 @@ public class Login extends AppCompatActivity {
    * On login failed.
    */
   public void onLoginFailed() {
-    Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+    Toast.makeText(getBaseContext(), "LoginActivity failed", Toast.LENGTH_LONG).show();
 
     loginButton.setEnabled(true);
   }

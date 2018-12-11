@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.List;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.Retrofit.Builder;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -56,8 +57,8 @@ public class ProfileFragment extends Fragment {
   }
 
   private void setupRetrofit() {
-    retrofit = new Retrofit.Builder()
-        .baseUrl("http://10.0.2.2:28082/rest/")
+    retrofit = new Builder()
+        .baseUrl(getString(R.string.base_url))
         .addConverterFactory(GsonConverterFactory.create())
         .build();
 
