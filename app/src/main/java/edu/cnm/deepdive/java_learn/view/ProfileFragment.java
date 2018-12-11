@@ -2,6 +2,7 @@ package edu.cnm.deepdive.java_learn.view;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,8 @@ public class ProfileFragment extends Fragment {
 
   @BindView(R.id.points_profile)
   TextView points;
+  @BindView(R.id.username_profile)
+  TextView username;
   @BindView(R.id.levels_complete)
   ListView levelsComplete;
 
@@ -37,11 +40,13 @@ public class ProfileFragment extends Fragment {
   private JavaLearnService service;
 
   @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
 
     View view = inflater.inflate(R.layout.fragment_profile, container, false);
     ButterKnife.bind(this, view);
+
+    username.setText(JavaLearnApplication.getInstance().getAccount().getDisplayName());
 
     setupRetrofit();
 

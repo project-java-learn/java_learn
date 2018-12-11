@@ -124,7 +124,12 @@ public class DefinitionsFragment extends GameFragment {
       }
 
       if (correct == 5) {
+        submitButton.setEnabled(false);
         updateProgress("Basic Definitions");
+        Toast.makeText(getContext(),
+            "You have " + correct + "/5 correct. That's all of them! Points added!",
+            Toast.LENGTH_LONG)
+            .show();
       }
       Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
           .show();

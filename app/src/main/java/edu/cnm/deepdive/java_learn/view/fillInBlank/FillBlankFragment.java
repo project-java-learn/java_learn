@@ -101,8 +101,10 @@ public class FillBlankFragment extends GameFragment {
       }
 
       if (correct == 4) {
+        submit.setEnabled(false);
         updateProgress("Basic Fill-in-the-Blank");
-        Toast.makeText(getContext(), "You have " + correct + "/4 correct. That's all of them!",
+        Toast.makeText(getContext(),
+            "You have " + correct + "/4 correct. That's all of them! Points added!",
             Toast.LENGTH_LONG)
             .show();
       }

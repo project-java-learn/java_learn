@@ -88,14 +88,14 @@ public class MultipleChoice extends GameFragment {
     checkMarks.add(checkMark5);
     checkMarks.add(checkMark6);
 
-    for (ImageView iv: checkMarks) {
+    for (ImageView iv : checkMarks) {
       iv.setVisibility(View.INVISIBLE);
     }
 
     submitAnswers = view.findViewById(R.id.submit_answers);
     submitAnswers.setOnClickListener(v -> {
       int correct = 0;
-      int index =0;
+      int index = 0;
 
       for (RadioGroup group : answerGroups) {
         int checkedId = group.getCheckedRadioButtonId();
@@ -111,7 +111,11 @@ public class MultipleChoice extends GameFragment {
       }
 
       if (correct == 6) {
+        submitAnswers.setEnabled(false);
         updateProgress("Basic Multiple Choice");
+        Toast.makeText(getContext(),
+            "You have " + correct + " out of 6. That's all of them! Points added!",
+            Toast.LENGTH_LONG).show();
       }
 
       Toast.makeText(getContext(), "You have " + correct + " out of 6", Toast.LENGTH_LONG).show();
@@ -147,7 +151,6 @@ public class MultipleChoice extends GameFragment {
       Level level = db.getLevelDao().select("Multiple Choice Test");
       return db.getMCQuestionDao().selectWithAnswers(level.getLevelId(), 6); // HACK
     }
-
 
     @Override
     protected void onPostExecute(List<MultipleChoiceQWithA> questions) {

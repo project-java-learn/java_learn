@@ -35,14 +35,15 @@ public class HighlightFragment extends GameFragment {
   private Button button2;
   private Button button3;
   private Button submit;
-  private OnClickListener listener;
+  private OnClickListener listener1;
+  private OnClickListener listener2;
   private int correctAnswers;
   private TextViewCursorWatcher textViewCursorWatcher;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
+
     View view = inflater.inflate(R.layout.fragment_highlight, container, false);
     textViewCursorWatcher = view.findViewById(R.id.highlight_text);
 
@@ -74,7 +75,7 @@ public class HighlightFragment extends GameFragment {
   }
 
   private void setAnswerListener() {
-    listener = (view) -> {
+    listener1 = (view) -> {
       int start = textViewCursorWatcher.getSelectionStart();
       int end = textViewCursorWatcher.getSelectionEnd();
       String str = textViewCursorWatcher.getText().toString().substring(start, end);
@@ -109,16 +110,27 @@ public class HighlightFragment extends GameFragment {
     };
   }
 
+  private void setSubmitListener() {
+    listener2 = (view) -> {
+      Toast
+          .makeText(getContext(), "You have " + correctAnswers + "/5 correct.", Toast.LENGTH_LONG)
+          .show();
+      if (correctAnswers == 4) {
+        Toast
+            .makeText(getContext(),
+                "You have " + correctAnswers + "/5 correct. That's all of them! Points added!",
+                Toast.LENGTH_LONG)
+            .show();
+        submit.setEnabled(false);
+        updateProgress("Basic Highlight");
+      }
+    };
+  }
+
   private boolean checkAnswer(String str, String type) {
     for (HLAnswer a : answers) {
       if (a.getHlAnswer().equals(str) && a.getType().equals(type)) {
         correctAnswers++;
-        Toast
-            .makeText(getContext(), "You have " + correctAnswers + "/4 correct.", Toast.LENGTH_LONG)
-            .show();
-        if (correctAnswers == 4) {
-          updateProgress("Basic Highlight");
-        }
         return true;
       }
     }
@@ -168,9 +180,11 @@ public class HighlightFragment extends GameFragment {
     @Override
     protected void onPostExecute(List<HLAnswer> hlAnswers) {
       setAnswerListener();
+      setSubmitListener();
 
+      submit.setOnClickListener(listener2);
       for (Button button : buttons) {
-        button.setOnClickListener(listener);
+        button.setOnClickListener(listener1);
       }
     }
   }
