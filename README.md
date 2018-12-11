@@ -46,18 +46,46 @@
 
 ## Links
 
+### Wireframe
+
 [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
+
+### User Stories
+
 [User Stories](Java_Learn_UserStories.pdf )
+
+### ERD
+
 [JavaLearnERD](java_learn_erd.pdf)
+
+### DDL
+
 [JavaLearnDDL](java_learn_ddl.pdf)
+
+### JavaDocs
+
 [JavaLearn JavadocHTML]()
+
+### Licenses 
+
 [Spring](https://spring.io/projects/spring-restdocs)
+
 [Apache](http://www.apache.org/licenses/LICENSE-2.0)
+
 [Stetho](https://github.com/facebook/stetho/blob/master/LICENSE)
+
 [Retrofit](https://github.com/square/retrofit/blob/master/LICENSE.txt)
+
 [ButterKnife](http://jakewharton.github.io/butterknife/)
+
 [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
-[Build Instructions](JavaLearn_BuildComp.pdf)    
+
+### Build Instructions
+
+[Build Instructions](JavaLearn_BuildComp.pdf)  
+
+### User Instructions
+
 [Basic Instructions](JavaLearn_BasicIns.pdf)
     
 
