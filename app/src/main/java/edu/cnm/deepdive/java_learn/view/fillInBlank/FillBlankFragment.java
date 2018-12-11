@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import edu.cnm.deepdive.java_learn.model.entity.FBAnswer;
@@ -25,14 +27,24 @@ import java.util.List;
  */
 public class FillBlankFragment extends GameFragment {
 
-  private Spinner spinner1;
-  private Spinner spinner2;
-  private Spinner spinner3;
-  private Spinner spinner4;
-  private ImageView checkMark1;
-  private ImageView checkMark2;
-  private ImageView checkMark3;
-  private ImageView checkMark4;
+  @BindView(R.id.fill_in_one_spinner)
+  Spinner spinner1;
+  @BindView(R.id.fill_in_two_spinner)
+  Spinner spinner2;
+  @BindView(R.id.fill_in_three_spinner)
+  Spinner spinner3;
+  @BindView(R.id.fill_in_four_spinner)
+  Spinner spinner4;
+  @BindView(R.id.fb_check_mark_1)
+  ImageView checkMark1;
+  @BindView(R.id.fb_check_mark_2)
+  ImageView checkMark2;
+  @BindView(R.id.fb_check_mark_3)
+  ImageView checkMark3;
+  @BindView(R.id.fb_check_mark_4)
+  ImageView checkMark4;
+
+
   private List<Spinner> spinners;
   private List<FBQuestion> questions;
   private List<FBAnswer> answers;
@@ -45,22 +57,12 @@ public class FillBlankFragment extends GameFragment {
     // Inflate the layout for this fragment
 
     View view = inflater.inflate(R.layout.fragment_fill_blank, container, false);
+    ButterKnife.bind(this, view);
 
     answers = new ArrayList<>();
     questions = new ArrayList<>();
     spinners = new ArrayList<>();
     checkMarks = new ArrayList<>();
-
-
-    spinner1 = view.findViewById(R.id.fill_in_one_spinner);
-    spinner2 = view.findViewById(R.id.fill_in_two_spinner);
-    spinner3 = view.findViewById(R.id.fill_in_three_spinner);
-    spinner4 = view.findViewById(R.id.fill_in_four_spinner);
-
-    checkMark1 = view.findViewById(R.id.check_mark_1);
-    checkMark2 = view.findViewById(R.id.check_mark_2);
-    checkMark3 = view.findViewById(R.id.check_mark_3);
-    checkMark4 = view.findViewById(R.id.check_mark_4);
 
     submit = view.findViewById(R.id.fill_blank_submit_button);
     setSubmitButton();
