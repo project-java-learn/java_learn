@@ -129,8 +129,6 @@ public class MainActivity extends AppCompatActivity {
   private void testPostProgress() {
     ProgressPojo progress = new ProgressPojo();
     List<String> test = new ArrayList<>();
-    test.add("test");
-    test.add("testing");
     progress.setScore(500);
     progress.setLevels(test);
 
@@ -140,16 +138,12 @@ public class MainActivity extends AppCompatActivity {
 
     try {
       Response<ProgressPojo> response = service.postProgress(token, progress).execute();
-      if (response.isSuccessful()) {
-        testUpdateProgress();
-      } else {
+      if (!response.isSuccessful()) {
         Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
       }
     } catch (IOException e) {
       e.printStackTrace();
     }
-
-
   }
 
   private void testUpdateProgress() {

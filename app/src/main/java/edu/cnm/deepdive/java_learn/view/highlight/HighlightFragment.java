@@ -58,8 +58,6 @@ public class HighlightFragment extends GameFragment {
     buttons.add(button2);
     buttons.add(button3);
 
-    submit.setVisibility(View.INVISIBLE);
-
     textViewCursorWatcher.setTextColor(Color.BLACK);
     textViewCursorWatcher.setText("public static class Solution {\n" +
         "        double[] quotient;\n "
@@ -76,13 +74,13 @@ public class HighlightFragment extends GameFragment {
   }
 
   private void setAnswerListener() {
-    listener = (v) -> {
+    listener = (view) -> {
       int start = textViewCursorWatcher.getSelectionStart();
       int end = textViewCursorWatcher.getSelectionEnd();
       String str = textViewCursorWatcher.getText().toString().substring(start, end);
       Spannable spannable = textViewCursorWatcher.getText();
 
-      switch (v.getId()) {
+      switch (view.getId()) {
         case (R.id.red_button):
           if (checkAnswer(str, "1")) {
             spannable.setSpan(new BackgroundColorSpan(Color.RED), start, end,
@@ -115,8 +113,11 @@ public class HighlightFragment extends GameFragment {
     for (HLAnswer a : answers) {
       if (a.getHlAnswer().equals(str) && a.getType().equals(type)) {
         correctAnswers++;
+        Toast
+            .makeText(getContext(), "You have " + correctAnswers + "/4 correct.", Toast.LENGTH_LONG)
+            .show();
         if (correctAnswers == 4) {
-          submit.setVisibility(View.VISIBLE);
+          updateProgress("Basic Highlight");
         }
         return true;
       }
@@ -142,7 +143,7 @@ public class HighlightFragment extends GameFragment {
     @Override
     protected void onPostExecute(List<HLQuestion> hlQuestions) {
       int index = 0;
-      for(HLQuestion q : questions) {
+      for (HLQuestion q : questions) {
         buttons.get(index).setText(q.getHlQuestion());
         index++;
       }
@@ -168,7 +169,7 @@ public class HighlightFragment extends GameFragment {
     protected void onPostExecute(List<HLAnswer> hlAnswers) {
       setAnswerListener();
 
-      for(Button button : buttons) {
+      for (Button button : buttons) {
         button.setOnClickListener(listener);
       }
     }

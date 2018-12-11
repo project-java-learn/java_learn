@@ -17,8 +17,8 @@ public abstract class GameFragment extends Fragment {
   private Retrofit retrofit;
   private JavaLearnService service;
 
-  protected void updateProgress() {
-    new UpdateProgressTask().execute();
+  protected void updateProgress(String levelComplete) {
+    new UpdateProgressTask().execute(levelComplete);
   }
 
   private void setupRetrofit() {
@@ -30,7 +30,7 @@ public abstract class GameFragment extends Fragment {
     service = retrofit.create(JavaLearnService.class);
   }
 
-  private class UpdateProgressTask extends AsyncTask<Void, Void, Void> {
+  private class UpdateProgressTask extends AsyncTask<String, Void, Void> {
 
     @Override
     protected void onPreExecute() {
@@ -38,7 +38,7 @@ public abstract class GameFragment extends Fragment {
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected Void doInBackground(String... strings) {
 
       ProgressPojo pojo;
       String token = getString(R.string.authorization_header_format,
@@ -49,7 +49,7 @@ public abstract class GameFragment extends Fragment {
           pojo = response.body();
           List<String> moreLevels = pojo.getLevels();
           int score = pojo.getScore();
-          moreLevels.add("check check");
+          moreLevels.add(strings[0]);
           score += 250;
 
           pojo.setLevels(moreLevels);

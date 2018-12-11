@@ -77,7 +77,7 @@ public class FillBlankFragment extends GameFragment {
     checkMarks.add(checkMark3);
     checkMarks.add(checkMark4);
 
-    for (ImageView iv: checkMarks) {
+    for (ImageView iv : checkMarks) {
       iv.setVisibility(View.INVISIBLE);
     }
 
@@ -98,6 +98,13 @@ public class FillBlankFragment extends GameFragment {
           checkMarks.get(index).setVisibility(View.VISIBLE);
         }
         index++;
+      }
+
+      if (correct == 4) {
+        updateProgress("Basic Fill-in-the-Blank");
+        Toast.makeText(getContext(), "You have " + correct + "/4 correct. That's all of them!",
+            Toast.LENGTH_LONG)
+            .show();
       }
       Toast.makeText(getContext(), "You have " + correct + "/4 correct.", Toast.LENGTH_LONG)
           .show();
@@ -129,7 +136,7 @@ public class FillBlankFragment extends GameFragment {
       int index = 0;
       for (FBQuestion q : questions) {
         List<FBAnswer> ans = new ArrayList<>();
-        for(FBAnswer a : answers) {
+        for (FBAnswer a : answers) {
           if (a.getFbQuestionId() == q.getFbQuestionId()) {
             ans.add(a);
           }

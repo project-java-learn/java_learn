@@ -110,11 +110,14 @@ public class MultipleChoice extends GameFragment {
         index++;
       }
 
+      if (correct == 6) {
+        updateProgress("Basic Multiple Choice");
+      }
+
       Toast.makeText(getContext(), "You have " + correct + " out of 6", Toast.LENGTH_LONG).show();
 
-      // TODO Register results with Room
     });
-    new GetQuestionsTask().execute(); // FIXME Should not be hardcoded 1
+    new GetQuestionsTask().execute();
     return view;
   }
 

@@ -122,6 +122,10 @@ public class DefinitionsFragment extends GameFragment {
         }
         index++;
       }
+
+      if (correct == 5) {
+        updateProgress("Basic Definitions");
+      }
       Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
           .show();
     });
