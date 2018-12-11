@@ -2,16 +2,16 @@
 
 ## Motivations 
 
-    * To help others learn the Java programming language. Everyone should learn how to code, if they are willing to. 
-    * There are so many devices that use Java.
+Our motivation for this project was to found within our own needs and struggles of learning the Java language. We wanted to create
+a tool for Java students to supplement their education. 
 
 2. A “functional inventory” for that repository—i.e. what functional components of the overall project are implemented by code in that repository?
 
 ## Team
 
-    * Chantelle Rey-Smith - Design, Google SignIn, and Login Screen, Multiple Choice Game, User Functionality
-    * Matthew Morgan - Definitions Game, Highlight Game, Fill In the Blank Game, Frontend and Backend Database
-    * Leslie Hinds -  Multiple Choice functionality
+* Chantelle Rey-Smith - Design, Google SignIn, Login & Create Account, Multiple Choice Game, User Functionality and Fragment Management
+* Matthew Morgan - Definitions Game, Highlight Game, Fill In the Blank Game, Frontend and Backend Database
+* Leslie Hinds -  Multiple Choice functionality
 
 4. If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
 
@@ -21,24 +21,24 @@
 
 ## Platforms
   
-    * Pixel C API 28 (Emulator)
-    * Nexus 10 API 26 (Emulator)
-    * Java 8, 10, 11
-    * Orientation: Landscape
+* Pixel C API 28 (Emulator)
+* Nexus 10 API 26 (Emulator)
+* Java 8, 10, 11
+* Orientation: Landscape
  
 ## Libraries
 
-    *Spring Boot
-    *Google
-    *Apache
-    *Room
-    *Butterknife
-    *Retrofit
-    *Stetho
+* Spring Boot
+* Google
+* Apache
+* Room
+* Butterknife
+* Retrofit
+* Stetho
 
 ## External Services
 
-    * Google SignIn
+* Google SignIn
  
 9. For client side components, a list of aesthetic/cosmetic (not functional) improvements that you think would improve this component. This list should be ordered, with those that would give the most improvement (in your opinion) listed first.
 
@@ -46,27 +46,27 @@
 
 ## Links
 
-### Wireframe
+#### Wireframe
 
 [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
 
-### User Stories
+#### User Stories
 
 [User Stories](Java_Learn_UserStories.pdf )
 
-### ERD
+#### ERD
 
 [JavaLearnERD](java_learn_erd.pdf)
 
-### DDL
+#### DDL
 
 [JavaLearnDDL](java_learn_ddl.pdf)
 
-### JavaDocs
+#### JavaDocs
 
 [JavaLearn JavadocHTML]()
 
-### Licenses 
+#### Licenses 
 
 [Spring](https://spring.io/projects/spring-restdocs)
 
@@ -80,11 +80,11 @@
 
 [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 
-### Build Instructions
+#### Build Instructions
 
 [Build Instructions](JavaLearn_BuildComp.pdf)  
 
-### User Instructions
+#### User Instructions
 
 [Basic Instructions](JavaLearn_BasicIns.pdf)
     
