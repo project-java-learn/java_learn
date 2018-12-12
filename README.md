@@ -62,27 +62,29 @@ a tool for Java students to supplement their education.
 
 ## Links
 
-#### Wireframe
+### Wireframe
 
 [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
 
-#### User Stories
+### User Stories
 
 [User Stories](Java_Learn_UserStories.pdf )
 
-#### ERD
+### Entity Relationship Diagrams
 
-[JavaLearnERD](java_learn_erd.pdf)
+[Client ERD](JavaLearnClientERD.pdf)
 
-#### DDL
+[Backend ERD](JavaLearnBackendERD.pdf)
+
+### DDL
 
 [JavaLearnDDL](java_learn_ddl.pdf)
 
-#### JavaDocs
+### JavaDocs
 
 [JavaLearn JavadocHTML]()
 
-#### Licenses 
+### Licenses 
 
 [Spring](https://spring.io/projects/spring-restdocs)
 
@@ -90,11 +92,11 @@ a tool for Java students to supplement their education.
 
 [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 
-#### Build Instructions
+### Build Instructions
 
 [Build Instructions](JavaLearn_BuildComp.pdf)  
 
-#### User Instructions
+### User Instructions
 
 [Basic Instructions](JavaLearn_BasicIns.pdf)
     
