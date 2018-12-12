@@ -24,7 +24,10 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * The type Definitions fragment.
+ * This class holds the logic for the Definitions game. Associates spinners with
+ *  defintions and allows users to match the correct word to the definitions. Makes
+ *  a call to the backend once the level has been completed to add progress to the
+ *  user.
  */
 public class DefinitionsFragment extends GameFragment {
 

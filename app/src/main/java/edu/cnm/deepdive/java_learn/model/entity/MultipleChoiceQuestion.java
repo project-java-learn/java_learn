@@ -6,6 +6,10 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a MultipleChoiceQuestion object. Each
+ * MultipleChoiceQuestion object is associated with one Level entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -29,8 +33,11 @@ public class MultipleChoiceQuestion {
   @ColumnInfo(name = "mc_question")
   private String mcQuestion;
 
-  public MultipleChoiceQuestion() {}
-
+  /**
+   * Creates a MultipleChoiceQuestion object.
+   * @param mcQuestion Text of the question.
+   * @param levelId Id of the level this object is associated with.
+   */
   public MultipleChoiceQuestion(@NonNull String mcQuestion, long levelId) {
     this.levelId = levelId;
     this.mcQuestion = mcQuestion;

@@ -8,7 +8,8 @@ import edu.cnm.deepdive.java_learn.model.entity.FillBlankQuestion;
 import java.util.List;
 
 /**
- * FillBlankQuestionDao interface class allows the user to insert and query fill-in-the-blank questions.
+ * FillBlankQuestionDao interface accesses FillBlankQuestion entities from the
+ * database.
  */
 @Dao
 public interface FillBlankQuestionDao {

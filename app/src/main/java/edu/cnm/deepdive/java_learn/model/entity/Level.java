@@ -5,6 +5,9 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a Level object.
+ */
 @Entity
 public class Level {
 
@@ -16,6 +19,10 @@ public class Level {
   @ColumnInfo(name = "level")
   private String level;
 
+  /**
+   * Creates a Level object.
+   * @param level Name of the level.
+   */
   public Level(@NonNull String level) {
     this.level = level;
   }

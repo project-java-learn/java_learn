@@ -8,7 +8,8 @@ import edu.cnm.deepdive.java_learn.model.entity.DefinitionsQuestion;
 import java.util.List;
 
 /**
- * DefinitionsQuestionDao interface class allows the user to insert questions to and from the database.
+ * DefinitionsQuestionDao interface accesses DefinitionsQuestion entities from the
+ * database.
  */
 @Dao
 public interface DefinitionsQuestionDao {

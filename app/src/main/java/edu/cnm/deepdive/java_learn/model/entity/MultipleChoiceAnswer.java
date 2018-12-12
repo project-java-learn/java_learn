@@ -6,6 +6,11 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a MultipleChoiceAnswer object. Each
+ * MultipleChoiceAnswer object is associated with one MultipleChoiceQuestion
+ * entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -32,6 +37,12 @@ public class MultipleChoiceAnswer {
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
+  /**
+   * Creates a MultipleChoiceAnswer object.
+   * @param mcAnswer Text of the answer.
+   * @param isCorrect Determines if answer is correct. True if correct, false otherwise.
+   * @param mcQuestionId Id of the question this object is associated with.
+   */
   public MultipleChoiceAnswer(@NonNull String mcAnswer, boolean isCorrect, long mcQuestionId) {
     this.mcQuestionId = mcQuestionId;
     this.mcAnswer = mcAnswer;

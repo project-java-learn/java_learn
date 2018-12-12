@@ -7,6 +7,10 @@ import android.arch.persistence.room.PrimaryKey;
 import android.media.Image;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a FillBlankQuestion object. Each
+ * FillBlankQuestion object is associated with one Level entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -26,7 +30,10 @@ public class FillBlankQuestion {
   @ColumnInfo(name = "level_id")
   private long levelId;
 
-
+  /**
+   * Creates a FillBlankQuestion object.
+   * @param levelId Id of level this object is associated with.
+   */
   public FillBlankQuestion(long levelId) {
     this.levelId = levelId;
   }

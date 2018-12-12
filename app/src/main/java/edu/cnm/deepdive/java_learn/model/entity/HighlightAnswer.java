@@ -6,6 +6,10 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a HighlightAnswer object. Each
+ * HighlightAnswer object is associated with one HighlightQuestion entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -32,6 +36,12 @@ public class HighlightAnswer {
   @ColumnInfo(name = "type")
   private String type;
 
+  /**
+   * Cerates a HighlightAnswer object.
+   * @param hlAnswer Text of the answer.
+   * @param type Type of the answer to be highlighted.
+   * @param hlQuestionId Id of the question this object is associated with.
+   */
   public HighlightAnswer( @NonNull String hlAnswer, String type, long hlQuestionId) {
     this.hlQuestionId = hlQuestionId;
     this.hlAnswer = hlAnswer;

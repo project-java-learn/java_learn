@@ -6,6 +6,10 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a HighlightQuestion object. Each
+ * HighlightQuestion object is associated with one Level entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -29,6 +33,11 @@ public class HighlightQuestion {
   @ColumnInfo(name = "hl_question")
   private String hlQuestion;
 
+  /**
+   * Creates a HighlightQuestion object.
+   * @param hlQuestion Text of the question.
+   * @param levelId Id of the level this object is associated with.
+   */
   public HighlightQuestion(@NonNull String hlQuestion, long levelId) {
     this.levelId = levelId;
     this.hlQuestion = hlQuestion;

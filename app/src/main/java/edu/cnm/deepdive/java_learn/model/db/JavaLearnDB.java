@@ -27,9 +27,9 @@ import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceAnswer;
 import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceQuestion;
 
 /**
- * JavaLearnDB class allows the user to create a database for holding user levels, game progress
- * and holds the questions and answers for Drag and Drop, HighLight, Fill-in-the-Blank, and Multiple
- * Choice.
+ * JavaLearnDB class allows the user to create a database for holding user levels,
+ * and holds the questions and answers for Drag and Drop, HighLight,
+ * Fill-in-the-Blank, and Multiple Choice.
  */
 @Database(
     entities = {Level.class, DefinitionsAnswer.class, DefinitionsQuestion.class, FillBlankAnswer.class, FillBlankQuestion.class,

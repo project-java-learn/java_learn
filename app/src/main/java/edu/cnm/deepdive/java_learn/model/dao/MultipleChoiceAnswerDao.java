@@ -8,7 +8,8 @@ import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceAnswer;
 import java.util.List;
 
 /**
- * MultipleChoiceAnswerDao Interface class that allows the user to insert and query answers from the database.
+ * MultipleChoiceAnswerDao interface accesses MultipleChoiceAnswer entities from
+ * the database.
  */
 @Dao
 public interface MultipleChoiceAnswerDao {

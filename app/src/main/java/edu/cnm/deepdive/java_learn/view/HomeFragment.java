@@ -1,6 +1,5 @@
 package edu.cnm.deepdive.java_learn.view;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,7 +16,8 @@ import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
 /**
- * The type Home fragment.
+ * This is the landing fragment for when a user first logs in. Users can navigate
+ * to the levels pages or to their profile from this page, or log out of the app.
  */
 public class HomeFragment extends Fragment {
 

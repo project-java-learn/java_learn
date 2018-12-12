@@ -2,6 +2,10 @@ package edu.cnm.deepdive.java_learn.model.pojo;
 
 import java.util.List;
 
+/**
+ * This class creates an object that can be sent to the backend to post/patch
+ * the progress of a user.
+ */
 public class ProgressPojo {
 
   private int score;

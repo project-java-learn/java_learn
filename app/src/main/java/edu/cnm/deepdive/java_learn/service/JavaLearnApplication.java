@@ -9,7 +9,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions.Builder;
 import edu.cnm.deepdive.java_learn.R;
 
 /**
- * The type Java learn application.
+ * Application class. Gives an instance of the application pass around and creates
+ * a client object to be used to get information about the user from their Google
+ * account.
  */
 public class JavaLearnApplication extends Application {
 

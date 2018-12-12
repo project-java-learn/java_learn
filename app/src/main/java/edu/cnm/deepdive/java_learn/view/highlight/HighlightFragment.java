@@ -24,7 +24,9 @@ import java.util.List;
 
 
 /**
- * The type Highlight fragment.
+ * This class holds the logic for the Highlight game. This game allows users to
+ * highlight text and check if they have correctly highlighted the requested piece
+ * of code. Makes a call to add progress to the user once it has been completed.
  */
 public class HighlightFragment extends GameFragment {
 

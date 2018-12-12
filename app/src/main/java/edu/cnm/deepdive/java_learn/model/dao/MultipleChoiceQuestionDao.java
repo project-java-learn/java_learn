@@ -10,9 +10,8 @@ import java.util.List;
 
 
 /**
- * MultipleChoiceQuestionDao Interface class that allows the user to to insert and query questions from the
- * database.
- *
+ * MultipleChoiceQuestionDao interface accesses MultipleChoiceQuestion entities from
+ * the database.
  */
 @Dao
 public interface MultipleChoiceQuestionDao {

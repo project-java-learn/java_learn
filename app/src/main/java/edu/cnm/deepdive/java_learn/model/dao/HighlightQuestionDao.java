@@ -8,8 +8,8 @@ import edu.cnm.deepdive.java_learn.model.entity.HighlightQuestion;
 import java.util.List;
 
 /**
- * HighlightQuestionDao interface class that will allow the user to insert to the database
- * and query questions from the database.
+ * HighlightQuestionDao interface accesses HighlightAnswer entities from the
+ * database.
  */
 @Dao
 public interface HighlightQuestionDao {

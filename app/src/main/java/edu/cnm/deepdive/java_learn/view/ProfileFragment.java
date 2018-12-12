@@ -26,7 +26,8 @@ import retrofit2.Retrofit.Builder;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * The type Profile fragment.
+ * This class is used to display the progress of the user. Displays their points
+ * and the levels they have completed.
  */
 public class ProfileFragment extends Fragment {
 

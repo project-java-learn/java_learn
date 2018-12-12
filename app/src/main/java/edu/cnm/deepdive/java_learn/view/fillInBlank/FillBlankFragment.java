@@ -23,7 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Fill blank fragment.
+ * Class that holds the logic to play the Fill-in-the-Blank game mode. Associates
+ * spinners with the correct numbers on the picture of code. Makes a call to the
+ * backend when a level is completed.
  */
 public class FillBlankFragment extends GameFragment {
 

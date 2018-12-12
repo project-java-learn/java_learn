@@ -28,7 +28,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
- * The type Main activity.
+ * MainActivity is used to setup functionality of the Hom floating action button
+ * and determines whether the current user is new or not and posts initial progress
+ * to new users.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   /**
-   * Google sign out.
+   * Method called when the user would like to log out, or when the initial login fails.
    */
   public void googleSignOut() {
     JavaLearnApplication application = JavaLearnApplication.getInstance();
@@ -140,33 +142,6 @@ public class MainActivity extends AppCompatActivity {
       Response<ProgressPojo> response = service.postProgress(token, progress).execute();
       if (!response.isSuccessful()) {
         Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
-      }
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  private void testUpdateProgress() {
-    ProgressPojo pojo;
-    String token = getString(R.string.authorization_header_format,
-        JavaLearnApplication.getInstance().getAccount().getIdToken());
-    try {
-      Response<ProgressPojo> response = service.checkProgress(token).execute();
-      if (response.isSuccessful()) {
-        pojo = response.body();
-        List<String> moreLevels = pojo.getLevels();
-        int score = pojo.getScore();
-        moreLevels.add("check check");
-        score += 250;
-
-        pojo.setLevels(moreLevels);
-        pojo.setScore(score);
-
-        Response response1 = service.updateProgress(token, pojo).execute();
-        if (!response1.isSuccessful()) {
-          Toast.makeText(MainActivity.this, "Update progress failed", Toast.LENGTH_LONG).show();
-        }
-
       }
     } catch (IOException e) {
       e.printStackTrace();

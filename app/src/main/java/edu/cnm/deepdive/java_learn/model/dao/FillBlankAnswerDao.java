@@ -8,7 +8,8 @@ import edu.cnm.deepdive.java_learn.model.entity.FillBlankAnswer;
 import java.util.List;
 
 /**
- * FillBlankAnswerDao interface class allows the user to insert answers into the database and query them.
+ * FillBlankDao interface accesses FillBlankAnswer entities from the
+ * database.
  */
 @Dao
 public interface FillBlankAnswerDao {

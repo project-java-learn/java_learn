@@ -6,6 +6,10 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a FillBlankAnswer object. Each
+ * FillBlankAnswer object is associated with one FillBlankQuestion entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -32,6 +36,12 @@ public class FillBlankAnswer {
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
+  /**
+   * Creates a FillBlankAnswer object.
+   * @param fbAnswer Text of the answer.
+   * @param isCorrect Determines if answer is correct. True if correct, false otherwise.
+   * @param fbQuestionId Id of question this oject is associated with.
+   */
   public FillBlankAnswer(@NonNull String fbAnswer, boolean isCorrect, long fbQuestionId) {
     this.fbQuestionId = fbQuestionId;
     this.fbAnswer = fbAnswer;

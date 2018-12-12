@@ -12,6 +12,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * This class is used to give a common super class to all of the game types for
+ * modularity in the code. It also holds the logic to add progress to the user
+ * on the backend.
+ */
 public abstract class GameFragment extends Fragment {
 
   private Retrofit retrofit;
@@ -23,7 +28,7 @@ public abstract class GameFragment extends Fragment {
 
   private void setupRetrofit() {
     retrofit = new Retrofit.Builder()
-        .baseUrl("http://10.0.2.2:28082/rest/")
+        .baseUrl(getString(R.string.base_url))
         .addConverterFactory(GsonConverterFactory.create())
         .build();
 

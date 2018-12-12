@@ -6,6 +6,10 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a DefinitionsQuestion object. Each
+ * DefinitionsQuestion object is associated with one Level entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -29,6 +33,11 @@ public class DefinitionsQuestion {
   @ColumnInfo(name = "def_question")
   private String defQuestion;
 
+  /**
+   * Creates a DefinitionsQuestion object.
+   * @param defQuestion Text of the question.
+   * @param levelId Id of level the object is associated with.
+   */
   public DefinitionsQuestion(@NonNull String defQuestion, long levelId) {
     this.defQuestion = defQuestion;
     this.levelId = levelId;

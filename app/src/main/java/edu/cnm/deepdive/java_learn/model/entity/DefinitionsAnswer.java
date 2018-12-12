@@ -6,6 +6,10 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+/**
+ * This is the entity class that creates a DefinitionsAnswer object. Each
+ * DefinitionsAnswer object is associated with one DefinitionsQuestion entity.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -32,6 +36,12 @@ public class DefinitionsAnswer {
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
+  /**
+   * Creates a DefinitionsAnswer object.
+   * @param defAnswer Text of the answer.
+   * @param isCorrect Determines if answer is correct. True if correct, false otherwise.
+   * @param defQuestionId Id of question this oject is associated with.
+   */
   public DefinitionsAnswer( @NonNull String defAnswer, boolean isCorrect, long defQuestionId) {
     this.defQuestionId = defQuestionId;
     this.defAnswer = defAnswer;
