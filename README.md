@@ -92,7 +92,7 @@ If the code in the repository implements a web service, list the primary endpoin
 
 [Spring](https://spring.io/projects/spring-restdocs)
 
-[Link to Licenses used in project](licenses.md)
+[Link to Licenses used in project](/licenses)
 
 [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 
