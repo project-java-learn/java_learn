@@ -20,11 +20,12 @@ a tool for Java students to supplement their education.
 * Matthew Morgan - Definitions Game, Highlight Game, Fill In the Blank Game, Frontend and Backend Database
 * Leslie Hinds -  Multiple Choice functionality
 
-4. If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
+If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
+## Web Server
 
 ### Web Service
 
-* [API Documentation] (https://github.com/project-java-learn/java_learn/blob/master/API_documentation.md)
+* [API Documentation] (API_documentation.md)
 
 
 ### Deficiencies
