@@ -15,7 +15,7 @@
     android:theme="@style/AppTheme"
     android:name=".service.JavaLearnApplication">
     <activity
-      android:name=".MainActivity"
+      android:name=".controller.MainActivity"
       android:screenOrientation="landscape"
       android:theme="@style/AppTheme">
     </activity>

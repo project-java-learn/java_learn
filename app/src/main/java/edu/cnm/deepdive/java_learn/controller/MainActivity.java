@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.java_learn;
+package edu.cnm.deepdive.java_learn.controller;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,6 +10,8 @@ import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+import edu.cnm.deepdive.java_learn.LoginActivity;
+import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
 import edu.cnm.deepdive.java_learn.model.pojo.ProgressPojo;
 import edu.cnm.deepdive.java_learn.model.pojo.UserPojo;
