@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     new InitializeDatabaseTask().execute();
 
     setupRetrofit();
+    setFabListener();
 
     new CheckBackEndTask().execute();
 
@@ -169,11 +170,6 @@ public class MainActivity extends AppCompatActivity {
     protected Void doInBackground(Void... voids) {
       checkUser();
       return null;
-    }
-
-    @Override
-    protected void onPostExecute(Void aVoid) {
-      setFabListener();
     }
   }
 }
