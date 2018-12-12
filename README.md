@@ -12,6 +12,7 @@ a tool for Java students to supplement their education.
 * Definitions Game
 * Highlight Game
 * Fill in the Blank Game
+* Client-side/backend communication.
 
 ## Team
 
@@ -28,7 +29,7 @@ a tool for Java students to supplement their education.
 
 ### Deficiencies
 
-* Attaching the client and server side together
+* Credentials will eventually become stale and the app will log you out if you close the app and then come back.
 
 ### Stretch Goals
 
