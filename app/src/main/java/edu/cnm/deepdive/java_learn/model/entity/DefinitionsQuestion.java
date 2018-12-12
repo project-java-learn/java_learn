@@ -16,32 +16,30 @@ import android.support.annotation.NonNull;
         )
     }
 )
-public class MultipleChoiceQ {
+public class DefinitionsQuestion {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "mc_question_id")
-  private long mcQuestionId;
+  @ColumnInfo(name = "def_question_id")
+  private long defQuestionId;
 
   @ColumnInfo(name = "level_id")
   private long levelId;
 
   @NonNull
-  @ColumnInfo(name = "mc_question")
-  private String mcQuestion;
+  @ColumnInfo(name = "def_question")
+  private String defQuestion;
 
-  public MultipleChoiceQ() {}
-
-  public MultipleChoiceQ(@NonNull String mcQuestion, long levelId) {
+  public DefinitionsQuestion(@NonNull String defQuestion, long levelId) {
+    this.defQuestion = defQuestion;
     this.levelId = levelId;
-    this.mcQuestion = mcQuestion;
   }
 
-  public long getMcQuestionId() {
-    return mcQuestionId;
+  public long getDefQuestionId() {
+    return defQuestionId;
   }
 
-  public void setMcQuestionId(long mcQuestionId) {
-    this.mcQuestionId = mcQuestionId;
+  public void setDefQuestionId(long defQuestionId) {
+    this.defQuestionId = defQuestionId;
   }
 
   public long getLevelId() {
@@ -53,11 +51,11 @@ public class MultipleChoiceQ {
   }
 
   @NonNull
-  public String getMcQuestion() {
-    return mcQuestion;
+  public String getDefQuestion() {
+    return defQuestion;
   }
 
-  public void setMcQuestion(@NonNull String mcQuestion) {
-    this.mcQuestion = mcQuestion;
+  public void setDefQuestion(@NonNull String DDQuestion) {
+    this.defQuestion = DDQuestion;
   }
 }

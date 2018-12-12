@@ -9,14 +9,14 @@ import android.support.annotation.NonNull;
 @Entity(
     foreignKeys = {
         @ForeignKey(
-            entity = FBQuestion.class,
+            entity = FillBlankQuestion.class,
             parentColumns = "fb_question_id",
             childColumns = "fb_question_id",
             onDelete = ForeignKey.CASCADE
         )
     }
 )
-public class FBAnswer {
+public class FillBlankAnswer {
 
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "fb_answer_id")
@@ -32,7 +32,7 @@ public class FBAnswer {
   @ColumnInfo(name = "is_correct")
   private boolean isCorrect;
 
-  public FBAnswer(@NonNull String fbAnswer, boolean isCorrect, long fbQuestionId) {
+  public FillBlankAnswer(@NonNull String fbAnswer, boolean isCorrect, long fbQuestionId) {
     this.fbQuestionId = fbQuestionId;
     this.fbAnswer = fbAnswer;
     this.isCorrect = isCorrect;

@@ -9,14 +9,14 @@ import android.support.annotation.NonNull;
 @Entity(
     foreignKeys = {
         @ForeignKey(
-            entity =HLQuestion.class,
+            entity =HighlightQuestion.class,
             parentColumns = "hl_question_id",
             childColumns = "hl_question_id",
             onDelete = ForeignKey.CASCADE
         )
     }
 )
-public class HLAnswer {
+public class HighlightAnswer {
 
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "hl_answer_id")
@@ -32,7 +32,7 @@ public class HLAnswer {
   @ColumnInfo(name = "type")
   private String type;
 
-  public HLAnswer( @NonNull String hlAnswer, String type, long hlQuestionId) {
+  public HighlightAnswer( @NonNull String hlAnswer, String type, long hlQuestionId) {
     this.hlQuestionId = hlQuestionId;
     this.hlAnswer = hlAnswer;
     this.type = type;

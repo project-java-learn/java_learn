@@ -4,6 +4,7 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
+import android.media.Image;
 import android.support.annotation.NonNull;
 
 @Entity(
@@ -16,30 +17,26 @@ import android.support.annotation.NonNull;
         )
     }
 )
-public class HLQuestion {
+public class FillBlankQuestion {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "hl_question_id")
-  private long hlQuestionId;
+  @ColumnInfo(name = "fb_question_id")
+  private long fbQuestionId;
 
   @ColumnInfo(name = "level_id")
   private long levelId;
 
-  @NonNull
-  @ColumnInfo(name = "hl_question")
-  private String hlQuestion;
 
-  public HLQuestion(@NonNull String hlQuestion, long levelId) {
+  public FillBlankQuestion(long levelId) {
     this.levelId = levelId;
-    this.hlQuestion = hlQuestion;
   }
 
-  public long getHlQuestionId() {
-    return hlQuestionId;
+  public long getFbQuestionId() {
+    return fbQuestionId;
   }
 
-  public void setHlQuestionId(long hlQuestionId) {
-    this.hlQuestionId = hlQuestionId;
+  public void setFbQuestionId(long fbQuestionId) {
+    this.fbQuestionId = fbQuestionId;
   }
 
   public long getLevelId() {
@@ -50,12 +47,4 @@ public class HLQuestion {
     this.levelId = levelId;
   }
 
-  @NonNull
-  public String getHlQuestion() {
-    return hlQuestion;
-  }
-
-  public void setHlQuestion(@NonNull String hlQuestion) {
-    this.hlQuestion = hlQuestion;
-  }
 }

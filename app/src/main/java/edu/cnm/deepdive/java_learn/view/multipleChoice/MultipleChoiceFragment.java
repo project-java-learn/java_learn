@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
-import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
+import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceAnswer;
 import edu.cnm.deepdive.java_learn.model.pojo.MultipleChoiceQWithA;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
@@ -27,8 +27,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * This is the MultipleChoiceFragment class game that retrieves 1 random question(populated in the textView
- * the correct answer(populated next to a random radio button in the same RadioGroup as the
+ * This is the MultipleChoiceFragment class game that retrieves 1 random question(populated in the
+ * textView the correct answer(populated next to a random radio button in the same RadioGroup as the
  * corresponding populated question) and 3 random wrong answers.
  */
 public class MultipleChoiceFragment extends GameFragment {
@@ -113,10 +113,10 @@ public class MultipleChoiceFragment extends GameFragment {
         Toast.makeText(getContext(),
             "You have " + correct + " out of 6. That's all of them! Points added!",
             Toast.LENGTH_LONG).show();
+      } else {
+
+        Toast.makeText(getContext(), "You have " + correct + " out of 6", Toast.LENGTH_LONG).show();
       }
-
-      Toast.makeText(getContext(), "You have " + correct + " out of 6", Toast.LENGTH_LONG).show();
-
     });
     new GetQuestionsTask().execute();
     return view;
@@ -124,13 +124,13 @@ public class MultipleChoiceFragment extends GameFragment {
 
   private void populateQuestionsAndAnswerButtons(TextView questionView, RadioGroup radioGroup,
       MultipleChoiceQWithA question) {
-    List<MultipleChoiceA> answers = question.getAnswers();
+    List<MultipleChoiceAnswer> answers = question.getAnswers();
 
     Collections.shuffle(answers);
 
     questionView.setText(question.getQuestion().getMcQuestion());
     int answerNumber = 0;
-    for (MultipleChoiceA answer : answers) {
+    for (MultipleChoiceAnswer answer : answers) {
       RadioButton button = (RadioButton) radioGroup.getChildAt(answerNumber);
       button.setText(answer.getMcAnswer());
       button.setTag(answer.isCorrect());

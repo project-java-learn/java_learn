@@ -56,15 +56,19 @@ public class LevelsFragment extends Fragment {
         case R.id.highlight_card:
           fragment[0] = new HighlightFragment();
           tag[0] = "Highlight Level";
+          break;
         case R.id.fill_in_card:
           fragment[0] = new FillBlankFragment();
           tag[0] = "Fill In The Blank Level";
+          break;
         case R.id.definitions_card:
           fragment[0] = new DefinitionsFragment();
           tag[0] = "Definitions Level";
+          break;
         case R.id.multiple_choice_card:
           fragment[0] = new MultipleChoiceFragment();
           tag[0] = "Multiple Choice Level";
+          break;
       }
 
       getFragmentManager()
