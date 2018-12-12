@@ -65,7 +65,7 @@ If the code in the repository implements a web service, list the primary endpoin
 
 ### Wireframe
 
-[JavaLearn Wireframes](JavaLearn_Mockup.pdf)
+* [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
 
 ### User Stories
 
@@ -86,15 +86,15 @@ If the code in the repository implements a web service, list the primary endpoin
 
 ### JavaDocs
 
-[JavaLearn JavadocHTML]()
+* [JavaLearn JavadocHTML]()
 
 ### Licenses 
 
-[Spring](https://spring.io/projects/spring-restdocs)
+* [Spring](https://spring.io/projects/spring-restdocs)
 
-[Link to Licenses used in project](/licenses)
+* [Link to Licenses used in project](/licenses)
 
-[Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
+* [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 
 ### Build Instructions
 
