@@ -5,7 +5,7 @@
 Our motivation for this project was to found within our own needs and struggles of learning the Java language. We wanted to create
 a tool for Java students to supplement their education. 
 
-### Functional Components
+## Functional Components
 
 * Google sign in 
 * Multiple Choice Game
@@ -23,16 +23,16 @@ a tool for Java students to supplement their education.
 If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
 ## Web Server
 
-### Web Service
+## Web Service
 
-* [API Documentation] (API_documentation.md)
+* [API Documentation](API_documentation.md)
 
 
-### Deficiencies
+## Deficiencies
 
 * Credentials will eventually become stale and the app will log you out if you close the app and then come back.
 
-### Stretch Goals
+## Stretch Goals
 
 * User points to be calculated and presented to the user
 * Let the user choose a picture for their profile
@@ -65,7 +65,7 @@ If the code in the repository implements a web service, list the primary endpoin
 
 ### Wireframe
 
-[JavaLearn Wireframes](JavaLearn_Mockup.pdf)
+* [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
 
 ### User Stories
 
@@ -86,15 +86,15 @@ If the code in the repository implements a web service, list the primary endpoin
 
 ### JavaDocs
 
-[JavaLearn JavadocHTML]()
+* [JavaLearn JavadocHTML]()
 
 ### Licenses 
 
-[Spring](https://spring.io/projects/spring-restdocs)
+* [Spring](https://spring.io/projects/spring-restdocs)
 
-[Link to Licenses used in project](licenses.md)
+* [Link to Licenses used in project](/licenses)
 
-[Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
+* [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 
 ### Build Instructions
 
