@@ -49,13 +49,12 @@ a tool for Java students to supplement their education.
  
 ## Libraries
 
-* Spring Boot
-* Google
-* Apache
-* Room
-* Butterknife
-* Retrofit
-* Stetho
+* com.jakewharton:butterknife:8.8.1
+* com.google.android.gms:play-services-auth:16.0.1
+* com.google.code.gson:gson:2.8.5
+* com.squareup.retrofit2:retrofit:2.4.0
+* com.squareup.retrofit2:converter-gson:2.4.0
+* com.jakewharton:butterknife-compiler:8.8.1
 
 ## External Services
 
