@@ -20,9 +20,6 @@ a tool for Java students to supplement their education.
 * Matthew Morgan - Definitions Game, Highlight Game, Fill In the Blank Game, Frontend and Backend Database
 * Leslie Hinds -  Multiple Choice functionality
 
-If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
-## Web Server
-
 ## Web Service
 
 * [API Documentation](API_documentation.md)
@@ -31,6 +28,7 @@ If the code in the repository implements a web service, list the primary endpoin
 ## Deficiencies
 
 * Credentials will eventually become stale and the app will log you out if you close the app and then come back.
+* The backend is not on a server, so you must run the backend to be able to communicate with the client.
 
 ## Stretch Goals
 
