@@ -68,17 +68,20 @@ a tool for Java students to supplement their education.
 
 ### User Stories
 
-[User Stories](Java_Learn_UserStories.pdf )
+* [User Stories](Java_Learn_UserStories.pdf )
 
 ### Entity Relationship Diagrams
 
-[Client ERD](JavaLearnClientERD.pdf)
+* [Client ERD](JavaLearnClientERD.pdf)
 
-[Backend ERD](JavaLearnBackendERD.pdf)
+* [Backend ERD](JavaLearnBackendERD.pdf)
 
 ### DDL
 
-[JavaLearnDDL](java_learn_ddl.pdf)
+* [Client DDL](java_learn.sql)
+
+* [Backend DDL](java_learn_backend.sql)
+
 
 ### JavaDocs
 
@@ -94,10 +97,10 @@ a tool for Java students to supplement their education.
 
 ### Build Instructions
 
-[Build Instructions](JavaLearn_BuildComp.pdf)  
+* [Build Instructions](JavaLearn_BuildComp.pdf)  
 
 ### User Instructions
 
-[Basic Instructions](JavaLearn_BasicIns.pdf)
+* [Basic Instructions](JavaLearn_BasicIns.pdf)
     
 
