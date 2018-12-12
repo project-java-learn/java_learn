@@ -15,8 +15,8 @@ import android.widget.TextView.BufferType;
 import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
-import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.HLQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.HighlightAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.HighlightQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
 import java.util.ArrayList;
@@ -24,25 +24,28 @@ import java.util.List;
 
 
 /**
- * The type Highlight fragment.
+ * This class holds the logic for the Highlight game. This game allows users to
+ * highlight text and check if they have correctly highlighted the requested piece
+ * of code. Makes a call to add progress to the user once it has been completed.
  */
 public class HighlightFragment extends GameFragment {
 
-  private List<HLQuestion> questions;
-  private List<HLAnswer> answers;
+  private List<HighlightQuestion> questions;
+  private List<HighlightAnswer> answers;
   private List<Button> buttons;
   private Button button1;
   private Button button2;
   private Button button3;
   private Button submit;
-  private OnClickListener listener;
+  private OnClickListener listener1;
+  private OnClickListener listener2;
   private int correctAnswers;
   private TextViewCursorWatcher textViewCursorWatcher;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
+
     View view = inflater.inflate(R.layout.fragment_highlight, container, false);
     textViewCursorWatcher = view.findViewById(R.id.highlight_text);
 
@@ -74,7 +77,7 @@ public class HighlightFragment extends GameFragment {
   }
 
   private void setAnswerListener() {
-    listener = (view) -> {
+    listener1 = (view) -> {
       int start = textViewCursorWatcher.getSelectionStart();
       int end = textViewCursorWatcher.getSelectionEnd();
       String str = textViewCursorWatcher.getText().toString().substring(start, end);
@@ -109,26 +112,39 @@ public class HighlightFragment extends GameFragment {
     };
   }
 
+  private void setSubmitListener() {
+    listener2 = (view) -> {
+
+      if (correctAnswers == 5) {
+        Toast
+            .makeText(getContext(),
+                "You have " + correctAnswers + "/5 correct. That's all of them! Points added!",
+                Toast.LENGTH_LONG)
+            .show();
+        submit.setEnabled(false);
+        updateProgress("Basic Highlight");
+      } else {
+        Toast
+            .makeText(getContext(), "You have " + correctAnswers + "/5 correct.", Toast.LENGTH_LONG)
+            .show();
+      }
+    };
+  }
+
   private boolean checkAnswer(String str, String type) {
-    for (HLAnswer a : answers) {
+    for (HighlightAnswer a : answers) {
       if (a.getHlAnswer().equals(str) && a.getType().equals(type)) {
         correctAnswers++;
-        Toast
-            .makeText(getContext(), "You have " + correctAnswers + "/4 correct.", Toast.LENGTH_LONG)
-            .show();
-        if (correctAnswers == 4) {
-          updateProgress("Basic Highlight");
-        }
         return true;
       }
     }
     return false;
   }
 
-  private class QuestionTask extends AsyncTask<Void, Void, List<HLQuestion>> {
+  private class QuestionTask extends AsyncTask<Void, Void, List<HighlightQuestion>> {
 
     @Override
-    protected List<HLQuestion> doInBackground(Void... voids) {
+    protected List<HighlightQuestion> doInBackground(Void... voids) {
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
       Level level = db.getLevelDao().select("Highlight Test");
 
@@ -141,9 +157,9 @@ public class HighlightFragment extends GameFragment {
     }
 
     @Override
-    protected void onPostExecute(List<HLQuestion> hlQuestions) {
+    protected void onPostExecute(List<HighlightQuestion> hlQuestions) {
       int index = 0;
-      for (HLQuestion q : questions) {
+      for (HighlightQuestion q : questions) {
         buttons.get(index).setText(q.getHlQuestion());
         index++;
       }
@@ -151,13 +167,13 @@ public class HighlightFragment extends GameFragment {
     }
   }
 
-  private class AnswerTask extends AsyncTask<Void, Void, List<HLAnswer>> {
+  private class AnswerTask extends AsyncTask<Void, Void, List<HighlightAnswer>> {
 
     @Override
-    protected List<HLAnswer> doInBackground(Void... voids) {
+    protected List<HighlightAnswer> doInBackground(Void... voids) {
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
 
-      for (HLQuestion q : questions) {
+      for (HighlightQuestion q : questions) {
         long queId = db.getHLQuestionDao().select(q.getHlQuestion()).getHlQuestionId();
         answers.addAll(db.getHLAnswerDao().select(queId));
       }
@@ -166,11 +182,13 @@ public class HighlightFragment extends GameFragment {
     }
 
     @Override
-    protected void onPostExecute(List<HLAnswer> hlAnswers) {
+    protected void onPostExecute(List<HighlightAnswer> hlAnswers) {
       setAnswerListener();
+      setSubmitListener();
 
+      submit.setOnClickListener(listener2);
       for (Button button : buttons) {
-        button.setOnClickListener(listener);
+        button.setOnClickListener(listener1);
       }
     }
   }

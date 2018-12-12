@@ -15,15 +15,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
-import edu.cnm.deepdive.java_learn.model.entity.FBAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.FBQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.FillBlankAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.FillBlankQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import edu.cnm.deepdive.java_learn.view.GameFragment;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The type Fill blank fragment.
+ * Class that holds the logic to play the Fill-in-the-Blank game mode. Associates
+ * spinners with the correct numbers on the picture of code. Makes a call to the
+ * backend when a level is completed.
  */
 public class FillBlankFragment extends GameFragment {
 
@@ -46,8 +48,8 @@ public class FillBlankFragment extends GameFragment {
 
 
   private List<Spinner> spinners;
-  private List<FBQuestion> questions;
-  private List<FBAnswer> answers;
+  private List<FillBlankQuestion> questions;
+  private List<FillBlankAnswer> answers;
   private List<ImageView> checkMarks;
   private Button submit;
 
@@ -92,7 +94,7 @@ public class FillBlankFragment extends GameFragment {
       int index = 0;
 
       for (Spinner spinner : spinners) {
-        FBAnswer answer = (FBAnswer) spinner.getSelectedItem();
+        FillBlankAnswer answer = (FillBlankAnswer) spinner.getSelectedItem();
         if (answer.isCorrect()) {
           correct++;
           checkMarks.get(index).setVisibility(View.VISIBLE);
@@ -101,20 +103,23 @@ public class FillBlankFragment extends GameFragment {
       }
 
       if (correct == 4) {
+        submit.setEnabled(false);
         updateProgress("Basic Fill-in-the-Blank");
-        Toast.makeText(getContext(), "You have " + correct + "/4 correct. That's all of them!",
+        Toast.makeText(getContext(),
+            "You have " + correct + "/4 correct. That's all of them! Points added!",
             Toast.LENGTH_LONG)
             .show();
+      } else {
+        Toast.makeText(getContext(), "You have " + correct + "/4 correct.", Toast.LENGTH_LONG)
+            .show();
       }
-      Toast.makeText(getContext(), "You have " + correct + "/4 correct.", Toast.LENGTH_LONG)
-          .show();
     });
   }
 
-  private class AnswerTask extends AsyncTask<Void, Void, FBAnswer> {
+  private class AnswerTask extends AsyncTask<Void, Void, FillBlankAnswer> {
 
     @Override
-    protected FBAnswer doInBackground(Void... voids) {
+    protected FillBlankAnswer doInBackground(Void... voids) {
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
       Level level = db.getLevelDao().select("Fill Blank Test");
 
@@ -123,7 +128,7 @@ public class FillBlankFragment extends GameFragment {
         questions.addAll(db.getFBQuestionDao().select(levId));
       }
 
-      for (FBQuestion q : questions) {
+      for (FillBlankQuestion q : questions) {
         long queId = q.getFbQuestionId();
         answers.addAll(db.getFBAnswerDao().select(queId));
       }
@@ -132,16 +137,16 @@ public class FillBlankFragment extends GameFragment {
     }
 
     @Override
-    protected void onPostExecute(FBAnswer fbAnswer) {
+    protected void onPostExecute(FillBlankAnswer fbAnswer) {
       int index = 0;
-      for (FBQuestion q : questions) {
-        List<FBAnswer> ans = new ArrayList<>();
-        for (FBAnswer a : answers) {
+      for (FillBlankQuestion q : questions) {
+        List<FillBlankAnswer> ans = new ArrayList<>();
+        for (FillBlankAnswer a : answers) {
           if (a.getFbQuestionId() == q.getFbQuestionId()) {
             ans.add(a);
           }
         }
-        ArrayAdapter<FBAnswer> adapter = new ArrayAdapter<>(
+        ArrayAdapter<FillBlankAnswer> adapter = new ArrayAdapter<>(
             getActivity(), R.layout.support_simple_spinner_dropdown_item, ans);
 
         spinners.get(index).setAdapter(adapter);

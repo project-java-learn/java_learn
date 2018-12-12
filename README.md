@@ -5,13 +5,14 @@
 Our motivation for this project was to found within our own needs and struggles of learning the Java language. We wanted to create
 a tool for Java students to supplement their education. 
 
-### Functional Components
+## Functional Components
 
 * Google sign in 
 * Multiple Choice Game
 * Definitions Game
 * Highlight Game
 * Fill in the Blank Game
+* Client-side/backend communication.
 
 ## Team
 
@@ -19,18 +20,19 @@ a tool for Java students to supplement their education.
 * Matthew Morgan - Definitions Game, Highlight Game, Fill In the Blank Game, Frontend and Backend Database
 * Leslie Hinds -  Multiple Choice functionality
 
-4. If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
+If the code in the repository implements a web service, list the primary endpoints of that service, with a server-relative URL for each. Additionally, if the component is currently hosted and running on an accessible server, include the host name of that server in this section.
+## Web Server
 
-### Web Service
+## Web Service
 
-* 
+* [API Documentation](API_documentation.md)
 
 
-### Deficiencies
+## Deficiencies
 
-* Attaching the client and server side together
+* Credentials will eventually become stale and the app will log you out if you close the app and then come back.
 
-### Stretch Goals
+## Stretch Goals
 
 * User points to be calculated and presented to the user
 * Let the user choose a picture for their profile
@@ -48,13 +50,12 @@ a tool for Java students to supplement their education.
  
 ## Libraries
 
-* Spring Boot
-* Google
-* Apache
-* Room
-* Butterknife
-* Retrofit
-* Stetho
+* com.jakewharton:butterknife:8.8.1
+* com.google.android.gms:play-services-auth:16.0.1
+* com.google.code.gson:gson:2.8.5
+* com.squareup.retrofit2:retrofit:2.4.0
+* com.squareup.retrofit2:converter-gson:2.4.0
+* com.jakewharton:butterknife-compiler:8.8.1
 
 ## External Services
 
@@ -62,40 +63,45 @@ a tool for Java students to supplement their education.
 
 ## Links
 
-#### Wireframe
+### Wireframe
 
-[JavaLearn Wireframes](JavaLearn_Mockup.pdf)
+* [JavaLearn Wireframes](JavaLearn_Mockup.pdf)
 
-#### User Stories
+### User Stories
 
-[User Stories](Java_Learn_UserStories.pdf )
+* [User Stories](Java_Learn_UserStories.pdf )
 
-#### ERD
+### Entity Relationship Diagrams
 
-[JavaLearnERD](java_learn_erd.pdf)
+* [Client ERD](JavaLearnClientERD.pdf)
 
-#### DDL
+* [Backend ERD](JavaLearnBackendERD.pdf)
 
-[JavaLearnDDL](java_learn_ddl.pdf)
+### DDL
 
-#### JavaDocs
+* [Client DDL](java_learn.sql)
 
-[JavaLearn JavadocHTML]()
+* [Backend DDL](java_learn_backend.sql)
 
-#### Licenses 
 
-[Spring](https://spring.io/projects/spring-restdocs)
+### JavaDocs
 
-[Link to Licenses used in project](licenses.md)
+* [JavaLearn JavadocHTML]()
 
-[Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
+### Licenses 
 
-#### Build Instructions
+* [Spring](https://spring.io/projects/spring-restdocs)
 
-[Build Instructions](JavaLearn_BuildComp.pdf)  
+* [Link to Licenses used in project](/licenses)
 
-#### User Instructions
+* [Java Learn License](https://github.com/project-java-learn/java_learn/blob/master/LICENSE)
 
-[Basic Instructions](JavaLearn_BasicIns.pdf)
+### Build Instructions
+
+* [Build Instructions](JavaLearn_BuildComp.pdf)  
+
+### User Instructions
+
+* [Basic Instructions](JavaLearn_BasicIns.pdf)
     
 

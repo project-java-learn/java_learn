@@ -2,6 +2,11 @@ package edu.cnm.deepdive.java_learn.model.pojo;
 
 import com.google.gson.annotations.Expose;
 
+
+/**
+ * This class creates an object that can be sent to the backend to create a user
+ * or check if this user already exists on the backend.
+ */
 public class UserPojo {
 
   @Expose

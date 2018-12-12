@@ -7,33 +7,33 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
-import edu.cnm.deepdive.java_learn.model.dao.DDAnswerDao;
-import edu.cnm.deepdive.java_learn.model.dao.DDQuestionDao;
-import edu.cnm.deepdive.java_learn.model.dao.FBAnswerDao;
-import edu.cnm.deepdive.java_learn.model.dao.FBQuestionDao;
-import edu.cnm.deepdive.java_learn.model.dao.HLAnswerDao;
-import edu.cnm.deepdive.java_learn.model.dao.HLQuestionDao;
+import edu.cnm.deepdive.java_learn.model.dao.DefinitionsAnswerDao;
+import edu.cnm.deepdive.java_learn.model.dao.DefinitionsQuestionDao;
+import edu.cnm.deepdive.java_learn.model.dao.FillBlankAnswerDao;
+import edu.cnm.deepdive.java_learn.model.dao.FillBlankQuestionDao;
+import edu.cnm.deepdive.java_learn.model.dao.HighlightAnswerDao;
+import edu.cnm.deepdive.java_learn.model.dao.HighlightQuestionDao;
 import edu.cnm.deepdive.java_learn.model.dao.LevelDao;
-import edu.cnm.deepdive.java_learn.model.dao.MCAnswerDao;
-import edu.cnm.deepdive.java_learn.model.dao.MCQuestionDao;
-import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.DDQuestion;
-import edu.cnm.deepdive.java_learn.model.entity.FBAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.FBQuestion;
-import edu.cnm.deepdive.java_learn.model.entity.HLAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.HLQuestion;
+import edu.cnm.deepdive.java_learn.model.dao.MultipleChoiceAnswerDao;
+import edu.cnm.deepdive.java_learn.model.dao.MultipleChoiceQuestionDao;
+import edu.cnm.deepdive.java_learn.model.entity.DefinitionsAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.DefinitionsQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.FillBlankAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.FillBlankQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.HighlightAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.HighlightQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
-import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceA;
-import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceQ;
+import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.MultipleChoiceQuestion;
 
 /**
- * JavaLearnDB class allows the user to create a database for holding user levels, game progress
- * and holds the questions and answers for Drag and Drop, HighLight, Fill-in-the-Blank, and Multiple
- * Choice.
+ * JavaLearnDB class allows the user to create a database for holding user levels,
+ * and holds the questions and answers for Drag and Drop, HighLight,
+ * Fill-in-the-Blank, and Multiple Choice.
  */
 @Database(
-    entities = {Level.class, DDAnswer.class, DDQuestion.class, FBAnswer.class, FBQuestion.class,
-        HLAnswer.class, HLQuestion.class, MultipleChoiceA.class, MultipleChoiceQ.class},
+    entities = {Level.class, DefinitionsAnswer.class, DefinitionsQuestion.class, FillBlankAnswer.class, FillBlankQuestion.class,
+        HighlightAnswer.class, HighlightQuestion.class, MultipleChoiceAnswer.class, MultipleChoiceQuestion.class},
     version = 1,
     exportSchema = true
 )
@@ -62,26 +62,26 @@ public abstract class JavaLearnDB extends RoomDatabase {
   public abstract LevelDao getLevelDao();
 
 
-  public abstract DDQuestionDao getDDQuestionDao();
+  public abstract DefinitionsQuestionDao getDDQuestionDao();
 
 
-  public abstract DDAnswerDao getDDAnswerDao();
+  public abstract DefinitionsAnswerDao getDDAnswerDao();
 
 
-  public abstract FBQuestionDao getFBQuestionDao();
+  public abstract FillBlankQuestionDao getFBQuestionDao();
 
 
-  public abstract FBAnswerDao getFBAnswerDao();
+  public abstract FillBlankAnswerDao getFBAnswerDao();
 
 
-  public abstract HLQuestionDao getHLQuestionDao();
+  public abstract HighlightQuestionDao getHLQuestionDao();
 
 
-  public abstract HLAnswerDao getHLAnswerDao();
+  public abstract HighlightAnswerDao getHLAnswerDao();
 
-  public abstract MCQuestionDao getMCQuestionDao();
+  public abstract MultipleChoiceQuestionDao getMCQuestionDao();
 
-  public abstract MCAnswerDao getMCAnswerDao();
+  public abstract MultipleChoiceAnswerDao getMCAnswerDao();
 
 //  public abstract MCImageDao getMCImageDao();
 
@@ -118,144 +118,144 @@ public abstract class JavaLearnDB extends RoomDatabase {
     protected Void doInBackground(Void... voids) {
       JavaLearnDB db = getInstance(context);
       LevelDao lDao = db.getLevelDao();
-      DDQuestionDao qDao = db.getDDQuestionDao();
-      DDAnswerDao aDao = db.getDDAnswerDao();
-      MCQuestionDao mcQDao = db.getMCQuestionDao();
-      MCAnswerDao mcADao = db.getMCAnswerDao();
-      HLQuestionDao hlQDao = db.getHLQuestionDao();
-      HLAnswerDao hlADao = db.getHLAnswerDao();
-      FBQuestionDao fbQDao = db.getFBQuestionDao();
-      FBAnswerDao fbADao = db.getFBAnswerDao();
+      DefinitionsQuestionDao qDao = db.getDDQuestionDao();
+      DefinitionsAnswerDao aDao = db.getDDAnswerDao();
+      MultipleChoiceQuestionDao mcQDao = db.getMCQuestionDao();
+      MultipleChoiceAnswerDao mcADao = db.getMCAnswerDao();
+      HighlightQuestionDao hlQDao = db.getHLQuestionDao();
+      HighlightAnswerDao hlADao = db.getHLAnswerDao();
+      FillBlankQuestionDao fbQDao = db.getFBQuestionDao();
+      FillBlankAnswerDao fbADao = db.getFBAnswerDao();
 
       long levId = lDao.insert(new Level("Definitions Test"));
       long levId2 = lDao.insert(new Level("Multiple Choice Test"));
       long levId3 = lDao.insert(new Level("Highlight Test"));
       long levId4 = lDao.insert(new Level("Fill Blank Test"));
 
-      long que1Id = qDao.insert(new DDQuestion("A function defined in a class.", levId));
-      aDao.insert(new DDAnswer("Method", true, que1Id));
-      aDao.insert(new DDAnswer("Class", false, que1Id));
-      aDao.insert(new DDAnswer("Object", false, que1Id));
-      aDao.insert(new DDAnswer("Field", false, que1Id));
-      aDao.insert(new DDAnswer("Abstract", false, que1Id));
+      long que1Id = qDao.insert(new DefinitionsQuestion("A function defined in a class.", levId));
+      aDao.insert(new DefinitionsAnswer("Method", true, que1Id));
+      aDao.insert(new DefinitionsAnswer("Class", false, que1Id));
+      aDao.insert(new DefinitionsAnswer("Object", false, que1Id));
+      aDao.insert(new DefinitionsAnswer("Field", false, que1Id));
+      aDao.insert(new DefinitionsAnswer("Abstract", false, que1Id));
 
-      long que2Id = qDao.insert(new DDQuestion("A type that defines the implementation of a "
+      long que2Id = qDao.insert(new DefinitionsQuestion("A type that defines the implementation of a "
           + "particular kind of object.", levId));
 
-      aDao.insert(new DDAnswer("Method", false, que2Id));
-      aDao.insert(new DDAnswer("Class", true, que2Id));
-      aDao.insert(new DDAnswer("Object", false, que2Id));
-      aDao.insert(new DDAnswer("Field", false, que2Id));
-      aDao.insert(new DDAnswer("Abstract", false, que2Id));
+      aDao.insert(new DefinitionsAnswer("Method", false, que2Id));
+      aDao.insert(new DefinitionsAnswer("Class", true, que2Id));
+      aDao.insert(new DefinitionsAnswer("Object", false, que2Id));
+      aDao.insert(new DefinitionsAnswer("Field", false, que2Id));
+      aDao.insert(new DefinitionsAnswer("Abstract", false, que2Id));
 
-      long que3Id = qDao.insert(new DDQuestion("The principal building blocks of object-oriented "
+      long que3Id = qDao.insert(new DefinitionsQuestion("The principal building blocks of object-oriented "
           + "programs", levId));
-      aDao.insert(new DDAnswer("Method", false, que3Id));
-      aDao.insert(new DDAnswer("Class", false, que3Id));
-      aDao.insert(new DDAnswer("Object", true, que3Id));
-      aDao.insert(new DDAnswer("Field", false, que3Id));
-      aDao.insert(new DDAnswer("Abstract", false, que3Id));
+      aDao.insert(new DefinitionsAnswer("Method", false, que3Id));
+      aDao.insert(new DefinitionsAnswer("Class", false, que3Id));
+      aDao.insert(new DefinitionsAnswer("Object", true, que3Id));
+      aDao.insert(new DefinitionsAnswer("Field", false, que3Id));
+      aDao.insert(new DefinitionsAnswer("Abstract", false, que3Id));
 
-      long que4Id = qDao.insert(new DDQuestion("A data member of a class.", levId));
-      aDao.insert(new DDAnswer("Method", false, que4Id));
-      aDao.insert(new DDAnswer("Class", false, que4Id));
-      aDao.insert(new DDAnswer("Object", false, que4Id));
-      aDao.insert(new DDAnswer("Field", true, que4Id));
-      aDao.insert(new DDAnswer("Abstract", false, que4Id));
+      long que4Id = qDao.insert(new DefinitionsQuestion("A data member of a class.", levId));
+      aDao.insert(new DefinitionsAnswer("Method", false, que4Id));
+      aDao.insert(new DefinitionsAnswer("Class", false, que4Id));
+      aDao.insert(new DefinitionsAnswer("Object", false, que4Id));
+      aDao.insert(new DefinitionsAnswer("Field", true, que4Id));
+      aDao.insert(new DefinitionsAnswer("Abstract", false, que4Id));
 
-      long que5Id = qDao.insert(new DDQuestion("A Java keyword used to specify that a "
+      long que5Id = qDao.insert(new DefinitionsQuestion("A Java keyword used to specify that a "
           + "class is to be inherited by "
           + "other classes.", levId));
 
-      aDao.insert(new DDAnswer("Method", false, que5Id));
-      aDao.insert(new DDAnswer("Class", false, que5Id));
-      aDao.insert(new DDAnswer("Object", false, que5Id));
-      aDao.insert(new DDAnswer("Field", false, que5Id));
-      aDao.insert(new DDAnswer("Abstract", true, que5Id));
+      aDao.insert(new DefinitionsAnswer("Method", false, que5Id));
+      aDao.insert(new DefinitionsAnswer("Class", false, que5Id));
+      aDao.insert(new DefinitionsAnswer("Object", false, que5Id));
+      aDao.insert(new DefinitionsAnswer("Field", false, que5Id));
+      aDao.insert(new DefinitionsAnswer("Abstract", true, que5Id));
 
-      long que6Id = mcQDao.insert(new MultipleChoiceQ("What is the access modifier\nfor the main method?",
+      long que6Id = mcQDao.insert(new MultipleChoiceQuestion("What is the access modifier\nfor the main method?",
           levId2));
-      mcADao.insert(new MultipleChoiceA("public", true, que6Id));
-      mcADao.insert(new MultipleChoiceA("private", false, que6Id));
-      mcADao.insert(new MultipleChoiceA("protected", false, que6Id));
-      mcADao.insert(new MultipleChoiceA("package private", false, que6Id));
+      mcADao.insert(new MultipleChoiceAnswer("public", true, que6Id));
+      mcADao.insert(new MultipleChoiceAnswer("private", false, que6Id));
+      mcADao.insert(new MultipleChoiceAnswer("protected", false, que6Id));
+      mcADao.insert(new MultipleChoiceAnswer("package private", false, que6Id));
 
-      long que7Id = mcQDao.insert(new MultipleChoiceQ("How many methods does\nthis class contain?", levId2));
-      mcADao.insert(new MultipleChoiceA("2", true, que7Id));
-      mcADao.insert(new MultipleChoiceA("5", false, que7Id));
-      mcADao.insert(new MultipleChoiceA("6", false, que7Id));
-      mcADao.insert(new MultipleChoiceA("3", false, que7Id));
+      long que7Id = mcQDao.insert(new MultipleChoiceQuestion("How many methods does\nthis class contain?", levId2));
+      mcADao.insert(new MultipleChoiceAnswer("2", true, que7Id));
+      mcADao.insert(new MultipleChoiceAnswer("5", false, que7Id));
+      mcADao.insert(new MultipleChoiceAnswer("6", false, que7Id));
+      mcADao.insert(new MultipleChoiceAnswer("3", false, que7Id));
 
-      long que8Id = mcQDao.insert(new MultipleChoiceQ("What does toString return?", levId2));
-      mcADao.insert(new MultipleChoiceA("A String", true, que8Id));
-      mcADao.insert(new MultipleChoiceA("StringBuilder", false, que8Id));
-      mcADao.insert(new MultipleChoiceA("StringBuffer", false, que8Id));
-      mcADao.insert(new MultipleChoiceA("StringWriter", false, que8Id));
+      long que8Id = mcQDao.insert(new MultipleChoiceQuestion("What does toString return?", levId2));
+      mcADao.insert(new MultipleChoiceAnswer("A String", true, que8Id));
+      mcADao.insert(new MultipleChoiceAnswer("StringBuilder", false, que8Id));
+      mcADao.insert(new MultipleChoiceAnswer("StringBuffer", false, que8Id));
+      mcADao.insert(new MultipleChoiceAnswer("StringWriter", false, que8Id));
 
-      long que9Id = mcQDao.insert(new MultipleChoiceQ("What is the name\n of the class?", levId2));
-      mcADao.insert(new MultipleChoiceA("Decompose", true, que9Id));
-      mcADao.insert(new MultipleChoiceA("main", false, que9Id));
-      mcADao.insert(new MultipleChoiceA("toString", false, que9Id));
-      mcADao.insert(new MultipleChoiceA("QRDecomposition", false, que9Id));
+      long que9Id = mcQDao.insert(new MultipleChoiceQuestion("What is the name\n of the class?", levId2));
+      mcADao.insert(new MultipleChoiceAnswer("Decompose", true, que9Id));
+      mcADao.insert(new MultipleChoiceAnswer("main", false, que9Id));
+      mcADao.insert(new MultipleChoiceAnswer("toString", false, que9Id));
+      mcADao.insert(new MultipleChoiceAnswer("QRDecomposition", false, que9Id));
 
-      long que10Id = mcQDao.insert(new MultipleChoiceQ("How many imports is\n this class using?", levId2));
-      mcADao.insert(new MultipleChoiceA("4" , true, que10Id));
-      mcADao.insert(new MultipleChoiceA("2", false, que10Id));
-      mcADao.insert(new MultipleChoiceA("5", false, que10Id));
-      mcADao.insert(new MultipleChoiceA("6", false, que10Id));
+      long que10Id = mcQDao.insert(new MultipleChoiceQuestion("How many imports is\n this class using?", levId2));
+      mcADao.insert(new MultipleChoiceAnswer("4" , true, que10Id));
+      mcADao.insert(new MultipleChoiceAnswer("2", false, que10Id));
+      mcADao.insert(new MultipleChoiceAnswer("5", false, que10Id));
+      mcADao.insert(new MultipleChoiceAnswer("6", false, que10Id));
 
-      long que11Id =  mcQDao.insert(new MultipleChoiceQ("Which object is asking\nfor an array of arrays?", levId2));
-      mcADao.insert(new MultipleChoiceA(" Matrix", true, que11Id));
-      mcADao.insert(new MultipleChoiceA("toString", false, que11Id));
-      mcADao.insert(new MultipleChoiceA("QRDecomposition", false, que11Id));
-      mcADao.insert(new MultipleChoiceA("main", false, que11Id));
+      long que11Id =  mcQDao.insert(new MultipleChoiceQuestion("Which object is asking\nfor an array of arrays?", levId2));
+      mcADao.insert(new MultipleChoiceAnswer(" Matrix", true, que11Id));
+      mcADao.insert(new MultipleChoiceAnswer("toString", false, que11Id));
+      mcADao.insert(new MultipleChoiceAnswer("QRDecomposition", false, que11Id));
+      mcADao.insert(new MultipleChoiceAnswer("main", false, que11Id));
 
-      long que12Id = hlQDao.insert(new HLQuestion("Field", levId3));
-      hlADao.insert(new HLAnswer("double[] quotient", "1", que12Id));
-      hlADao.insert(new HLAnswer("double[] remainder", "1", que12Id));
+      long que12Id = hlQDao.insert(new HighlightQuestion("Field", levId3));
+      hlADao.insert(new HighlightAnswer("double[] quotient", "1", que12Id));
+      hlADao.insert(new HighlightAnswer("double[] remainder", "1", que12Id));
 
-      long que13Id = hlQDao.insert(new HLQuestion("Access Modifier", levId3));
-      hlADao.insert(new HLAnswer("public", "2", que13Id));
-      hlADao.insert(new HLAnswer("private", "2", que13Id));
+      long que13Id = hlQDao.insert(new HighlightQuestion("Access Modifier", levId3));
+      hlADao.insert(new HighlightAnswer("public", "2", que13Id));
+      hlADao.insert(new HighlightAnswer("private", "2", que13Id));
 
-      long que14Id = hlQDao.insert(new HLQuestion("Class Name", levId3));
-      hlADao.insert(new HLAnswer("Solution", "3", que14Id));
+      long que14Id = hlQDao.insert(new HighlightQuestion("Class Name", levId3));
+      hlADao.insert(new HighlightAnswer("Solution", "3", que14Id));
 
-      long que15Id = fbQDao.insert(new FBQuestion(levId4));
-      fbADao.insert(new FBAnswer("Select an answer...", false, que15Id));
-      fbADao.insert(new FBAnswer("try", true, que15Id));
-      fbADao.insert(new FBAnswer("do", false, que15Id));
-      fbADao.insert(new FBAnswer("printf", false, que15Id));
-      fbADao.insert(new FBAnswer("println", false, que15Id));
-      fbADao.insert(new FBAnswer("Random", false, que15Id));
-      fbADao.insert(new FBAnswer("IOException e", false, que15Id));
+      long que15Id = fbQDao.insert(new FillBlankQuestion(levId4));
+      fbADao.insert(new FillBlankAnswer("Select an answer...", false, que15Id));
+      fbADao.insert(new FillBlankAnswer("try", true, que15Id));
+      fbADao.insert(new FillBlankAnswer("do", false, que15Id));
+      fbADao.insert(new FillBlankAnswer("printf", false, que15Id));
+      fbADao.insert(new FillBlankAnswer("println", false, que15Id));
+      fbADao.insert(new FillBlankAnswer("Random", false, que15Id));
+      fbADao.insert(new FillBlankAnswer("IOException e", false, que15Id));
 
-      long que16Id = fbQDao.insert(new FBQuestion(levId4));
-      fbADao.insert(new FBAnswer("Select an answer...", false, que16Id));
-      fbADao.insert(new FBAnswer("try", false, que16Id));
-      fbADao.insert(new FBAnswer("do", false, que16Id));
-      fbADao.insert(new FBAnswer("printf", false, que16Id));
-      fbADao.insert(new FBAnswer("println", false, que16Id));
-      fbADao.insert(new FBAnswer("Random", true, que16Id));
-      fbADao.insert(new FBAnswer("IOException e", false, que16Id));
+      long que16Id = fbQDao.insert(new FillBlankQuestion(levId4));
+      fbADao.insert(new FillBlankAnswer("Select an answer...", false, que16Id));
+      fbADao.insert(new FillBlankAnswer("try", false, que16Id));
+      fbADao.insert(new FillBlankAnswer("do", false, que16Id));
+      fbADao.insert(new FillBlankAnswer("printf", false, que16Id));
+      fbADao.insert(new FillBlankAnswer("println", false, que16Id));
+      fbADao.insert(new FillBlankAnswer("Random", true, que16Id));
+      fbADao.insert(new FillBlankAnswer("IOException e", false, que16Id));
 
-      long que17Id = fbQDao.insert(new FBQuestion(levId4));
-      fbADao.insert(new FBAnswer("Select an answer...", false, que17Id));
-      fbADao.insert(new FBAnswer("try", false, que17Id));
-      fbADao.insert(new FBAnswer("do", false, que17Id));
-      fbADao.insert(new FBAnswer("printf", false, que17Id));
-      fbADao.insert(new FBAnswer("println", false, que17Id));
-      fbADao.insert(new FBAnswer("Random", false, que17Id));
-      fbADao.insert(new FBAnswer("IOException e", true, que17Id));
+      long que17Id = fbQDao.insert(new FillBlankQuestion(levId4));
+      fbADao.insert(new FillBlankAnswer("Select an answer...", false, que17Id));
+      fbADao.insert(new FillBlankAnswer("try", false, que17Id));
+      fbADao.insert(new FillBlankAnswer("do", false, que17Id));
+      fbADao.insert(new FillBlankAnswer("printf", false, que17Id));
+      fbADao.insert(new FillBlankAnswer("println", false, que17Id));
+      fbADao.insert(new FillBlankAnswer("Random", false, que17Id));
+      fbADao.insert(new FillBlankAnswer("IOException e", true, que17Id));
 
-      long que18Id = fbQDao.insert(new FBQuestion(levId4));
-      fbADao.insert(new FBAnswer("Select an answer...", false, que18Id));
-      fbADao.insert(new FBAnswer("try", false, que18Id));
-      fbADao.insert(new FBAnswer("do", false, que18Id));
-      fbADao.insert(new FBAnswer("printf", false, que18Id));
-      fbADao.insert(new FBAnswer("println", true, que18Id));
-      fbADao.insert(new FBAnswer("Random", false, que18Id));
-      fbADao.insert(new FBAnswer("IOException e", false, que18Id));
+      long que18Id = fbQDao.insert(new FillBlankQuestion(levId4));
+      fbADao.insert(new FillBlankAnswer("Select an answer...", false, que18Id));
+      fbADao.insert(new FillBlankAnswer("try", false, que18Id));
+      fbADao.insert(new FillBlankAnswer("do", false, que18Id));
+      fbADao.insert(new FillBlankAnswer("printf", false, que18Id));
+      fbADao.insert(new FillBlankAnswer("println", true, que18Id));
+      fbADao.insert(new FillBlankAnswer("Random", false, que18Id));
+      fbADao.insert(new FillBlankAnswer("IOException e", false, que18Id));
 
 
 

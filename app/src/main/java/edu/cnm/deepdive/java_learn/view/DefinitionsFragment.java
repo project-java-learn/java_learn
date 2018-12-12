@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,15 +16,18 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.model.db.JavaLearnDB;
-import edu.cnm.deepdive.java_learn.model.entity.DDAnswer;
-import edu.cnm.deepdive.java_learn.model.entity.DDQuestion;
+import edu.cnm.deepdive.java_learn.model.entity.DefinitionsAnswer;
+import edu.cnm.deepdive.java_learn.model.entity.DefinitionsQuestion;
 import edu.cnm.deepdive.java_learn.model.entity.Level;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * The type Definitions fragment.
+ * This class holds the logic for the Definitions game. Associates spinners with
+ *  defintions and allows users to match the correct word to the definitions. Makes
+ *  a call to the backend once the level has been completed to add progress to the
+ *  user.
  */
 public class DefinitionsFragment extends GameFragment {
 
@@ -61,8 +63,8 @@ public class DefinitionsFragment extends GameFragment {
   ImageView checkMark5;
 
   private Button submitButton;
-  private List<DDQuestion> questions;
-  private List<DDAnswer> answers;
+  private List<DefinitionsQuestion> questions;
+  private List<DefinitionsAnswer> answers;
   private List<Spinner> spinners;
   private List<TextView> questionTexts;
   private List<ImageView> checkMarks;
@@ -115,7 +117,7 @@ public class DefinitionsFragment extends GameFragment {
       int index = 0;
 
       for (Spinner spinner : spinners) {
-        DDAnswer answer = (DDAnswer) spinner.getSelectedItem();
+        DefinitionsAnswer answer = (DefinitionsAnswer) spinner.getSelectedItem();
         if (answer.isCorrect()) {
           correct++;
           checkMarks.get(index).setVisibility(View.VISIBLE);
@@ -124,17 +126,23 @@ public class DefinitionsFragment extends GameFragment {
       }
 
       if (correct == 5) {
+        submitButton.setEnabled(false);
         updateProgress("Basic Definitions");
+        Toast.makeText(getContext(),
+            "You have " + correct + "/5 correct. That's all of them! Points added!",
+            Toast.LENGTH_LONG)
+            .show();
+      } else {
+        Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
+            .show();
       }
-      Toast.makeText(getContext(), "You have " + correct + "/5 correct.", Toast.LENGTH_LONG)
-          .show();
     });
   }
 
-  private class QuestionTask extends AsyncTask<Void, Void, List<DDQuestion>> {
+  private class QuestionTask extends AsyncTask<Void, Void, List<DefinitionsQuestion>> {
 
     @Override
-    protected List<DDQuestion> doInBackground(Void... voids) {
+    protected List<DefinitionsQuestion> doInBackground(Void... voids) {
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
       Level level = db.getLevelDao().select("Definitions Test");
 
@@ -147,20 +155,20 @@ public class DefinitionsFragment extends GameFragment {
     }
 
     @Override
-    protected void onPostExecute(List<DDQuestion> ddQuestions) {
+    protected void onPostExecute(List<DefinitionsQuestion> definitionsQuestions) {
       new AnswerTask().execute();
     }
   }
 
-  private class AnswerTask extends AsyncTask<Void, Void, List<DDAnswer>> {
+  private class AnswerTask extends AsyncTask<Void, Void, List<DefinitionsAnswer>> {
 
     @Override
-    protected List<DDAnswer> doInBackground(Void... voids) {
+    protected List<DefinitionsAnswer> doInBackground(Void... voids) {
 
       JavaLearnDB db = JavaLearnDB.getInstance(getActivity());
 
-      for (DDQuestion q : questions) {
-        long queId = db.getDDQuestionDao().select(q.getDdQuestion()).getDdQuestionId();
+      for (DefinitionsQuestion q : questions) {
+        long queId = db.getDDQuestionDao().select(q.getDefQuestion()).getDefQuestionId();
         answers.addAll(db.getDDAnswerDao().select(queId));
       }
 
@@ -168,18 +176,18 @@ public class DefinitionsFragment extends GameFragment {
     }
 
     @Override
-    protected void onPostExecute(List<DDAnswer> ddAnswers) {
+    protected void onPostExecute(List<DefinitionsAnswer> definitionsAnswers) {
       Collections.shuffle(questions);
       int index = 0;
-      for (DDQuestion q : questions) {
-        List<DDAnswer> ans = new ArrayList<>();
-        questionTexts.get(index).setText(q.getDdQuestion());
-        for (DDAnswer a : answers) {
-          if ((a.getDdQuestionId() == q.getDdQuestionId())) {
+      for (DefinitionsQuestion q : questions) {
+        List<DefinitionsAnswer> ans = new ArrayList<>();
+        questionTexts.get(index).setText(q.getDefQuestion());
+        for (DefinitionsAnswer a : answers) {
+          if ((a.getDefQuestionId() == q.getDefQuestionId())) {
             ans.add(a);
           }
         }
-        ArrayAdapter<DDAnswer> adapter = new ArrayAdapter<>(
+        ArrayAdapter<DefinitionsAnswer> adapter = new ArrayAdapter<>(
             getActivity(), R.layout.support_simple_spinner_dropdown_item, ans);
 
         spinners.get(index).setAdapter(adapter);

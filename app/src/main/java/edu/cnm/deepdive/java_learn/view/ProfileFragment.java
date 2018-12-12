@@ -2,6 +2,7 @@ package edu.cnm.deepdive.java_learn.view;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,15 +22,19 @@ import java.io.IOException;
 import java.util.List;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.Retrofit.Builder;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * The type Profile fragment.
+ * This class is used to display the progress of the user. Displays their points
+ * and the levels they have completed.
  */
 public class ProfileFragment extends Fragment {
 
   @BindView(R.id.points_profile)
   TextView points;
+  @BindView(R.id.username_profile)
+  TextView username;
   @BindView(R.id.levels_complete)
   ListView levelsComplete;
 
@@ -37,11 +42,13 @@ public class ProfileFragment extends Fragment {
   private JavaLearnService service;
 
   @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
 
     View view = inflater.inflate(R.layout.fragment_profile, container, false);
     ButterKnife.bind(this, view);
+
+    username.setText(JavaLearnApplication.getInstance().getAccount().getDisplayName());
 
     setupRetrofit();
 
@@ -51,8 +58,8 @@ public class ProfileFragment extends Fragment {
   }
 
   private void setupRetrofit() {
-    retrofit = new Retrofit.Builder()
-        .baseUrl("http://10.0.2.2:28082/rest/")
+    retrofit = new Builder()
+        .baseUrl(getString(R.string.base_url))
         .addConverterFactory(GsonConverterFactory.create())
         .build();
 

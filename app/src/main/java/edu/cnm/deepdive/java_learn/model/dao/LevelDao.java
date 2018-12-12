@@ -8,7 +8,7 @@ import edu.cnm.deepdive.java_learn.model.entity.Level;
 import java.util.List;
 
 /**
- * LevelDao Interface class that allows the user to insert and query list levels.
+ * LevelDao interface accesses Level entities from the database.
  */
 @Dao
 public interface LevelDao {

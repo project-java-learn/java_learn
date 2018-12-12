@@ -9,7 +9,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions.Builder;
 import edu.cnm.deepdive.java_learn.R;
 
 /**
- * The type Java learn application.
+ * Application class. Gives an instance of the application pass around and creates
+ * a client object to be used to get information about the user from their Google
+ * account.
  */
 public class JavaLearnApplication extends Application {
 
@@ -21,16 +23,14 @@ public class JavaLearnApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
     instance = this;
     GoogleSignInOptions gso = new Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
         .requestEmail()
+        .requestProfile()
         .requestId()
         .requestIdToken(getString(R.string.client_id))
         .build();
 
-    // Build a GoogleSignInClient with the options specified by gso.
     client = GoogleSignIn
         .getClient(this, gso);
   }

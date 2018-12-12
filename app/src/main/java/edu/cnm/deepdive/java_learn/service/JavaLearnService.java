@@ -10,6 +10,9 @@ import retrofit2.http.Header;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
+/**
+ * Service class for communication with the backend.
+ */
 public interface JavaLearnService {
 
   @GET("users")
@@ -28,25 +31,4 @@ public interface JavaLearnService {
   @PATCH("progress")
   Call<ProgressPojo> updateProgress(@Header("Authorization") String authorization,
       @Body ProgressPojo progress);
-
-  @GET("user/{userId}/progress/{progressId}/score")
-  Call<ProgressPojo> getScore(@Header("Authorization") String authorization,
-      @Body ProgressPojo progress);
-
-  @GET("user/{userId}/progress/{progressId}/levels")
-  Call<ProgressPojo> getLevels(@Header("Authorization") String authorization,
-      @Body ProgressPojo progress);
-
-  @POST("user/{userId}/progress/{progressId}/score")
-  Call<ProgressPojo> updateScore(@Header("Authorization") String authorization,
-      @Body ProgressPojo progress);
-
-  @POST("user/{userId}/progress/{progressId}/levels")
-  Call<ProgressPojo> updateLevels(@Header("Authorization") String authorization,
-      @Body ProgressPojo progress);
-
-  @POST("users")
-  Call<UserPojo> newUser(@Header("Authorization") String authorization, @Body UserPojo user);
-
-
 }

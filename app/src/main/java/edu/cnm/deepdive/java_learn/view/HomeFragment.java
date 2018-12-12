@@ -1,6 +1,5 @@
 package edu.cnm.deepdive.java_learn.view;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,18 +9,25 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import edu.cnm.deepdive.java_learn.Login;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import edu.cnm.deepdive.java_learn.LoginActivity;
 import edu.cnm.deepdive.java_learn.R;
 import edu.cnm.deepdive.java_learn.service.JavaLearnApplication;
 
 /**
- * The type Home fragment.
+ * This is the landing fragment for when a user first logs in. Users can navigate
+ * to the levels pages or to their profile from this page, or log out of the app.
  */
 public class HomeFragment extends Fragment {
 
-  private Button levelsButton;
-  private Button profileButton;
-  private FloatingActionButton fabSignOut;
+  @BindView(R.id.levels_button)
+  Button levelsButton;
+  @BindView(R.id.profile_button)
+  Button profileButton;
+  @BindView(R.id.fab_sign_out)
+  FloatingActionButton fabSignOut;
+
   private OnClickListener listener;
 
   @Override
@@ -29,10 +35,7 @@ public class HomeFragment extends Fragment {
       Bundle savedInstanceState) {
 
     View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-    levelsButton = view.findViewById(R.id.levels_button);
-    profileButton = view.findViewById(R.id.profile_button);
-    fabSignOut = view.findViewById(R.id.fabSignOut);
+    ButterKnife.bind(this, view);
 
     setupListener();
 
@@ -41,7 +44,6 @@ public class HomeFragment extends Fragment {
 
     return view;
   }
-
 
   private void setupListener() {
     listener = v -> {
@@ -64,13 +66,8 @@ public class HomeFragment extends Fragment {
           .addToBackStack("home").commit();
     };
 
-    fabSignOut.setOnClickListener(v -> {
-
-      googleSignOut();
-
-    });
+    fabSignOut.setOnClickListener(v -> googleSignOut());
   }
-
 
   /**
    * Google sign out.
@@ -79,12 +76,10 @@ public class HomeFragment extends Fragment {
     JavaLearnApplication application = JavaLearnApplication.getInstance();
     application.getClient().signOut().addOnCompleteListener(getActivity(), (task) -> {
       application.setAccount(null);
-      Intent intent = new Intent(getActivity(), Login.class);
+      Intent intent = new Intent(getActivity(), LoginActivity.class);
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
       startActivity(intent);
     });
 
   }
-
-
 }
