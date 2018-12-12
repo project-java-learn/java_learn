@@ -24,7 +24,7 @@ a tool for Java students to supplement their education.
 
 ### Web Service
 
-* [API Documentation] (API_documentation.md)
+* [API Documentation] (https://github.com/project-java-learn/java_learn/blob/master/API_documentation.md)
 
 
 ### Deficiencies
