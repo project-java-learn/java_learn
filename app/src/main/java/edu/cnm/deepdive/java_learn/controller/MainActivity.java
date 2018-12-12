@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View.OnClickListener;
 import android.widget.Toast;
 import edu.cnm.deepdive.java_learn.LoginActivity;
 import edu.cnm.deepdive.java_learn.R;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
   private FloatingActionButton fab;
   private Retrofit retrofit;
   private JavaLearnService service;
+  private OnClickListener listener;
 
 
   @Override
@@ -52,11 +54,15 @@ public class MainActivity extends AppCompatActivity {
 
     HomeFragment homeFragment = new HomeFragment();
     fab = findViewById(R.id.fab);
+    fab.setOnClickListener(listener);
 
     getSupportFragmentManager()
         .beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
 
-    fab.setOnClickListener(v -> {
+  }
+
+  private void setFabListener() {
+    listener = v -> {
       Fragment fragment = new HomeFragment();
 
       if (getSupportFragmentManager()
@@ -82,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment)
             .commit();
       }
-    });
+    };
   }
 
   private void setupRetrofit() {
@@ -107,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     });
   }
 
-  private void testCheckUser() {
+  private void checkUser() {
     UserPojo user = new UserPojo();
     String email = JavaLearnApplication.getInstance().getAccount().getEmail();
     user.setUsername(email);
@@ -119,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     try {
       Response<UserPojo> response = service.checkUser(token).execute();
       if (response.isSuccessful()) {
-        testPostProgress();
+        checkProgress();
       } else {
         googleSignOut();
       }
@@ -128,10 +134,10 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
-  private void testPostProgress() {
+  private void checkProgress() {
     ProgressPojo progress = new ProgressPojo();
     List<String> test = new ArrayList<>();
-    progress.setScore(500);
+    progress.setScore(50);
     progress.setLevels(test);
 
     String token = getString(
@@ -141,10 +147,10 @@ public class MainActivity extends AppCompatActivity {
     try {
       Response<ProgressPojo> response = service.postProgress(token, progress).execute();
       if (!response.isSuccessful()) {
-        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "No response from backend.", Toast.LENGTH_LONG).show();
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      Toast.makeText(MainActivity.this, "Unable to post progress.", Toast.LENGTH_LONG).show();
     }
   }
 
@@ -161,8 +167,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected Void doInBackground(Void... voids) {
-      testCheckUser();
+      checkUser();
       return null;
+    }
+
+    @Override
+    protected void onPostExecute(Void aVoid) {
+      setFabListener();
     }
   }
 }
