@@ -25,7 +25,7 @@ If the code in the repository implements a web service, list the primary endpoin
 
 ### Web Service
 
-* [API Documentation] (API_documentation.md)
+* [API Documentation](API_documentation.md)
 
 
 ### Deficiencies
