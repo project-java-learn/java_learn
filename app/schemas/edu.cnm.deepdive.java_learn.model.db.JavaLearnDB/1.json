@@ -1,0 +1,409 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "143816355bf7b40e2d6181a0da1726cb",
+    "entities": [
+      {
+        "tableName": "Level",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`level_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `level` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "levelId",
+            "columnName": "level_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "level_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DefinitionsAnswer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`def_answer_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `def_question_id` INTEGER NOT NULL, `def_answer` TEXT NOT NULL, `is_correct` INTEGER NOT NULL, FOREIGN KEY(`def_question_id`) REFERENCES `DefinitionsQuestion`(`def_question_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "defAnswerId",
+            "columnName": "def_answer_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defQuestionId",
+            "columnName": "def_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defAnswer",
+            "columnName": "def_answer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCorrect",
+            "columnName": "is_correct",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "def_answer_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "DefinitionsQuestion",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "def_question_id"
+            ],
+            "referencedColumns": [
+              "def_question_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "DefinitionsQuestion",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`def_question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `level_id` INTEGER NOT NULL, `def_question` TEXT NOT NULL, FOREIGN KEY(`level_id`) REFERENCES `Level`(`level_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "defQuestionId",
+            "columnName": "def_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelId",
+            "columnName": "level_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defQuestion",
+            "columnName": "def_question",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "def_question_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Level",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "level_id"
+            ],
+            "referencedColumns": [
+              "level_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "FillBlankAnswer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`fb_answer_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fb_question_id` INTEGER NOT NULL, `fb_answer` TEXT NOT NULL, `is_correct` INTEGER NOT NULL, FOREIGN KEY(`fb_question_id`) REFERENCES `FillBlankQuestion`(`fb_question_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "fbAnswerId",
+            "columnName": "fb_answer_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fbQuestionId",
+            "columnName": "fb_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fbAnswer",
+            "columnName": "fb_answer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCorrect",
+            "columnName": "is_correct",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "fb_answer_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "FillBlankQuestion",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "fb_question_id"
+            ],
+            "referencedColumns": [
+              "fb_question_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "FillBlankQuestion",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`fb_question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `level_id` INTEGER NOT NULL, FOREIGN KEY(`level_id`) REFERENCES `Level`(`level_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "fbQuestionId",
+            "columnName": "fb_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelId",
+            "columnName": "level_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "fb_question_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Level",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "level_id"
+            ],
+            "referencedColumns": [
+              "level_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "HighlightAnswer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hl_answer_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `hl_question_id` INTEGER NOT NULL, `hl_answer` TEXT NOT NULL, `type` TEXT, FOREIGN KEY(`hl_question_id`) REFERENCES `HighlightQuestion`(`hl_question_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "hlAnswerId",
+            "columnName": "hl_answer_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hlQuestionId",
+            "columnName": "hl_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hlAnswer",
+            "columnName": "hl_answer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "hl_answer_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "HighlightQuestion",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "hl_question_id"
+            ],
+            "referencedColumns": [
+              "hl_question_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "HighlightQuestion",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hl_question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `level_id` INTEGER NOT NULL, `hl_question` TEXT NOT NULL, FOREIGN KEY(`level_id`) REFERENCES `Level`(`level_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "hlQuestionId",
+            "columnName": "hl_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelId",
+            "columnName": "level_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hlQuestion",
+            "columnName": "hl_question",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "hl_question_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Level",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "level_id"
+            ],
+            "referencedColumns": [
+              "level_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "MultipleChoiceAnswer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mc_answer_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mc_question_id` INTEGER NOT NULL, `mc_answer` TEXT NOT NULL, `is_correct` INTEGER NOT NULL, FOREIGN KEY(`mc_question_id`) REFERENCES `MultipleChoiceQuestion`(`mc_question_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "mcAnswerId",
+            "columnName": "mc_answer_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mcQuestionId",
+            "columnName": "mc_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mcAnswer",
+            "columnName": "mc_answer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCorrect",
+            "columnName": "is_correct",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mc_answer_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "MultipleChoiceQuestion",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "mc_question_id"
+            ],
+            "referencedColumns": [
+              "mc_question_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "MultipleChoiceQuestion",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mc_question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `level_id` INTEGER NOT NULL, `mc_question` TEXT NOT NULL, FOREIGN KEY(`level_id`) REFERENCES `Level`(`level_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "mcQuestionId",
+            "columnName": "mc_question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelId",
+            "columnName": "level_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mcQuestion",
+            "columnName": "mc_question",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mc_question_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Level",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "level_id"
+            ],
+            "referencedColumns": [
+              "level_id"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"143816355bf7b40e2d6181a0da1726cb\")"
+    ]
+  }
+}

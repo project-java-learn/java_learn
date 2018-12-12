@@ -22,6 +22,10 @@ public abstract class GameFragment extends Fragment {
   private Retrofit retrofit;
   private JavaLearnService service;
 
+  /**
+   * Method makes a call to the backend to update progress for a user.
+   * @param levelComplete Name of the level completed.
+   */
   protected void updateProgress(String levelComplete) {
     new UpdateProgressTask().execute(levelComplete);
   }
